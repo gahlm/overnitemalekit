@@ -1,0 +1,103 @@
+// Query is a flexible sass mixin to handle all pixel-based media queries
+// It accepts 1-2 inputs
+// The first input will always be a default breakpoint (e.g. 'medium'), px, em, or rem. Any unit-less number will calculate to px.
+// If there is no second input, it will default to a min-width query. Input "max" to create a max-width, or another breakpoint/pixel value to create a min-max range
+
+// check if input is em/rem
+@function is-relative-unit($value) {
+  @if is-number($value) and index('em' 'rem', unit($value)) != null {
+    @return 'true';
+  } @else {
+    @return 'false';
+  }
+}
+
+@function shave($value) {
+  $shaving: 1px;
+  @if is-relative-unit($value) == 'true' {
+    @if index('rem', unit($value)) != null {
+      $shaving: 0.01rem;
+    } @else {
+      $shaving: 0.01em;
+    }
+  }
+  $value: $value - $shaving;
+  @return $value;
+}
+
+// check to see if single or double declaration
+@function parseSwitch($var) {
+  @if map_has_key($breakpoints, $var) or type-of($var) == 'number' {
+    @return 'double';
+  } @else if $var == 'max' or $var == 'min' {
+    @return 'single';
+  } @else {
+    @return 'err';
+  }
+}
+
+// map variable name or number to its px equivalent
+@function parseWidth($width) {
+  // if map variable, grab and return
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+
+    @return $width;
+  } @else if is-relative-unit($width) == 'true' {
+    @return $width;
+  } @else if type-of($width) == 'number' {
+    $width: $width + 0px;
+
+    @return $width;
+  } @else {
+    @return 'err';
+  }
+}
+
+@mixin query($width, $flex: min) {
+  // get second param type ("single" or "double")
+  $switch: parseSwitch($flex);
+
+  // get first param width
+  @if $width == 'print' {
+    @media print {
+      @content;
+    }
+  } @else if
+    (type-of(parseWidth($width)) != 'number') and
+    (is-relative-unit($width) != 'true')
+  {
+    @error "'#{$width}' is not a legal value for query";
+  } @else {
+    $width: parseWidth($width);
+  }
+
+  // throw warning if parseSwitch() isn't happy
+  @if $switch == 'err' {
+    @error "'#{$flex}' is not a legal value for query";
+  }
+
+  // double breakpoint
+  @if $switch == 'double' and $width != 'print' {
+    @if map_has_key($breakpoints, $flex) {
+      $flex: map_get($breakpoints, $flex);
+    }
+
+    $flex: shave($flex);
+
+    @media only screen and (min-width: $width) and (max-width: $flex) {
+      @content;
+    }
+  }
+
+  // single breakpoint
+  @if $switch == 'single' and $width != 'print' {
+    @if $flex == 'max' {
+      $width: shave($width);
+    }
+
+    @media only screen and (#{$flex}-width: $width) {
+      @content;
+    }
+  }
+}

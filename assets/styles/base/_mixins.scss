@@ -1,0 +1,28 @@
+//
+// Mixins
+//
+
+@mixin visuallyHidden() {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+@mixin clearButtonUA {
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+@mixin truncate {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

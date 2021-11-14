@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div>
+
+		{{ post.post_title|title }}
+
+		{% if post.active_date %}
+			{{ post.active_date|date("m/d/Y") }}
+		{% endif %}
+
+		{% if post.image %}
+			{% set image = TimberImage(post.image) %}
+			<img src="{{ image }}" alt="{{ image.alt }}">
+		{% endif %}
+
+		<p>{{ post.content|wpautop }}</p>
+
+	</div>
+
+{% endblock %}

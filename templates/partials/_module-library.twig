@@ -1,0 +1,21 @@
+{% if modules %}
+    {% for module in modules %}
+
+        {#
+            Take the "machine readable" value of the module and grab the twig
+            partial of the same name
+
+            Looks like you can add a custom filter to check if file exists if
+            we're worried about calling a module that may not exist. I imagine this
+            will only happen in development but it may be a nice "safety net"
+            to add.
+
+            https://stackoverflow.com/questions/31443703/twig-check-if-file-exists
+        #}
+
+        {% set twig_url = "modules/_" ~ module.acf_fc_layout|split('_')|join('-') ~ ".twig" %}
+        {% include [ twig_url, 'modules/_default.twig'] %}
+
+    {% endfor %}
+{% endif %}
+

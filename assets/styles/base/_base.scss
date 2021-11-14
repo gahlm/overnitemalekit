@@ -1,0 +1,281 @@
+@use "sass:math";
+
+/**
+ *
+ * Base
+ *
+ *  Resets *most* styles but takes some base style variables from _setting.scss
+ *  to prevent the need for overwriting a bunch of rules. Includes misc bug fixes
+ *  from the normalize.css project as well.
+ *
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+// ::selection {
+//   color: $color-background;
+//   background-color: $color-text;
+// }
+
+html {
+	// color: $color-text;
+	// background: $color-background;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: 16px;
+
+	// prevents the window from being entirely squished and unusable
+	min-width: 320px;
+}
+
+body,
+input,
+textarea,
+button,
+select {
+	padding: 0;
+	// font-size: $font-size-body;
+	// line-height: $line-height;
+	// font-family: $font-body;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+
+	@include query("small") {
+		// font-size: $font-size-body;
+		line-height: math.div(36, 22);
+	}
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+body,
+p,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+figcaption,
+ol,
+ul,
+blockquote,
+q,
+input,
+button,
+optgroup,
+select,
+textarea,
+fieldset,
+legend {
+	margin: 0;
+}
+
+i,
+cite {
+	font-style: normal;
+}
+
+hr {
+	height: 1px;
+	border: 0;
+	// background-color: $color-text;
+}
+
+picture {
+	display: block;
+}
+
+b,
+strong {
+	font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-family: $font-heading;
+	font-weight: 600;
+	font-size: 100%;
+}
+
+small {
+	font-size: 100%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	background-color: transparent;
+	touch-action: manipulation; // remove double-tap zoom
+
+	&:active,
+	&:hover,
+	&:focus {
+		outline: 0;
+	}
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+	padding: 0;
+}
+
+blockquote,
+q {
+	padding: 0;
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	font-weight: normal;
+	text-align: left;
+	padding: 0;
+}
+
+button {
+	overflow: visible;
+	touch-action: manipulation; // remove double-tap zoom
+}
+
+button,
+input[type="text"],
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	border: 0;
+	border-radius: 0;
+	background: none;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset,
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}

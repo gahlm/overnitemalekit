@@ -1,0 +1,6 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set modules = post.get_field('modules') %}
+    {% include "partials/_module-library.twig" %}
+{% endblock %}

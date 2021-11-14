@@ -1,0 +1,16 @@
+{# 
+	DEFAULT MODULE
+
+	This is the "404" module. If this gets called,
+	its because you forgot to create a .twig for
+	an item in the Page Modules flex content block
+#}
+
+<div class="module">
+	<p class="with--text-large">OOPS!</p>
+	<p>Please create a new twig file in /modules/ and name it <code class="with--text-red">{{ twig_url|slice(8)|raw }}</code></p>
+	<p class="with--text-small with--text-muted">Anyway, here's all the data you added:</p>
+	<pre class="with--text-micro with--text-muted" style="height:250px;overflow-y:auto;padding:10px;background:#fafafa;">
+		{{ dump(module) }}
+	</pre>
+</div>

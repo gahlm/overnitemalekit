@@ -1,0 +1,11 @@
+<header>
+		<nav>
+			<ul>
+				{% for item in header_nav_menu.get_items %}
+					<li>
+						<a href="{{ item.link }}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+</header>
