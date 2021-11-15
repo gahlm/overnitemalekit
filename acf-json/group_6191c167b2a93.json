@@ -1,0 +1,44 @@
+{
+    "key": "group_6191c167b2a93",
+    "title": "Type - Product",
+    "fields": [
+        {
+            "key": "field_6191c176920cd",
+            "label": "Description",
+            "name": "description",
+            "type": "text",
+            "instructions": "Detailed product description",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1636942227
+}

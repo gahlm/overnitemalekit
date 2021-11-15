@@ -1,7 +1,9 @@
+
+   
 <?php
-/* Template Name: Modular */
+/* Template Name: Product Page */
 
 $context = Timber::context();
 $post = new TimberPost();
 $context['post'] = $post;
-Timber::render( 'modular.twig', $context );
+Timber::render( 'product.twig', $context );

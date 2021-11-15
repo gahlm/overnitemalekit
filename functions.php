@@ -82,9 +82,8 @@ add_action('wp_enqueue_scripts', 'app_scripts');
 
 
 
-// function app_get_lib() {
-//     require_once(__DIR__ . '/lib/post-types.php');
-//     require_once(__DIR__ . '/lib/tinymce.php');
-// }
+function app_get_types() {
+    require_once(__DIR__ . '/types/post-types.php');
+}
 
-// add_action('init', 'app_get_lib');
+add_action('init', 'app_get_types');

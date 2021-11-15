@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set hero = post.get_field('hero') %}
+    <pre>
+        {{ dump(hero) }}
+    </pre>
+
+    {% set main_p = post.get_field('main_products') %}
+    <pre>
+        {{ dump(main_p) }}
+    </pre>
+
+    {% set secondary_p = post.get_field('secondary_products') %}
+    <pre>
+        {{ dump(secondary_p) }}
+    </pre>
+{% endblock %}
