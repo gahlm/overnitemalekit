@@ -2,17 +2,20 @@
 
 {% block content %}
     {% set hero = post.get_field('hero') %}
-    <pre>
-        {{ dump(hero) }}
-    </pre>
+    <div class="page__hero">
+        <h1>{{ hero.title }}</h1>
+        <p>{{ hero.subtitle }}</p>
+    </div>
 
-    {% set main_p = post.get_field('main_products') %}
-    <pre>
-        {{ dump(main_p) }}
-    </pre>
+    {% for p in post.get_field('main_products') %}
+        {% set product = p.product[0] %}
+        <h2>{{ product.post_title }}</h2>
+        <p>{{ product.description }}</p>
+    {% endfor %}
 
-    {% set secondary_p = post.get_field('secondary_products') %}
-    <pre>
-        {{ dump(secondary_p) }}
-    </pre>
+    {% for p in post.get_field('secondary_products') %}
+        {% set product = p.product[0] %}
+        <h3>{{ product.post_title }}</h3>
+        <p>{{ product.description }}</p>
+    {% endfor %}
 {% endblock %}
