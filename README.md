@@ -18,7 +18,6 @@ Optional: set up a local WP server. My preferred method is [this Docker image](h
 
 ## Troubleshooting
 
-<details>
-    <summary>Gulp Error: "forget to signal async completion?"</summary>
-    If you're seeing error without editing the `gulpfile`, this is easily resolved by copying the `.env.txt` file to a `.env` file. The `browserSync` task is expecting a port variable from the `.env` file and without one the process hangs and throws the error expecting a completion. 
-</details>
+#### Gulp Error: "forget to signal async completion"
+
+If you're seeing error without editing the `gulpfile`, this is easily resolved by copying the `.env.txt` file to a `.env` file. The `browserSync` task is expecting a port variable from the `.env` file and without one the process hangs and throws the error expecting a completion.
