@@ -16,9 +16,9 @@ Optional: set up a local WP server. My preferred method is [this Docker image](h
 - Start WP host server
 - Run `gulp watch` in the command line from theme root
 
-# Modular Templating
+## Troubleshooting
 
-`template-modular.php` serves the `modular.twig` file which is associated with the `modular` flexible content field in the theme's ACF. To create a new module:
-
-- Create a new ACF field group titled after your module e.g. `BasicText`
-- Using the same module name, create a `.twig` file in the `templates/modules` directory e.g. `_basicText.twig`
+<details>
+    <summary>Gulp Error: "forget to signal async completion?"</summary>
+    If you're seeing error without editing the `gulpfile`, this is easily resolved by copying the `.env.txt` file to a `.env` file. The `browserSync` task is expecting a port variable from the `.env` file and without one the process hangs and throws the error expecting a completion. 
+</details>

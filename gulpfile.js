@@ -47,4 +47,4 @@ function watcher() {
 // aggregate tasks
 exports.style = style;
 exports.styleProp = styleProduction;
-exports.watch = watcher;
+exports.watch = series(style, watcher);
