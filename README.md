@@ -16,6 +16,11 @@ Optional: set up a local WP server. My preferred method is [this Docker image](h
 - Start WP host server
 - Run `gulp watch` in the command line from theme root
 
+### Fresh WordPress Install Setup
+
+1. Ensure the `Common Settings` radio on Settings -> Permalinks is set to `Post name`
+2. In `Appearance -> Menus`, create the following menus and populate with appropriate links: `header_nav`, `footer_nav`, `footer_copy_nav`
+
 ## Resources
 
 - [Timber Docs](https://timber.github.io/docs/)
