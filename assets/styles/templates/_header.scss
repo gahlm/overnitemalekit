@@ -1,0 +1,26 @@
+.header {
+	display: grid;
+	grid-column: viewport;
+	grid-template-columns: inherit;
+	z-index: $index-background;
+
+	&__nav {
+		grid-column: container;
+
+		li {
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+			}
+		}
+
+		li > ul {
+			display: none;
+			position: absolute;
+			background-color: white;
+			padding: $spacer-sm;
+			z-index: $index-foreground;
+		}
+	}
+}

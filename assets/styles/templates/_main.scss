@@ -1,0 +1,14 @@
+.main {
+	display: grid;
+	grid-column: container;
+	grid-template-columns: inherit;
+
+	> *,
+	.main-contained {
+		grid-column: container;
+	}
+
+	.main-full {
+		grid-column: viewport;
+	}
+}

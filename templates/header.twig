@@ -1,9 +1,10 @@
-<header>
-		<nav>
+<header class="header">
+		<nav class="header__nav">
 			<ul>
 				{% for item in header_nav_menu.get_items %}
 					<li>
 						<a href="{{ item.link }}">{{ item.title }}</a>
+						{% include "menu.twig" with {'menu': item.get_children} %}
 					</li>
 				{% endfor %}
 			</ul>

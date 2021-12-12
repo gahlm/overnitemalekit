@@ -6,4 +6,4 @@
 $context = Timber::context();
 $post = new TimberPost();
 $context['post'] = $post;
-Timber::render( 'product.twig', $context );
+Timber::render( 'template-product.twig', $context );

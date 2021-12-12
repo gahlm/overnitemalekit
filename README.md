@@ -18,6 +18,11 @@ Optional: set up a local WP server. My preferred method is [this Docker image](h
 
 ## Troubleshooting
 
+#### Custom post types not showing up in menu editor
+
+1. Check your arguments and make sure that `show_in_nav_menus` is set to true.
+2. Go to the Appearance -> Menus page and at the very top, click on Screen Options. In the panel that opens, make sure that your custom post types are checked.
+
 #### Gulp Error: "forget to signal async completion"
 
 If you're seeing error without editing the `gulpfile`, this is easily resolved by copying the `.env.txt` file to a `.env` file. The `browserSync` task is expecting a port variable from the `.env` file and without one the process hangs and throws the error expecting a completion.

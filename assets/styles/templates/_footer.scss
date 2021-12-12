@@ -1,0 +1,17 @@
+.footer {
+	display: grid;
+	grid-column: viewport;
+	grid-template-columns: inherit;
+	background: $color-navy;
+
+	&__info {
+		color: $color-white;
+		grid-column: container;
+	}
+
+	&__copy {
+		grid-column: viewport;
+		background: $color-white;
+		text-align: center;
+	}
+}

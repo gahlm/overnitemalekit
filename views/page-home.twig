@@ -5,17 +5,16 @@
     <div class="page__hero">
         <h1>{{ hero.title }}</h1>
         <p>{{ hero.subtitle }}</p>
+        
+        {# TODO: setup contact link field or context #}
+        <p>contact us</p>
+
+        {# TODO: add slider or image field #}
     </div>
 
     {% for p in post.get_field('main_products') %}
         {% set product = p.product[0] %}
         <h2>{{ product.post_title }}</h2>
-        <p>{{ product.description }}</p>
-    {% endfor %}
-
-    {% for p in post.get_field('secondary_products') %}
-        {% set product = p.product[0] %}
-        <h3>{{ product.post_title }}</h3>
         <p>{{ product.description }}</p>
     {% endfor %}
 {% endblock %}

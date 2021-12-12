@@ -1,6 +1,13 @@
 // base settings
-@import 'base/functions';
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/query';
-@import 'base/base';
+@import "base/functions";
+@import "base/variables";
+@import "base/mixins";
+@import "base/query";
+@import "base/base";
+@import "base/typography";
+@import "base/layout";
+
+// templates
+@import "templates/footer";
+@import "templates/header";
+@import "templates/main";

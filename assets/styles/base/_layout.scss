@@ -1,0 +1,14 @@
+.body {
+	$gutter: minmax(24px, 1fr);
+	$container: minmax(0, map_get($breakpoints, "large"));
+
+	display: grid;
+	grid-template-columns:
+		[viewport-start]
+		$gutter
+		[container-start]
+		$container
+		[container-end]
+		$gutter
+		[viewport-end];
+}
