@@ -22,13 +22,15 @@ class ModularSite extends TimberSite {
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		add_filter('timber_context', array($this, 'add_to_context'));
+		add_filter( 'timber_context', array($this, 'add_to_context' ) );
+		add_filter( 'get_twig', array($this, 'add_to_twig' ) ); //hook into twig global object
 		parent::__construct();
 	}
 
 	function add_to_context( $context ) {
 		$context['header_nav_menu'] = new TimberMenu('header_nav');
 		$context['footer_nav_menu'] = new TimberMenu('footer_nav');
+		$context['copy_nav_menu'] = new TimberMenu('footer_copy_nav');
 		$context['site'] = $this;
 		$context['options'] = get_fields('options');
 
@@ -53,11 +55,40 @@ class ModularSite extends TimberSite {
 		return $context;
 	}
 
+	function add_to_twig( $twig ) {
+		$twig->addFilter(new Twig_SimpleFilter('format_phone_number', array($this, 'format_phone_number')));
+		return $twig;
+	}
+
+	function format_phone_number( $number ) {
+		$formattedNumber = sprintf("%s.%s.%s",
+			substr($number, 0, 3),
+			substr($number, 3, 3),
+			substr($number, 6, 4));
+
+		return $formattedNumber;
+	}
 }
 
 new ModularSite();
 
-
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+}
 
 function app_scripts() {
 	wp_enqueue_script('jquery');

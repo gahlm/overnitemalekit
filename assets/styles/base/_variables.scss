@@ -8,9 +8,16 @@ $breakpoints: (
 $spacer-sm: 8px;
 $spacer-md: 16px;
 $spacer-lg: 24px;
+$spacer-xl: 40px;
 
+// base colors
 $color-navy: #263640;
 $color-white: #fff;
+
+// applied colors
+// $color-text-heading:
+$color-text: #222;
+$color-text-subtle: transparentize($color-text, 0.1);
 
 $index-background: 1;
 $index-middle: 2;

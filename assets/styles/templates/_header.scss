@@ -1,7 +1,5 @@
 .header {
-	display: grid;
-	grid-column: viewport;
-	grid-template-columns: inherit;
+	@include gridInherit();
 	z-index: $index-background;
 
 	&__nav {

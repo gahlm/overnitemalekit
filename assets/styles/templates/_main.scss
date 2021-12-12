@@ -1,7 +1,5 @@
 .main {
-	display: grid;
-	grid-column: container;
-	grid-template-columns: inherit;
+	@include gridInherit;
 
 	> *,
 	.main-contained {

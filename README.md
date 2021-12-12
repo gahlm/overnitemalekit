@@ -16,6 +16,11 @@ Optional: set up a local WP server. My preferred method is [this Docker image](h
 - Start WP host server
 - Run `gulp watch` in the command line from theme root
 
+## Resources
+
+- [Timber Docs](https://timber.github.io/docs/)
+- [ACF Docs](https://www.advancedcustomfields.com/resources/)
+
 ## Troubleshooting
 
 #### Custom post types not showing up in menu editor

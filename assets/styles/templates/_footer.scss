@@ -1,17 +1,64 @@
 .footer {
-	display: grid;
-	grid-column: viewport;
-	grid-template-columns: inherit;
+	@include gridInherit();
 	background: $color-navy;
 
-	&__info {
-		color: $color-white;
+	&__main {
+		display: grid;
 		grid-column: container;
+		grid-template-areas:
+			"contact logo"
+			"contact nav";
+		padding: $spacer-xl 0;
+		color: $color-white;
+	}
+
+	&__contact {
+		grid-area: contact;
+		display: flex;
+		row-gap: $spacer-lg;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__logo {
+		grid-area: logo;
+		display: flex;
+		justify-self: flex-end;
+		align-self: flex-start;
+	}
+
+	&__nav {
+		grid-area: nav;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+
+		li {
+			display: inline-block;
+
+			&:not(:last-child):after {
+				content: "|";
+			}
+		}
 	}
 
 	&__copy {
 		grid-column: viewport;
+		padding: $spacer-xl 0;
 		background: $color-white;
 		text-align: center;
+	}
+
+	&__copy--nav {
+		display: inline-block;
+
+		li {
+			display: inline-block;
+
+			&:before {
+				content: "|";
+			}
+		}
 	}
 }

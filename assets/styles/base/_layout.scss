@@ -1,3 +1,9 @@
+@mixin gridInherit() {
+	display: grid;
+	grid-column: viewport;
+	grid-template-columns: inherit;
+}
+
 .body {
 	$gutter: minmax(24px, 1fr);
 	$container: minmax(0, map_get($breakpoints, "large"));
