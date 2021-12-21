@@ -1,12 +1,9 @@
 "use strict";
 
-require("dotenv").config();
-
 const { watch, src, dest, series } = require("gulp");
 const del = require("del");
 const maps = require("gulp-sourcemaps");
 const sass = require("gulp-sass")(require("sass"));
-const browserSync = require("browser-sync").create();
 
 // clean
 function clean() {
@@ -19,8 +16,7 @@ function style() {
 		.pipe(maps.init())
 		.pipe(sass().on("error", sass.logError))
 		.pipe(maps.write())
-		.pipe(dest("./dist"))
-		.pipe(browserSync.stream());
+		.pipe(dest("./dist"));
 }
 
 function styleProduction() {

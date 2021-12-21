@@ -22,9 +22,7 @@
   },
   "homepage": "https://github.com/igloude/timber-starter#readme",
   "devDependencies": {
-    "browser-sync": "^2.27.7",
     "del": "^6.0.0",
-    "dotenv": "^10.0.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.1",
