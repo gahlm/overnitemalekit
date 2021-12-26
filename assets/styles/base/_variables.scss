@@ -5,10 +5,15 @@ $breakpoints: (
 	"x-large": 1400px,
 );
 
+// spacers
 $spacer-sm: 8px;
 $spacer-md: 16px;
 $spacer-lg: 24px;
 $spacer-xl: 40px;
+
+// font properties
+$font-size-small: 14px;
+$font-size-normal: 16px;
 
 // base colors
 $color-navy: #263640;
@@ -20,5 +25,5 @@ $color-text: #222;
 $color-text-subtle: transparentize($color-text, 0.1);
 
 $index-background: 1;
-$index-middle: 2;
-$index-foreground: 3;
+$index-middle: 10;
+$index-foreground: 20;

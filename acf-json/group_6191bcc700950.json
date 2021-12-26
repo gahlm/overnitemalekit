@@ -62,7 +62,7 @@
             "label": "Main Products",
             "name": "main_products",
             "type": "repeater",
-            "instructions": "Set of 4 showcase products that appear on the home page checkerboard",
+            "instructions": "5 showcase products that appear on the home page checkerboard ordered top-to-bottom, left-to-right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -71,10 +71,10 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": 4,
-            "max": 4,
+            "min": 5,
+            "max": 5,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Product",
             "sub_fields": [
                 {
                     "key": "field_6191bdb2779a5",
@@ -102,52 +102,6 @@
                     "return_format": "object"
                 }
             ]
-        },
-        {
-            "key": "field_6191be28779a6",
-            "label": "Secondary Products",
-            "name": "secondary_products",
-            "type": "repeater",
-            "instructions": "Second list of remaining products that will not appear in the checkerboard",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_6191be3a779a7",
-                    "label": "Product",
-                    "name": "product",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "product"
-                    ],
-                    "taxonomy": "",
-                    "filters": [
-                        "search"
-                    ],
-                    "elements": "",
-                    "min": 1,
-                    "max": 1,
-                    "return_format": "object"
-                }
-            ]
         }
     ],
     "location": [
@@ -155,33 +109,18 @@
             {
                 "param": "page",
                 "operator": "==",
-                "value": "40"
+                "value": "8"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "permalink",
-        "the_content",
-        "excerpt",
-        "discussion",
-        "comments",
-        "revisions",
-        "slug",
-        "author",
-        "format",
-        "page_attributes",
-        "featured_image",
-        "categories",
-        "tags",
-        "send-trackbacks"
-    ],
+    "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1636943298
+    "modified": 1640548616
 }

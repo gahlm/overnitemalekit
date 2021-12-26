@@ -1,12 +1,14 @@
 <header class="header">
-		<nav class="header__nav">
-			<ul>
-				{% for item in header_nav_menu.get_items %}
-					<li>
-						<a href="{{ item.link }}">{{ item.title }}</a>
-						{% include "menu.twig" with {'menu': item.get_children} %}
-					</li>
-				{% endfor %}
-			</ul>
-		</nav>
+	<a href="#main" class="header__skip-nav">Skip Navigation</a>
+	<img class="header__logo" src="" alt="Future Foam Logo"/>
+	<nav class="header__nav">
+		<ul>
+			{% for item in header_nav_menu.get_items %}
+				<li>
+					<a href="{{ item.link }}">{{ item.title }}</a>
+					{% include "menu.twig" with {'menu': item.get_children} %}
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
 </header>

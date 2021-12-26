@@ -54,10 +54,15 @@
 		display: inline-block;
 
 		li {
+			font-size: $font-size-small;
 			display: inline-block;
 
 			&:before {
 				content: "|";
+			}
+
+			a {
+				text-transform: uppercase;
 			}
 		}
 	}

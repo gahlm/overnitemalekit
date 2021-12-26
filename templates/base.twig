@@ -1,27 +1,20 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
+	{% include 'html-header.twig' %}
 
-	{% block head %}
-	{% endblock %}
-	</head>
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body data-template="base.twig" class="body">
+{% block header %}
+	{% include 'header.twig' %}
 {% endblock %}
 
-<body data-template="base.twig" class="body">
-	{% block header %}
-		{% include 'header.twig' %}
+<main role="main" class="main" id="main">
+	{% block content %}
+		Sorry, no content
 	{% endblock %}
+</main>
 
-	<main role="main" class="main">
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-	</main>
-
-	{% block footer %}
-		{% include 'footer.twig' %}
-		{{ function('wp_footer') }}
-	{% endblock %}
-</body>
-
-</html>
+{% block footer %}
+	{% include 'footer.twig' %}
+	{{ function('wp_footer') }}
+{% endblock %}</body></html>
