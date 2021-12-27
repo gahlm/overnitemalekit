@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	{% for product in products %}
+		<h2>{{ product.title }}</h2>
+	{% endfor %}
+
+{% endblock %}

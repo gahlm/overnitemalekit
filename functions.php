@@ -90,6 +90,8 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+
+// load application scripts
 function app_scripts() {
 	wp_enqueue_script('jquery');
   wp_enqueue_style('app-css', (get_template_directory_uri() . "/dist/application.css"), null, null);
@@ -99,7 +101,7 @@ function app_scripts() {
 add_action('wp_enqueue_scripts', 'app_scripts');
 
 
-
+// adds post type index
 function app_get_types() {
     require_once(__DIR__ . '/types/post-types.php');
 }
@@ -131,3 +133,11 @@ function fix_svg() {
         </style>';
 }
 add_action( 'admin_head', 'fix_svg' );
+
+
+// removes default post editor
+function remove_editor() {
+  remove_post_type_support('page', 'editor');
+}
+
+add_action('admin_init', 'remove_editor');

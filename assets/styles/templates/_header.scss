@@ -21,4 +21,23 @@
 			z-index: $index-foreground;
 		}
 	}
+
+	&__skip-nav {
+		transform: translateY(-120%);
+		position: absolute;
+		top: $spacer-sm;
+		left: $spacer-lg;
+		transition: transform 0.125s ease-in;
+		padding: $spacer-sm;
+		border: 2px solid black;
+		border-radius: 4px;
+		background: white;
+		color: black;
+		font-weight: bold;
+		z-index: $index-foreground;
+
+		&:focus {
+			transform: translateY(0);
+		}
+	}
 }
