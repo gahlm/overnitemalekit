@@ -23,7 +23,7 @@
         },
         {
             "key": "field_61ca11d042d45",
-            "label": "Product Image",
+            "label": "Event Image",
             "name": "image",
             "type": "image",
             "instructions": "Image of the actual product. For best results, use a high resolution .png with transparency.",
@@ -47,7 +47,7 @@
         },
         {
             "key": "field_61ca11d046759",
-            "label": "Product Feature Image",
+            "label": "Event Feature Image",
             "name": "feature_image",
             "type": "image",
             "instructions": "Product CTA background. For best results, use a high resolution image with no transparency.",
@@ -68,6 +68,27 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_61ca14cbc73bf",
+            "label": "Year",
+            "name": "Year",
+            "type": "number",
+            "instructions": "Enter the Year as a 4 digit value to populate the timeline value",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "i.e. 1987",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         }
     ],
     "location": [
@@ -75,7 +96,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "product"
+                "value": "history"
             }
         ]
     ],
@@ -88,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640632829
+    "modified": 1640633674
 }

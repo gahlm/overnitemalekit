@@ -2,8 +2,8 @@
 
 $labels = array(
 	'name'                  => _x( 'History', 'Post Type General Name', 'text_domain' ),
-	'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'text_domain' ),
-	'menu_name'             => __( 'Events', 'text_domain' ),
+	'singular_name'         => _x( 'History', 'Post Type Singular Name', 'text_domain' ),
+	'menu_name'             => __( 'History', 'text_domain' ),
 	'name_admin_bar'        => __( 'History', 'text_domain' ),
 	'archives'              => __( 'Event Archives', 'text_domain' ),
 	'attributes'            => __( 'Event Attributes', 'text_domain' ),
@@ -51,4 +51,4 @@ $args = array(
 	'show_in_rest'          => false,
 );
 
-register_post_type( 'Product', $args );
+register_post_type( 'History', $args );
