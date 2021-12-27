@@ -107,7 +107,7 @@ function app_get_types() {
 }
 
 add_action('init', 'app_get_types');
-// Wp v4.7.1 and higher
+// Allow Svg Upload In Wordpress Wp v4.7.1 and higher
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
   $filetype = wp_check_filetype( $filename, $mimes );
   return [
