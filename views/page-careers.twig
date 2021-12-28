@@ -1,5 +1,14 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    page-careers.twig
+	<div>
+		{{ options.careers_summary|wpautop }}
+		{% for career in careers %}
+			<a href="{{ career.link }}">
+				<h2>{{ career.title }}</h2>
+				<p>{{ career.location }}</p>
+				<p>{{ career.description }}</p>
+			</a>
+		{% endfor %}
+	</div>
 {% endblock %}

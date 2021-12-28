@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div>
+
+		<h1>{{ post.title }}</h1>
+		<p>{{ post.location }}</p>
+		<p>{{ post.description }}</p>
+		{{ post.requirements|wpautop }}
+		<p>{{ post.compensation }}</p>
+
+		{# TODO: link to applications email #}
+		<a href="">Apply Now</a>
+		<a href="/careers">Back</a>
+	</div>
+{% endblock %}

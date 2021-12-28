@@ -20,8 +20,6 @@ class ModularSite extends TimberSite {
 		show_admin_bar( false );
 		add_theme_support( 'menus' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_filter( 'timber_context', array($this, 'add_to_context' ) );
 		add_filter( 'get_twig', array($this, 'add_to_twig' ) ); //hook into twig global object
 		parent::__construct();
