@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div>
+		<h1>{{ post.get_field ('headline')}}</h1>
+		{% for events in history %}
+			<div>
+				<h2>{{ events.Year }}</h2>
+				<h2>{{events.title}}</h2>
+				<p>{{ events.description }}</p>
+			</div>
+			<div>
+				<img src="{{events.image.src}}" alt="">
+
+
+			</div>
+
+
+		{% endfor %}
+	</div>
+{% endblock %}
