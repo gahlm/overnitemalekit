@@ -1,5 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    page-contacts.twig
+	<div>
+		<h1>Contact Us</h1>
+		{% if options.address %}
+			<p>{{ options.address }}</p>
+		{% endif %}
+		{% if options.contact_phone_numbers %}
+			<ul class="with__text-subtle">
+				{% for item in options.contact_phone_numbers %}
+					<li>
+						<a href="tel:{{ item.number }}">
+							{{ item.type }}:
+							{{ item.number|format_phone_number }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if post.form %}
+			{{ post.form|shortcodes }}
+		{% endif %}
+	</div>
 {% endblock %}
