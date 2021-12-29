@@ -1,6 +1,6 @@
 .footer {
 	@include gridInherit();
-	background: $color-navy;
+	background: var(--bg-navy);
 
 	&__main {
 		display: grid;
@@ -9,7 +9,7 @@
 			"contact logo"
 			"contact nav";
 		padding: $spacer-xl 0;
-		color: $color-white;
+		color: var(--text-true-white);
 	}
 
 	&__contact {
@@ -46,7 +46,10 @@
 	&__copy {
 		grid-column: viewport;
 		padding: $spacer-xl 0;
-		background: $color-white;
+		color: var(--text-black);
+		background: var(--bg-true-white);
+		font-weight: bold;
+		font-size: var(--font-small);
 		text-align: center;
 	}
 
@@ -54,15 +57,12 @@
 		display: inline-block;
 
 		li {
-			font-size: $font-size-small;
 			display: inline-block;
 
 			&:before {
 				content: "|";
-			}
-
-			a {
-				text-transform: uppercase;
+				font-weight: normal;
+				color: $color-black-t30;
 			}
 		}
 	}

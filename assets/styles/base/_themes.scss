@@ -1,0 +1,32 @@
+:root {
+	// background colors
+	--bg-navy: #{$color-navy};
+	// --bg-green: #{$color-green};
+	// --bg-light-blue: #{$color-light-blue};
+	--bg-black: #{$color-black};
+	// --bg-true-black: #{$color-true-black};
+	--bg-white: #{$color-white};
+	--bg-true-white: #{$color-true-white};
+
+	// text colors
+	--text-navy: #{$color-navy};
+	--text-green: #{$color-green};
+	// --text-light-blue: #{$color-light-blue};
+	--text-black: #{$color-black};
+	--text-true-black: #{$color-true-black};
+	--text-white: #{$color-white};
+	--text-true-white: #{$color-true-white};
+
+	// font sizes
+	--font-small: #{$font-size-small};
+	--font-body: #{$font-size-body};
+}
+
+// TODO: high contrast mode
+//       adjust background and text colors to be minimum 4.5:1 contrast
+//       images may need some sort of outline or other treatment
+// .mode__high-contrast
+
+// TODO: large text mode
+//       adjust text sizes up ~25%
+// .mode__large-text

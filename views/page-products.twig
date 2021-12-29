@@ -3,7 +3,9 @@
 {% block content %}
 
 	{% for product in products %}
-		<h2>{{ product.title }}</h2>
+		<a href="{{ product.link }}">
+			<h2>{{ product.title }}</h2>
+		</a>
 	{% endfor %}
 
 {% endblock %}

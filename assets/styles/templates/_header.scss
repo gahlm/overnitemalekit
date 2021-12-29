@@ -1,9 +1,22 @@
 .header {
 	@include gridInherit();
-	z-index: $index-background;
+	height: $header-height;
+	background: var(--bg-true-white);
+	z-index: $index-foreground;
+
+	&__inner {
+		grid-column: container;
+		display: grid;
+		grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+	}
 
 	&__nav {
-		grid-column: container;
+		display: contents;
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+		}
 
 		li {
 			position: relative;
