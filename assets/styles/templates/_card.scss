@@ -1,0 +1,15 @@
+.card {
+	&__contact {
+		padding: $spacer-xl;
+		background: var(--bg-navy);
+		color: var(--text-true-white);
+	}
+
+	&__highlight {
+		background: grey; // TODO: update to color var
+	}
+
+	&__product {
+		text-align: center;
+	}
+}

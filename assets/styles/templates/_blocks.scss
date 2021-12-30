@@ -1,0 +1,17 @@
+.blocks {
+	--horizontal-padding: 0;
+	display: grid;
+	grid-template-columns: fr;
+	padding-left: var(--horizontal-padding);
+	padding-right: var(--horizontal-padding);
+
+	@include query("medium") {
+		grid-template-columns: repeat(2, 1fr);
+		--horizontal-padding: #{$spacer-xl};
+	}
+
+	@include query("large") {
+		grid-template-columns: repeat(3, 1fr);
+		--horizontal-padding: #{$spacer-max};
+	}
+}
