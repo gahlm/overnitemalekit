@@ -1,5 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    page-about.twig
+	<div>
+		<h1 class="heading__main">About Us</h1>
+
+		{{ post.content|wpautop }}
+
+		<ul>
+			<li>
+				<a href="/contact">Contact Us</a>
+			</li>
+			<li>
+				<a href="/careers">Careers</a>
+			</li>
+			<li>
+				<a href="/resources">Resources</a>
+			</li>
+		</ul>
+
+		{% if post.form %}
+			{{ post.form|shortcodes }}
+		{% endif %}
+	</div>
 {% endblock %}
