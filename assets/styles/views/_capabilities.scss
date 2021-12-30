@@ -1,0 +1,15 @@
+.capabilities__list {
+}
+
+.capabilities__item {
+	display: grid;
+	grid-template-columns: minmax(120px, 200px) 1fr;
+
+	> :not(img) {
+		grid-column: 2 / 3;
+	}
+
+	img {
+		grid-column: 1 / 2;
+	}
+}

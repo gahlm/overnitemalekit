@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div>
+		<h1 class="heading__main">Capabilities</h2>
+
+		<ul class="capabilities__list">
+			{% for this in capabilities %}
+				<li>
+					<a href="#{{ this.title }}">{{ this.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+
+		<div class="capabilities">
+			{% for this in capabilities %}
+				<article id="{{ this.title }}" class="capabilities__item">
+					<h2 class="heading__md">{{ this.title }}</h2>
+					{{ this.description|wpautop }}
+					{% if this.image %}
+						{# TODO: optimize image #}
+						<img src="{{ this.image }}" alt="{{ this.image_alt }}"/>
+					{% endif %}
+				</article>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
