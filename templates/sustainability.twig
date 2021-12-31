@@ -1,14 +1,19 @@
 {# depends on `options` fields in context #}
 
 <div class="sustainability">
-	<h2>{{ options.sustainability__title }}</h2>
-	<p>{{ options.sustainability__description }}</p>
+	<div class="sustainability__inner">
+		<h2 class="heading__lg">{{ options.sustainability__title }}</h2>
+		<p>{{ options.sustainability__description }}</p>
 
-	{{ function(
-      ['ModularSite', 'sustainability_conversion'], 
-      options.sustainability__calc.initialDate, 
-      options.sustainability__calc.rate)
-  }}
+		<p class="sustainability__number">
+			{{ function(
+        ['ModularSite', 'sustainability_conversion'], 
+        options.sustainability__calc.initialDate, 
+        options.sustainability__calc.rate)
+      }}
+		</p>
+		<p class="text__strong">{{ options.sustainability__context }}</p>
 
-	<a class="action__blue" href="/about">Learn More</a>
+		<a class="action__blue" href="/about">Learn More</a>
+	</div>
 </div>

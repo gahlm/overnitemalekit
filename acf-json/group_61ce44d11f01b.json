@@ -41,6 +41,25 @@
             "new_lines": ""
         },
         {
+            "key": "field_61ce704f5b2ac",
+            "label": "Unit Context",
+            "name": "sustainability__context",
+            "type": "text",
+            "instructions": "Text giving context to the sustainability number",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_61ce47aea6720",
             "label": "Unit Calculation",
             "name": "sustainability__calc",
@@ -114,5 +133,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640909282
+    "modified": 1640919268
 }

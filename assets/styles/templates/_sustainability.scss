@@ -1,0 +1,18 @@
+.sustainability {
+	@include gridInherit;
+	background: var(--bg-green);
+	color: var(--text-true-white);
+
+	&__inner {
+		grid-column: container;
+		padding-top: $spacer-xl;
+		padding-bottom: $spacer-xl;
+		text-align: center;
+	}
+
+	&__number {
+		font-size: $font-size-heading-main;
+		font-weight: bold;
+		letter-spacing: 6px;
+	}
+}

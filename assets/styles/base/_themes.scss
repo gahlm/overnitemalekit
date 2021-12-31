@@ -1,7 +1,7 @@
 :root {
 	// background colors
 	--bg-navy: #{$color-navy};
-	// --bg-green: #{$color-green};
+	--bg-green: #{$color-green};
 	// --bg-light-blue: #{$color-light-blue};
 	--bg-black: #{$color-black};
 	// --bg-true-black: #{$color-true-black};
@@ -26,6 +26,7 @@
 	// font sizes
 	--font-small: #{$font-size-small};
 	--font-body: #{$font-size-body};
+	--font-strong: #{$font-size-body};
 	--font-heading-sm: #{$font-size-heading-sm};
 	--font-heading-md: #{$font-size-heading-md};
 	--font-heading-lg: #{$font-size-heading-lg};
