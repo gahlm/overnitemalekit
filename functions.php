@@ -1,5 +1,6 @@
 <?php
 
+// Handle no Timber plugin case
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';
@@ -12,9 +13,12 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+
+// Let Timber know where Twig directories are located
 Timber::$dirname = array('templates', 'views');
 
 
+// Initialize Timber
 class ModularSite extends TimberSite {
 	function __construct() {
 		show_admin_bar( false );
@@ -31,7 +35,6 @@ class ModularSite extends TimberSite {
 		$context['copy_nav_menu'] = new TimberMenu('footer_copy_nav');
 		$context['site'] = $this;
 		$context['options'] = get_fields('options');
-
 
 		$all_posts_args = array(
 			'post_type' => 'post',
@@ -54,10 +57,12 @@ class ModularSite extends TimberSite {
 	}
 
 	function add_to_twig( $twig ) {
-		$twig->addFilter(new Twig_SimpleFilter('format_phone_number', array($this, 'format_phone_number')));
+		$twig->addFilter( new Twig_SimpleFilter('format_phone_number', array($this, 'format_phone_number')));
+		$twig->addFunction( new Twig_SimpleFunction( 'sustainability_conversion', array( $this, 'sustainability_conversion' ) ) );
 		return $twig;
 	}
 
+	// Formats 9 digit string into dot-notation phone number
 	function format_phone_number( $number ) {
 		$formattedNumber = sprintf("%s.%s.%s",
 			substr($number, 0, 3),
@@ -66,6 +71,16 @@ class ModularSite extends TimberSite {
 
 		return $formattedNumber;
 	}
+
+
+	// Unit conversion for sustainability module
+	public static function sustainability_conversion( $date, $rate ) {
+		$origin = new DateTime($date);
+		$target = new DateTime('now');
+		$interval = $origin->diff($target);
+		$totalHours = ($interval->y * 365 * 24) + ($interval->m * 12 * 24) + ($interval->d + 24) + $interval->h;
+		return $totalHours * $rate;
+	}
 }
 
 new ModularSite();
@@ -73,17 +88,11 @@ new ModularSite();
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
+		'page_title' 	=> 'General Settings',
+		'menu_title'	=> 'General Settings',
+		'menu_slug' 	=> 'general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Footer Settings',
-		'menu_title'	=> 'Footer',
-		'parent_slug'	=> 'theme-general-settings',
 	));
 	
 }

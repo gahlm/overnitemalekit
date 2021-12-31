@@ -1,0 +1,14 @@
+{# depends on `options` fields in context #}
+
+<div class="sustainability">
+	<h2>{{ options.sustainability__title }}</h2>
+	<p>{{ options.sustainability__description }}</p>
+
+	{{ function(
+      ['ModularSite', 'sustainability_conversion'], 
+      options.sustainability__calc.initialDate, 
+      options.sustainability__calc.rate)
+  }}
+
+	<a class="action__blue" href="/about">Learn More</a>
+</div>
