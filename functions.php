@@ -78,7 +78,8 @@ class ModularSite extends TimberSite {
 		$origin = new DateTime($date);
 		$target = new DateTime('now');
 		$interval = $origin->diff($target);
-		$totalHours = ($interval->y * 365 * 24) + ($interval->m * 12 * 24) + ($interval->d + 24) + $interval->h;
+		$totalHours = ($interval->y * 365 * 24) + ($interval->m * 30 * 24) + ($interval->d + 24) + $interval->h;
+		// TODO: add initial number
 		return $totalHours * $rate;
 	}
 }
@@ -88,6 +89,7 @@ new ModularSite();
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
+
 		'page_title' 	=> 'General Settings',
 		'menu_title'	=> 'General Settings',
 		'menu_slug' 	=> 'general-settings',
