@@ -17,6 +17,12 @@
 	--text-white: #{$color-white};
 	--text-true-white: #{$color-true-white};
 
+	// action colors
+	--action-text: #{$color-true-white-t90};
+	--action-blue: #{$color-light-blue};
+	--action-green: #{$color-green};
+	--action-navy: #{$color-navy};
+
 	// font sizes
 	--font-small: #{$font-size-small};
 	--font-body: #{$font-size-body};

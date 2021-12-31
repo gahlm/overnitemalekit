@@ -1,0 +1,21 @@
+%action {
+	display: inline-block;
+	padding: $spacer-sm $spacer-md;
+	color: var(--action-text);
+	font-weight: bold;
+}
+
+.action__blue {
+	@extend %action;
+	background: var(--action-blue);
+}
+
+.action__green {
+	@extend %action;
+	background: var(--action-green);
+}
+
+.action__navy {
+	@extend %action;
+	background: var(--action-navy);
+}
