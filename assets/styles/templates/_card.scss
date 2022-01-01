@@ -1,11 +1,16 @@
 .card {
+	&__company {
+		background: var(--bg-light-grey);
+		text-align: center;
+	}
+
 	&__contact {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		padding: $spacer-xl;
 		background: var(--bg-navy);
-		color: var(--text-true-white);
+		color: var(--text-white);
 	}
 
 	&__highlight {

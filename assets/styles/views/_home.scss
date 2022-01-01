@@ -2,6 +2,12 @@
 // }
 
 .home__productBlocks {
-	margin-bottom: $spacer-max;
 	grid-auto-rows: 280px;
+	margin-bottom: $spacer-max;
+}
+
+.home__companyBlocks {
+	margin-bottom: $spacer-max;
+	// TODO: add bg SVG
+	// background-image: ;
 }

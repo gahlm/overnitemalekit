@@ -1,7 +1,7 @@
 .sustainability {
 	@include gridInherit;
 	background: var(--bg-green);
-	color: var(--text-true-white);
+	color: var(--text-white);
 
 	&__inner {
 		grid-column: container;

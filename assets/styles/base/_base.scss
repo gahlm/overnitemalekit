@@ -18,13 +18,13 @@
 }
 
 ::selection {
-	color: var(--bg-true-white);
+	color: var(--bg-white);
 	background-color: var(--text-black);
 }
 
 html {
 	color: var(--text-black);
-	background: var(--bg-true-white);
+	background: var(--bg-white);
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	font-size: 16px;

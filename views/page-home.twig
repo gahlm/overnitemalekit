@@ -30,7 +30,29 @@
 		</div>
 	</div>
 
-	<div class="blocks"></div>
+	<div class="home__companyBlocks blocks">
+		<div class="card card__company">
+			<img src="{{ post.experience.icon }}" alt=""/>
+			55+ YEARS OF
+																		Experience
+			<p>{{ post.experience.description }}</p>
+			<a class="action__navy" href="/about">About Us</a>
+		</div>
+		<div class="card card__company">
+			<img src="{{ post.innovation.icon }}" alt=""/>
+			DRIVEN BY
+																		Innovation
+			<p>{{ post.innovation.description }}</p>
+			<a class="action__navy" href="/whats-new">See What's New</a>
+		</div>
+		<div class="card card__company">
+			<img src="{{ post.solutions.icon }}" alt=""/>
+			TAILORED
+																		Solutions
+			<p>{{ post.solutions.description }}</p>
+			<a class="action__navy" href="/contact">Contact Us</a>
+		</div>
+	</div>
 
 	{% include "templates/sustainability.twig" %}
 

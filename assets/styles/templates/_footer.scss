@@ -1,6 +1,6 @@
 .footer {
 	@include gridInherit();
-	background: var(--bg-white);
+	background: var(--bg-light-grey);
 
 	&__main {
 		display: grid;
@@ -47,7 +47,7 @@
 		grid-column: viewport;
 		padding: $spacer-xl 0;
 		color: var(--text-black);
-		background: var(--bg-true-white);
+		background: var(--bg-white);
 		font-weight: bold;
 		font-size: var(--font-small);
 		text-align: center;

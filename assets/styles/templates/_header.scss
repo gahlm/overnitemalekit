@@ -1,7 +1,7 @@
 .header {
 	@include gridInherit();
 	height: $header-height;
-	background: var(--bg-true-white);
+	background: var(--bg-white);
 	z-index: $index-foreground;
 
 	&__inner {
