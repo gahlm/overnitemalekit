@@ -1,7 +1,23 @@
 .card {
 	&__company {
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
 		background: var(--bg-light-grey);
 		text-align: center;
+
+		&--image {
+			height: 120px;
+			width: 120px;
+			margin: 0 auto $spacer-xxl;
+			padding: 20px;
+			border-radius: 100%;
+			background: var(--bg-white);
+		}
+
+		img {
+			height: 100%;
+			width: auto;
+		}
 	}
 
 	&__contact {

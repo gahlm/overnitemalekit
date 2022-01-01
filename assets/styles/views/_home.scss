@@ -10,4 +10,17 @@
 	margin-bottom: $spacer-max;
 	// TODO: add bg SVG
 	// background-image: ;
+
+	&--heading {
+		margin-top: $spacer-xl;
+		margin-bottom: $spacer-xxl;
+
+		span {
+			display: block;
+
+			&:first-of-type {
+				margin-bottom: $spacer-sm;
+			}
+		}
+	}
 }

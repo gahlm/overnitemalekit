@@ -20,6 +20,11 @@
 	background: var(--action-navy);
 }
 
+.action__black {
+	@extend %action;
+	background: var(--action-black);
+}
+
 .action__link {
 	color: var(--text-black);
 	text-decoration: underline;

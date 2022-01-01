@@ -10,7 +10,7 @@
 		{# TODO: add slider or image field #}
 	</div>
 
-	<div class="home__productBlocks blocks">
+	<section class="home__productBlocks blocks">
 		{% for p in post.get_field('main_products') %}
 			{% set product = p.product[0] %}
 			<div class="card card__product">
@@ -28,31 +28,43 @@
 				<a href="/contact" class="action__green">Contact Us</a>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="home__companyBlocks blocks">
-		<div class="card card__company">
-			<img src="{{ post.experience.icon }}" alt=""/>
-			55+ YEARS OF
-																		Experience
+	<section class="home__companyBlocks blocks">
+		<article class="card card__company">
+			<div class="card__company--image">
+				<img src="{{ post.experience.icon }}" alt=""/>
+			</div>
+			<h2 class="home__companyBlocks--heading">
+				<span class="text__strong">55+ YEARS OF</span>
+				<span class="heading__lg">Experience</span>
+			</h2>
 			<p>{{ post.experience.description }}</p>
-			<a class="action__navy" href="/about">About Us</a>
-		</div>
-		<div class="card card__company">
-			<img src="{{ post.innovation.icon }}" alt=""/>
-			DRIVEN BY
-																		Innovation
+			<a class="action__black" href="/about">About Us</a>
+		</article>
+		<article class="card card__company">
+			<div class="card__company--image">
+				<img src="{{ post.innovation.icon }}" alt=""/>
+			</div>
+			<h2 class="home__companyBlocks--heading">
+				<span class="text__strong">DRIVEN BY</span>
+				<span class="heading__lg">Innovation</span>
+			</h2>
 			<p>{{ post.innovation.description }}</p>
-			<a class="action__navy" href="/whats-new">See What's New</a>
-		</div>
-		<div class="card card__company">
-			<img src="{{ post.solutions.icon }}" alt=""/>
-			TAILORED
-																		Solutions
+			<a class="action__black" href="/whats-new">See What's New</a>
+		</article>
+		<article class="card card__company">
+			<div class="card__company--image">
+				<img src="{{ post.solutions.icon }}" alt=""/>
+			</div>
+			<h2 class="home__companyBlocks--heading">
+				<span class="text__strong">TAILORED</span>
+				<span class="heading__lg">Solutions</span>
+			</h2>
 			<p>{{ post.solutions.description }}</p>
-			<a class="action__navy" href="/contact">Contact Us</a>
-		</div>
-	</div>
+			<a class="action__black" href="/contact">Contact Us</a>
+		</article>
+	</section>
 
 	{% include "templates/sustainability.twig" %}
 
