@@ -1,7 +1,8 @@
 .blocks {
 	--horizontal-padding: 0;
 	display: grid;
-	grid-template-columns: fr;
+	gap: $spacer-xl;
+	grid-template-columns: 1fr;
 	padding-left: var(--horizontal-padding);
 	padding-right: var(--horizontal-padding);
 

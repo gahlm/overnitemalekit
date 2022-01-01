@@ -5,9 +5,13 @@
 
 	&__inner {
 		grid-column: container;
-		padding-top: $spacer-xl;
-		padding-bottom: $spacer-xl;
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
 		text-align: center;
+
+		> :not(:last-child) {
+			margin-bottom: $spacer-xl;
+		}
 	}
 
 	&__number {

@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="footer__main">
 		<div class="footer__contact">
-			<p class="with__heading-3">{{ options.title }}</p>
+			<p class="heading__md">{{ options.title }}</p>
 			{% if options.address %}
 				<p>{{ options.address }}</p>
 			{% endif %}
@@ -10,26 +10,29 @@
 					{% for item in options.contact_phone_numbers %}
 						<li>
 							<a href="tel:{{ item.number }}">
-								{{ item.type }}: {{ item.number|format_phone_number }}
+								{{ item.type }}:
+								{{ item.number|format_phone_number }}
 							</a>
 						</li>
 					{% endfor %}
 				</ul>
 			{% endif %}
 		</div>
-		<img class="footer__logo" src="" alt="Future Foam Logo" />
+		<img class="footer__logo" src="" alt="Future Foam Logo"/>
 		<nav class="footer__nav">
 			<ul>
 				{% for item in footer_nav_menu.get_items %}
 					<li>
-						<a href="{{ item.link }}">{{ item.title }}</a>
+						<a class="" href="{{ item.link }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>
 		</nav>
 	</div>
 	<div class="footer__copy with__text-subtle">
-		&copy; {{ now|date('Y') }} Future Foam
+		&copy;
+		{{ now|date('Y') }}
+		Future Foam
 		<nav class="footer__copy--nav">
 			<ul>
 				{% for item in copy_nav_menu.get_items %}

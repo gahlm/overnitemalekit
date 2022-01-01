@@ -5,14 +5,16 @@
 		<h2 class="heading__lg">{{ options.sustainability__title }}</h2>
 		<p>{{ options.sustainability__description }}</p>
 
-		<p class="sustainability__number">
-			{{ function(
-        ['ModularSite', 'sustainability_conversion'], 
-        options.sustainability__calc.initialDate, 
-        options.sustainability__calc.rate)
-      }}
-		</p>
-		<p class="text__strong">{{ options.sustainability__context }}</p>
+		<div>
+			<p class="sustainability__number">
+				{{ function(
+					['ModularSite', 'sustainability_conversion'], 
+					options.sustainability__calc.initialDate, 
+					options.sustainability__calc.rate)
+				}}
+			</p>
+			<p class="text__strong">{{ options.sustainability__context }}</p>
+		</div>
 
 		<a class="action__blue" href="/about">Learn More</a>
 	</div>

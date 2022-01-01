@@ -19,3 +19,12 @@
 	@extend %action;
 	background: var(--action-navy);
 }
+
+.action__link {
+	color: var(--text-black);
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

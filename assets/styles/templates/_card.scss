@@ -1,5 +1,8 @@
 .card {
 	&__contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: $spacer-xl;
 		background: var(--bg-navy);
 		color: var(--text-true-white);
@@ -10,6 +13,16 @@
 	}
 
 	&__product {
+		display: grid;
+		grid-template-rows: 1fr 100px;
 		text-align: center;
+		box-shadow: 1px 1px 4px $color-black-t10;
+
+		&--meta {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: $spacer-xs;
+		}
 	}
 }
