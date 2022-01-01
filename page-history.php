@@ -7,7 +7,7 @@ $context['post'] = $post;
 
 $args = array(
   // Get post type project
-  'post_type' => 'history',
+  'post_type' => 'event',
   // Get all posts
   'posts_per_page' => -1,
   // Order by post date

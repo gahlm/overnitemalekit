@@ -2,20 +2,20 @@
 
 $labels = array(
 	'name'                  => _x( 'History', 'Post Type General Name', 'text_domain' ),
-	'singular_name'         => _x( 'History', 'Post Type Singular Name', 'text_domain' ),
+	'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'text_domain' ),
 	'menu_name'             => __( 'History', 'text_domain' ),
-	'name_admin_bar'        => __( 'History', 'text_domain' ),
+	'name_admin_bar'        => __( 'Event', 'text_domain' ),
 	'archives'              => __( 'Event Archives', 'text_domain' ),
 	'attributes'            => __( 'Event Attributes', 'text_domain' ),
 	'parent_item_colon'     => __( 'Parent Event:', 'text_domain' ),
-	'all_items'             => __( 'All Events', 'text_domain' ),
+	'all_items'             => __( 'All History', 'text_domain' ),
 	'add_new_item'          => __( 'Add New Event', 'text_domain' ),
 	'add_new'               => __( 'Add New Event', 'text_domain' ),
 	'new_item'              => __( 'New Event', 'text_domain' ),
 	'edit_item'             => __( 'Edit Event', 'text_domain' ),
 	'update_item'           => __( 'Update Item', 'text_domain' ),
 	'view_item'             => __( 'View Event', 'text_domain' ),
-	'view_items'            => __( 'View Events', 'text_domain' ),
+	'view_items'            => __( 'View History', 'text_domain' ),
 	'search_items'          => __( 'Search Event', 'text_domain' ),
 	'not_found'             => __( 'Event Not found', 'text_domain' ),
 	'not_found_in_trash'    => __( 'Event Not found in Trash', 'text_domain' ),
@@ -25,14 +25,14 @@ $labels = array(
 	'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
 	'insert_into_item'      => __( 'Insert into Event', 'text_domain' ),
 	'uploaded_to_this_item' => __( 'Uploaded to this Event', 'text_domain' ),
-	'items_list'            => __( 'Events list', 'text_domain' ),
-	'items_list_navigation' => __( 'Events list navigation', 'text_domain' ),
-	'filter_items_list'     => __( 'Filter Events list', 'text_domain' ),
+	'items_list'            => __( 'History list', 'text_domain' ),
+	'items_list_navigation' => __( 'History list navigation', 'text_domain' ),
+	'filter_items_list'     => __( 'Filter History list', 'text_domain' ),
 );
 
 $args = array(
 	'label'                 => __( 'Event', 'text_domain' ),
-	'description'           => __( 'Future Foam Events', 'text_domain' ),
+	'description'           => __( 'Future Foam History', 'text_domain' ),
 	'labels'                => $labels,
 	'supports'              => array( 'title', 'custom-fields' ),
 	'hierarchical'          => false,
@@ -40,7 +40,7 @@ $args = array(
 	'show_ui'               => true,
 	'show_in_menu'          => true,
 	// 'menu_position'         => 5,
-	'menu_icon'             => 'dashicons-calendar',
+	'menu_icon'             => 'dashicons-products',
 	'show_in_admin_bar'     => true,
 	'show_in_nav_menus'     => true,
 	'can_export'            => true,
@@ -51,4 +51,4 @@ $args = array(
 	'show_in_rest'          => false,
 );
 
-register_post_type( 'History', $args );
+register_post_type( 'event', $args );
