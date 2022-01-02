@@ -1,3 +1,6 @@
 jQuery(function ($) {
-	$(".slider").sss();
+	$(".slider").sss({
+		transition: 1000,
+		speed: 10000,
+	});
 });
