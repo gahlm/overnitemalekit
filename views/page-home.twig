@@ -7,7 +7,12 @@
 		<p>{{ hero.subtitle }}</p>
 		<a href="/contact" class="action__blue">Contact Us</a>
 
-		{# TODO: add slider or image field #}
+		<div class="home__hero--slider slider">
+			{% for i in hero.product_images %}
+				{% set image = i.image %}
+				<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+			{% endfor %}
+		</div>
 	</div>
 
 	<section class="home__productBlocks blocks">
@@ -69,5 +74,4 @@
 	{% include "templates/facilities.twig" %}
 	{% include "templates/history.twig" %}
 	{% include "templates/sustainability.twig" %}
-
 {% endblock %}
