@@ -21,8 +21,8 @@
                     "key": "field_6191bd0d779a2",
                     "label": "Title",
                     "name": "title",
-                    "type": "text",
-                    "instructions": "Main hero title",
+                    "type": "textarea",
+                    "instructions": "Main hero title. Line breaks are preserved.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -32,9 +32,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "br"
                 },
                 {
                     "key": "field_6191bd1d779a3",
@@ -347,5 +347,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641069044
+    "modified": 1641146463
 }

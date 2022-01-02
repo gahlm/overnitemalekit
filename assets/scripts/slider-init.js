@@ -1,6 +1,9 @@
 jQuery(function ($) {
 	$(".slider").sss({
-		transition: 1000,
-		speed: 10000,
+		slideShow: true,
+		startOn: 0,
+		transition: 800,
+		speed: 5000,
+		showNav: true,
 	});
 });

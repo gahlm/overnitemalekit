@@ -15,7 +15,7 @@
 	}
 
 	&__number {
-		font-size: $font-size-heading-main;
+		font-size: var(--font-heading-xl);
 		font-weight: bold;
 		letter-spacing: 6px;
 	}

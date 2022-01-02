@@ -3,16 +3,24 @@
 {% block content %}
 	{% set hero = post.get_field('hero') %}
 	<div class="home__hero">
-		<h1>{{ hero.title }}</h1>
-		<p>{{ hero.subtitle }}</p>
-		<a href="/contact" class="action__blue">Contact Us</a>
+		<div class="hero__inner">
+			<div class="hero__meta">
+				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
+				<p class="hero__subtitle heading__sm">{{ hero.subtitle }}</p>
+				<div>
+					<a href="/contact" class="action__blue">Contact Us</a>
+				</div>
+			</div>
 
-		<div class="home__hero--slider slider">
-			{% for i in hero.product_images %}
-				{% set image = i.image %}
-				<img src="{{ image.url }}" alt="{{ image.caption }}"/>
-			{% endfor %}
+			<div class="hero__slider slider">
+				{% for i in hero.product_images %}
+					{% set image = i.image %}
+					<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+				{% endfor %}
+			</div>
 		</div>
+
+		{# TODO: add hero graphic here #}
 	</div>
 
 	<section class="home__productBlocks blocks">
