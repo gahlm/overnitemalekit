@@ -1,5 +1,8 @@
 .card {
 	&__company {
+		display: grid;
+		grid-template-rows: 1fr min-content;
+		gap: $spacer-xxl;
 		padding-top: $spacer-xxl;
 		padding-bottom: $spacer-xxl;
 		background: var(--bg-light-grey);
@@ -17,6 +20,10 @@
 		img {
 			height: 100%;
 			width: auto;
+		}
+
+		&--description {
+			padding: 0 $spacer-md;
 		}
 	}
 
