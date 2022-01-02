@@ -1,6 +1,7 @@
 "use strict";
 
-const { watch, src, dest, series } = require("gulp");
+const { watch, src, dest, parallel, series } = require("gulp");
+const concat = require("gulp-concat");
 const del = require("del");
 const maps = require("gulp-sourcemaps");
 const sass = require("gulp-sass")(require("sass"));
@@ -25,12 +26,22 @@ function styleProduction() {
 		.pipe(dest("./dist"));
 }
 
+// JS
+function scripts() {
+	return src(["./assets/vendor/**/*.js", "./assets/scripts/*.js"])
+		.pipe(maps.init())
+		.pipe(concat("application.js"))
+		.pipe(maps.write())
+		.pipe(dest("./dist/"));
+}
+
 // watchers
 function watcher() {
 	watch(["./assets/styles/**/*.scss"], series(style));
+	watch(["./assets/scripts/*.js"], series(scripts));
 }
 
 // aggregate tasks
 exports.style = style;
-exports.styleProp = series(clean, styleProduction);
-exports.watch = series(style, watcher);
+exports.production = series(clean, parallel(styleProduction, scripts));
+exports.watch = series(parallel(style, scripts), watcher);
