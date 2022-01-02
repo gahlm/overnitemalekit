@@ -1,0 +1,10 @@
+.history {
+	margin-bottom: $spacer-max;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: $spacer-lg;
+		margin-bottom: $spacer-xxl;
+	}
+}
