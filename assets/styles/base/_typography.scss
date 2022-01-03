@@ -1,17 +1,26 @@
-.heading__main {
-	font-size: var(--font-heading-main);
+.heading__hero {
+	font-size: var(--font-heading-hero);
+	font-weight: bold;
+}
+
+.heading__xl {
+	font-size: var(--font-heading-xl);
+	font-weight: bold;
 }
 
 .heading__lg {
 	font-size: var(--font-heading-lg);
+	font-weight: bold;
 }
 
 .heading__md {
 	font-size: var(--font-heading-md);
+	font-weight: bold;
 }
 
 .heading__sm {
 	font-size: var(--font-heading-sm);
+	font-weight: bold;
 }
 
 .text__strong {

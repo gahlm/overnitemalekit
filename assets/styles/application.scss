@@ -1,3 +1,6 @@
+// vendor
+@import "../vendor/sss/sss";
+
 // base settings
 @import "base/functions";
 @import "base/variables";
@@ -14,10 +17,13 @@
 // templates
 @import "templates/blocks";
 @import "templates/card";
+@import "templates/facilities";
 @import "templates/footer";
 @import "templates/header";
+@import "templates/history";
 @import "templates/main";
 @import "templates/sustainability";
 
 // views
 @import "views/capabilities";
+@import "views/home";

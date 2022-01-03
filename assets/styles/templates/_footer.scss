@@ -1,6 +1,6 @@
 .footer {
 	@include gridInherit();
-	background: var(--bg-navy);
+	background: var(--bg-light-grey);
 
 	&__main {
 		display: grid;
@@ -8,14 +8,14 @@
 		grid-template-areas:
 			"contact logo"
 			"contact nav";
-		padding: $spacer-xl 0;
-		color: var(--text-true-white);
+		padding: $spacer-xxl 0;
+		color: var(--text-black);
 	}
 
 	&__contact {
 		grid-area: contact;
 		display: flex;
-		row-gap: $spacer-lg;
+		row-gap: $spacer-xl;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -47,7 +47,7 @@
 		grid-column: viewport;
 		padding: $spacer-xl 0;
 		color: var(--text-black);
-		background: var(--bg-true-white);
+		background: var(--bg-white);
 		font-weight: bold;
 		font-size: var(--font-small);
 		text-align: center;

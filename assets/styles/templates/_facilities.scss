@@ -1,0 +1,16 @@
+.facilities {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-bottom: $spacer-max;
+	gap: $spacer-lg;
+
+	@include query("medium") {
+		grid-template-columns: 1fr 2fr;
+	}
+
+	&__meta {
+		:not(:last-child) {
+			margin-bottom: $spacer-xxl;
+		}
+	}
+}

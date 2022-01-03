@@ -1,8 +1,39 @@
 .card {
+	&__company {
+		display: grid;
+		grid-template-rows: 1fr min-content;
+		gap: $spacer-xxl;
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
+		background: var(--bg-light-grey);
+		text-align: center;
+
+		&--image {
+			height: 120px;
+			width: 120px;
+			margin: 0 auto $spacer-xxl;
+			padding: 20px;
+			border-radius: 100%;
+			background: var(--bg-white);
+		}
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+
+		&--description {
+			padding: 0 $spacer-md;
+		}
+	}
+
 	&__contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: $spacer-xl;
 		background: var(--bg-navy);
-		color: var(--text-true-white);
+		color: var(--text-white);
 	}
 
 	&__highlight {
@@ -10,6 +41,16 @@
 	}
 
 	&__product {
+		display: grid;
+		grid-template-rows: 1fr 100px;
 		text-align: center;
+		box-shadow: 1px 1px 4px $color-black-t10;
+
+		&--meta {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: $spacer-xs;
+		}
 	}
 }

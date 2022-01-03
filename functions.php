@@ -104,7 +104,7 @@ if( function_exists('acf_add_options_page') ) {
 function app_scripts() {
 	wp_enqueue_script('jquery');
   wp_enqueue_style('app-css', (get_template_directory_uri() . "/dist/application.css"), null, null);
-  // wp_enqueue_script('app-js', (get_template_directory_uri() . "/dist/application.js"), ['jquery'], null, true);
+  wp_enqueue_script('app-js', (get_template_directory_uri() . "/dist/application.js"), ['jquery'], null, true);
 }
 
 add_action('wp_enqueue_scripts', 'app_scripts');

@@ -6,10 +6,12 @@ $breakpoints: (
 );
 
 // spacers
+$spacer-xs: 4px;
 $spacer-sm: 8px;
 $spacer-md: 16px;
 $spacer-lg: 24px;
-$spacer-xl: 40px;
+$spacer-xl: 32px;
+$spacer-xxl: 60px;
 $spacer-max: 120px;
 
 // global heights
@@ -21,7 +23,8 @@ $font-size-body: 18px;
 $font-size-heading-sm: 24px;
 $font-size-heading-md: 28px;
 $font-size-heading-lg: 32px;
-$font-size-heading-main: 40px;
+$font-size-heading-xl: 40px;
+$font-size-heading-hero: 60px;
 
 $line-height: 1.125rem;
 
@@ -40,10 +43,11 @@ $color-light-blue: #6da7cb;
 
 $color-black: #2a3640;
 $color-true-black: #000;
+$color-black-t10: transparentize($color-black, 0.9);
 $color-black-t30: transparentize($color-black, 0.7);
 $color-black-t60: transparentize($color-black, 0.4);
 $color-black-t90: transparentize($color-black, 0.1);
 
-$color-white: #e3e5e5;
-$color-true-white: #fff;
-$color-true-white-t90: transparentize($color-true-white, 0.1);
+$color-light-grey: #e3e5e5;
+$color-white: #fff;
+$color-white-t90: transparentize($color-white, 0.1);

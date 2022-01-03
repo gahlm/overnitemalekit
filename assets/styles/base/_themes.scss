@@ -5,8 +5,8 @@
 	// --bg-light-blue: #{$color-light-blue};
 	--bg-black: #{$color-black};
 	// --bg-true-black: #{$color-true-black};
+	--bg-light-grey: #{$color-light-grey};
 	--bg-white: #{$color-white};
-	--bg-true-white: #{$color-true-white};
 
 	// text colors
 	--text-navy: #{$color-navy};
@@ -14,14 +14,15 @@
 	// --text-light-blue: #{$color-light-blue};
 	--text-black: #{$color-black};
 	--text-true-black: #{$color-true-black};
+	--text-light-grey: #{$color-light-grey};
 	--text-white: #{$color-white};
-	--text-true-white: #{$color-true-white};
 
 	// action colors
-	--action-text: #{$color-true-white-t90};
+	--action-text: #{$color-white-t90};
 	--action-blue: #{$color-light-blue};
 	--action-green: #{$color-green};
 	--action-navy: #{$color-navy};
+	--action-black: #{$color-black};
 
 	// font sizes
 	--font-small: #{$font-size-small};
@@ -30,7 +31,8 @@
 	--font-heading-sm: #{$font-size-heading-sm};
 	--font-heading-md: #{$font-size-heading-md};
 	--font-heading-lg: #{$font-size-heading-lg};
-	--font-heading-main: #{$font-size-heading-main};
+	--font-heading-xl: #{$font-size-heading-xl};
+	--font-heading-hero: #{$font-size-heading-hero};
 }
 
 // TODO: high contrast mode

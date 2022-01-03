@@ -1,0 +1,71 @@
+.home__hero {
+	--sliderDimension: 300px;
+	@include gridInherit;
+	grid-column: viewport;
+
+	@include query("x-large") {
+		--sliderDimension: 450px;
+	}
+}
+
+.hero__inner {
+	grid-column: container;
+	display: grid;
+	grid-template-columns: 1fr min-content;
+	height: 75vh;
+}
+
+.hero__meta {
+	display: flex;
+	flex-direction: column;
+	gap: $spacer-md;
+	margin-top: 10vh;
+}
+
+.hero__title {
+	color: var(--text-green);
+}
+
+.hero__subtitle {
+	order: -1;
+	text-transform: uppercase;
+}
+
+.hero__slider {
+	display: none;
+
+	@include query("large") {
+		display: initial;
+	}
+
+	.sss {
+		// override SSS presets
+		height: var(--sliderDimension);
+		width: var(--sliderDimension);
+		padding-bottom: 0 !important;
+	}
+}
+
+.home__productBlocks {
+	grid-auto-rows: 280px;
+	margin-bottom: $spacer-max;
+}
+
+.home__companyBlocks {
+	margin-bottom: $spacer-max;
+	// TODO: add bg SVG
+	// background-image: ;
+
+	&--heading {
+		margin-top: $spacer-xl;
+		margin-bottom: $spacer-xl;
+
+		span {
+			display: block;
+
+			&:first-of-type {
+				margin-bottom: $spacer-sm;
+			}
+		}
+	}
+}

@@ -2,31 +2,96 @@
 
 {% block content %}
 	{% set hero = post.get_field('hero') %}
-	<div class="page__hero">
-		<h1>{{ hero.title }}</h1>
-		<p>{{ hero.subtitle }}</p>
-		<a href="/contact" class="action__blue">Contact Us</a>
+	<div class="home__hero">
+		<div class="hero__inner">
+			<div class="hero__meta">
+				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
+				<p class="hero__subtitle heading__sm">{{ hero.subtitle }}</p>
+				<div>
+					<a href="/contact" class="action__blue">Contact Us</a>
+				</div>
+			</div>
 
-		{# TODO: add slider or image field #}
+			<div class="hero__slider slider">
+				{% for i in hero.product_images %}
+					{% set image = i.image %}
+					<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+				{% endfor %}
+			</div>
+		</div>
+
+		{# TODO: add hero graphic here #}
 	</div>
 
-	<div class="blocks">
+	<section class="home__productBlocks blocks">
 		{% for p in post.get_field('main_products') %}
 			{% set product = p.product[0] %}
 			<div class="card card__product">
-				<h2>{{ product.post_title }}</h2>
-				<p>{{ product.description }}</p>
+				<img src="{{ product.image }}" alt="Image of {{ product.post_title }}"/>
+				<div class="card__product--meta">
+					<h2>{{ product.post_title }}</h2>
+					<a class="action__link" href="{{ product.link }}">Learn More</a>
+				</div>
 			</div>
 		{% endfor %}
 
 		<div class="card card__contact">
-			<h2>Looking for something?</h2>
-			<a href="/contact" class="action__green">Contact Us</a>
+			<h2 class="heading__md">Looking for something?</h2>
+			<div>
+				<a href="/contact" class="action__green">Contact Us</a>
+			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="blocks"></div>
+	<section class="home__companyBlocks blocks">
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.experience_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">55+ YEARS OF</span>
+					<span class="heading__lg">Experience</span>
+				</h2>
+				<p class="card__company--description">{{ post.experience_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/about">About Us</a>
+			</div>
+		</article>
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.innovation_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">DRIVEN BY</span>
+					<span class="heading__lg">Innovation</span>
+				</h2>
+				<p class="card__company--description">{{ post.innovation_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/whats-new">See What's New</a>
+			</div>
+		</article>
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.solutions_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">TAILORED</span>
+					<span class="heading__lg">Solutions</span>
+				</h2>
+				<p class="card__company--description">{{ post.solutions_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/contact">Contact Us</a>
+			</div>
+		</article>
+	</section>
 
+	{% include "templates/facilities.twig" %}
+	{% include "templates/history.twig" %}
 	{% include "templates/sustainability.twig" %}
-
 {% endblock %}
