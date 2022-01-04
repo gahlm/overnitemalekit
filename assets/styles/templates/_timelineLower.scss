@@ -1,0 +1,26 @@
+.timeline-lower {
+	color: var(--text-black);
+	align-items: center;
+	justify-items: center;
+
+	&__inner {
+		display: flex;
+		// grid-column: container;
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
+		text-align: center;
+		p {
+			max-width: 30vw;
+		}
+	}
+}
+// .timeline-title {
+// }
+// .timeline-description {
+// }
+// .timeline-title {
+// }
+// .next-slide {
+// }
+// .prev-slide {
+// }

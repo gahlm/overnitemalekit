@@ -1,0 +1,61 @@
+.history__hero {
+	@include gridInherit;
+}
+.history__inner {
+	grid-column: container;
+}
+
+h1 {
+	color: $color-green;
+	font-size: $font-size-heading-hero;
+	max-width: 45%;
+	margin-top: $spacer-xxl;
+	line-height: 0.85;
+}
+.wave {
+	grid-column: viewport;
+	width: 100%;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	height: 50vh;
+	margin-top: $spacer-md;
+	margin-bottom: $spacer-xxl;
+	transition: linear ease 0.5s;
+}
+.timeline-slider {
+	display: flex;
+	position: relative;
+	height: 55vh;
+	overflow: hidden;
+}
+.timeline-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+.active {
+	opacity: 1;
+	transform: translateX(0);
+}
+.next_slide {
+	transform: translateX(100%);
+}
+.last_slide {
+	transform: translateX(-100%);
+}
+.prev {
+	position: absolute;
+	left: 20px;
+	top: 80vh;
+	font-size: xx-large;
+}
+.next {
+	position: absolute;
+	right: 20px;
+	top: 80vh;
+	font-size: xx-large;
+}

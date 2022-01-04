@@ -11,9 +11,9 @@ $args = array(
   // Get all posts
   'posts_per_page' => -1,
   // Order by post date
-  'orderby' => array(
-      'date' => 'DESC'
-  )
+  'meta_key'			=> 'year',
+	'orderby'			=> 'meta_value',
+	'order'				=> 'ASC'
 );
 $context['history'] = Timber::get_posts( $args );
 
