@@ -16,6 +16,7 @@ h1 {
 	grid-column: viewport;
 	width: 100%;
 	overflow: hidden;
+	background: $looping-dots;
 	background-repeat: repeat-x;
 	height: 50vh;
 	margin-top: $spacer-md;

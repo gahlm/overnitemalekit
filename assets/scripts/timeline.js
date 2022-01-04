@@ -41,9 +41,6 @@ const startSlider = type => {
 	next.classList.add("active");
 };
 
-function moveLeft() {
-	wave.style.transformOrigin = "-20px";
-}
 let x = 0;
 function moveRight() {
 	x += -25;
@@ -54,40 +51,40 @@ function moveLeft() {
 	wave.style.transform = `translateX(${x}%)`;
 }
 
-let images = [
-	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
-	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
-	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg"
-];
-let amountOfImages = images.length;
-let currentIndex = 0;
-console.log(images);
-function updateImage() {
-	wave.style.backgroundImage = "url('" + images[currentIndex] + "')";
-}
-function prevImage() {
-	if (currentIndex > 0) {
-		// Can't go lower than 0.
-		currentIndex--;
-		updateImage();
-	}
-}
+// let images = [
+// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
+// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
+// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg"
+// ];
+// let amountOfImages = images.length;
+// let currentIndex = 0;
+// console.log(images);
+// function updateImage() {
+// 	wave.style.backgroundImage = "url('" + images[currentIndex] + "')";
+// }
+// function prevImage() {
+// 	if (currentIndex > 0) {
+// 		// Can't go lower than 0.
+// 		currentIndex--;
+// 		updateImage();
+// 	}
+// }
 
-function nextImage() {
-	if (currentIndex < amountOfImages - 1) {
-		// Can't go higher than the amount of images present.
-		currentIndex++;
-		updateImage();
-	}
-}
+// function nextImage() {
+// 	if (currentIndex < amountOfImages - 1) {
+// 		// Can't go higher than the amount of images present.
+// 		currentIndex++;
+// 		updateImage();
+// 	}
+// }
 
 nextBtn.addEventListener("click", () => {
 	startSlider();
-	nextImage();
+	// nextImage();
 	moveRight();
 });
 prevBtn.addEventListener("click", () => {
 	startSlider("prev");
-	prevImage();
+	// prevImage();
 	moveLeft();
 });
