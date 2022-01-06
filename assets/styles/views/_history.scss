@@ -1,8 +1,14 @@
 .history__hero {
 	@include gridInherit;
+	overflow: hidden;
+	margin-top: $spacer-xxl;
+	grid-template-rows: 1fr 4fr 3fr;
 }
 .history__inner {
 	grid-column: container;
+	box-sizing: border-box;
+	align-content: center;
+	justify-content: center;
 }
 
 h1 {
@@ -10,24 +16,67 @@ h1 {
 	font-size: $font-size-heading-hero;
 	max-width: 45%;
 	margin-top: $spacer-xxl;
-	line-height: 0.85;
+	line-height: 0.95;
+	grid-row-end: 2;
 }
-.wave {
+.wavecontainer {
 	grid-column: viewport;
-	width: 100%;
-	overflow: hidden;
-	background: $looping-dots;
-	background-repeat: repeat-x;
-	height: 50vh;
-	margin-top: $spacer-md;
-	margin-bottom: $spacer-xxl;
-	transition: linear ease 0.5s;
+	grid-row-start: 3;
+	margin-top: 5vh;
+	.dotcontainer {
+		grid-column: container;
+		width: 80vw;
+		position: relative;
+		top: 200px;
+		.dot {
+			color: $color-navy;
+			z-index: $index-middle;
+			cursor: pointer;
+			position: absolute;
+			&#dot1 {
+				left: 25vw;
+			}
+			&#dot2 {
+				left: 50vw;
+			}
+			&#dot3 {
+				left: 75vw;
+			}
+			&:hover {
+				color: $color-light-blue;
+			}
+		}
+	}
+	.wave {
+		// width: 100%;
+		// overflow: hidden;
+		background: $looping-dots repeat-x;
+		opacity: 60%;
+		position: relative;
+		height: 400px;
+		width: 15564px;
+		margin-top: $spacer-md;
+		margin-bottom: $spacer-xxl;
+		transition: linear ease 0.5s;
+		animation: waveslide 20s linear infinite;
+		animation-play-state: paused;
+		z-index: $index-background;
+		&.play {
+			animation-play-state: running;
+		}
+		&.playBackward {
+			animation-play-state: running;
+			animation-direction: reverse;
+		}
+	}
 }
+
 .timeline-slider {
 	display: flex;
 	position: relative;
-	height: 55vh;
-	overflow: hidden;
+	height: fit-content;
+	z-index: $index-middle;
+	grid-row-start: 2;
 }
 .timeline-slide {
 	position: absolute;
@@ -35,7 +84,7 @@ h1 {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.7s ease-in-out;
 	opacity: 0;
 }
 .active {
@@ -52,11 +101,71 @@ h1 {
 	position: absolute;
 	left: 20px;
 	top: 80vh;
-	font-size: xx-large;
+	z-index: $index-middle;
+	font-size: $font-size-heading-hero;
 }
 .next {
 	position: absolute;
 	right: 20px;
 	top: 80vh;
-	font-size: xx-large;
+	z-index: $index-middle;
+	font-size: $font-size-heading-hero;
+}
+.vl {
+	border-left: 6px solid $color-navy;
+	height: 15vh;
+	margin-left: 6px;
+	position: relative;
+	top: -20vh;
+}
+@keyframes waveslide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-5188px, 0, 0); /* The image width */
+	}
+}
+.history__contact {
+	@include gridInherit;
+	overflow: hidden;
+	background: $green-slope-bg;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 90vh;
+	margin-top: $spacer-xxl;
+
+	&__inner {
+		grid-column: container;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+		&__form {
+			grid-column-start: 2;
+			margin-top: $spacer-max;
+			padding: $spacer-xxl;
+			label {
+				display: none;
+			}
+			input {
+				border-radius: 5px;
+				padding: 5px 10px 5px 10px;
+				border: none;
+			}
+		}
+		&__text {
+			grid-column-start: 1;
+			position: relative;
+			margin-right: $spacer-sm;
+
+			h2 {
+				font-size: $font-size-heading-hero;
+				color: $color-white;
+				margin-bottom: $spacer-xxl;
+			}
+			p {
+				color: $color-white;
+			}
+		}
+	}
 }

@@ -1,3 +1,5 @@
+// Slider functionality for the history page. Adds and removes classes within the twig for loop using active, next and last to loop through slide content.
+// access variables
 const slide = document.querySelectorAll(".timeline-slide");
 const slider = document.querySelector("timeline-slider");
 const prevBtn = document.querySelector(".prev");
@@ -5,14 +7,16 @@ const nextBtn = document.querySelector(".next");
 const first = slide[0];
 const last = slide[slide.length - 1];
 const wave = document.querySelector(".wave");
-
+const firstDot = document.querySelector("#dot1");
+const thirdDot = document.querySelector("#dot3");
+// add active and last classes
 window.onload = function() {
 	first.classList.remove("next_slide");
 	first.classList.add("active");
 	last.classList.remove("next_slide");
 	last.classList.add("last_slide");
 };
-
+// handle sliding classes along loop
 const startSlider = type => {
 	const active = document.querySelector(".active");
 	const last_slide = document.querySelector(".last_slide");
@@ -40,51 +44,34 @@ const startSlider = type => {
 	last_slide.classList.add("next_slide");
 	next.classList.add("active");
 };
-
-let x = 0;
+// sliding the wave animation along the loop
 function moveRight() {
-	x += -25;
-	wave.style.transform = `translateX(${x}%)`;
+	wave.classList.toggle("play");
+	setTimeout(function() {
+		wave.classList.toggle("play");
+	}, 700);
 }
 function moveLeft() {
-	x += 25;
-	wave.style.transform = `translateX(${x}%)`;
+	wave.classList.toggle("playBackward");
+	setTimeout(function() {
+		wave.classList.toggle("playBackward");
+	}, 700);
 }
-
-// let images = [
-// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
-// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg",
-// 	"http://future-foam.local/wp-content/uploads/2022/01/Loop.svg"
-// ];
-// let amountOfImages = images.length;
-// let currentIndex = 0;
-// console.log(images);
-// function updateImage() {
-// 	wave.style.backgroundImage = "url('" + images[currentIndex] + "')";
-// }
-// function prevImage() {
-// 	if (currentIndex > 0) {
-// 		// Can't go lower than 0.
-// 		currentIndex--;
-// 		updateImage();
-// 	}
-// }
-
-// function nextImage() {
-// 	if (currentIndex < amountOfImages - 1) {
-// 		// Can't go higher than the amount of images present.
-// 		currentIndex++;
-// 		updateImage();
-// 	}
-// }
-
+// chevron function calls
 nextBtn.addEventListener("click", () => {
 	startSlider();
-	// nextImage();
 	moveRight();
 });
 prevBtn.addEventListener("click", () => {
 	startSlider("prev");
-	// prevImage();
 	moveLeft();
+});
+// dot function calls
+firstDot.addEventListener("click", () => {
+	startSlider("prev");
+	moveLeft();
+});
+thirdDot.addEventListener("click", () => {
+	startSlider();
+	moveRight();
 });

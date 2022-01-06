@@ -1,26 +1,21 @@
 .timeline-lower {
 	color: var(--text-black);
-	align-items: center;
-	justify-items: center;
 
 	&__inner {
 		display: flex;
-		// grid-column: container;
+		align-content: center;
+		justify-content: center;
 		padding-top: $spacer-xxl;
 		padding-bottom: $spacer-xxl;
 		text-align: center;
 		p {
-			max-width: 30vw;
+			max-width: 25vw;
+			margin: auto;
+		}
+		h2 {
+			&#year {
+				color: var(--bg-green);
+			}
 		}
 	}
 }
-// .timeline-title {
-// }
-// .timeline-description {
-// }
-// .timeline-title {
-// }
-// .next-slide {
-// }
-// .prev-slide {
-// }

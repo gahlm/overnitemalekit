@@ -14,7 +14,7 @@
 							<div class="timeline-upper__inner">
 								<article>
 									<a href="{{ post.link }}">
-										<h2 id="year">{{post.year}}</h2>
+										<h2 id="year">{{post.Year}}</h2>
 										<h2>
 											-
 											{{ post.title }}</h2>
@@ -28,7 +28,7 @@
 						<div class="timeline-lower">
 							<div class="timeline-lower__inner">
 								<article>
-									<h3>{{post.year}}</h3>
+									<h2 id="year">{{post.Year}}</h2>
 									<h3>{{post.title}}</h3>
 									<p>{{post.description}}</p>
 								</article>
@@ -41,22 +41,51 @@
 			</Section>
 		</div>
 
-		<div
-			class="wave" id="wave">{# <i class="fas fa-circle"></i>
-																							<i class="fas fa-circle"></i>
-																							<i class="fas fa-circle"></i>
-																							<i class="fas fa-circle"></i>
-																							<i class="fas fa-circle"></i> #}
 
+		<div class="wavecontainer">
+			<div class="dotcontainer">
+
+				<i class="fas fa-circle dot" id="dot1"></i>
+				<i class="fas fa-circle dot" id="dot2">
+
+					<div class="vl"></div>
+				</i>
+				<i class="fas fa-circle dot" id="dot3"></i>
+			</div>
+			<div class="wave" id="wave"></div>
 		</div>
+
 		<button class="prev">
 			<i class="fas fa-chevron-left"></i>
 		</button>
+
 
 		<button class="next">
 			<i class="fas fa-chevron-right"></i>
 		</button>
 
+
+	</div>
+	<div class="history__contact">
+		<div class="history__contact__inner">
+
+			<div class="history__contact__inner__text">
+
+
+				<h2>
+					{{post.get_field('contact_heading')}}
+
+				</h2>
+				<p>{{post.get_field('contact_text')}}</p>
+
+			</div>
+			<div class="history__contact__inner__form">
+
+				{% if post.form %}
+					{{ post.form|shortcodes }}
+				{% endif %}
+			</div>
+		</div>
 
 	</div>
 
