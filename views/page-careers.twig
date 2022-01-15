@@ -2,13 +2,23 @@
 
 {% block content %}
 	<div>
-		{{ options.careers_summary|wpautop }}
-		{% for career in careers %}
-			<a href="{{ career.link }}">
-				<h2>{{ career.title }}</h2>
-				<p>{{ career.location }}</p>
-				<p>{{ career.description }}</p>
-			</a>
-		{% endfor %}
+		<h1 class="careers__heading heading__hero">Careers</h1>
+
+		<div class="content">
+			{{ options.careers_summary|wpautop }}
+		</div>
+
+		<div class="careers__grid">
+			{% for career in careers %}
+				<details class="career">
+					<summary class="career__summary">
+						<h2 class="career__title">{{ career.title }}</h2>
+						<p class="career__location">{{ career.location }}</p>
+					</summary>
+					<p class="career__description">{{ career.description }}</p>
+					<a href="{{ career.link }}" class="career">Learn More</a>
+				</details>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}

@@ -1,0 +1,52 @@
+.careers__heading {
+	color: var(--text-green);
+	margin-bottom: $spacer-lg;
+}
+
+.careers__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content;
+	gap: $spacer-xl;
+	margin-top: $spacer-xl;
+}
+
+.career {
+	&__summary {
+		position: relative;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:after {
+			content: "+";
+			display: block;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: $spacer-sm;
+			font-size: 18px;
+		}
+	}
+
+	// career summary open state
+	&[open] &__summary:after {
+		content: "-";
+		display: block;
+	}
+
+	&__title {
+		margin-bottom: $spacer-sm;
+	}
+
+	&__location {
+		color: var(--text-light-blue);
+		font-weight: bold;
+	}
+
+	&__description {
+		margin-top: $spacer-md;
+		margin-bottom: $spacer-sm;
+	}
+}

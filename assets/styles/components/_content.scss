@@ -1,0 +1,16 @@
+// content provides basic spacing for WYSIWYG or other simple content areas
+
+.content {
+	> *:not(:last-child) {
+		margin-bottom: $spacer-md;
+	}
+
+	ul {
+		margin-left: $spacer-lg;
+
+		li {
+			margin-bottom: $spacer-xs;
+			list-style: disc;
+		}
+	}
+}
