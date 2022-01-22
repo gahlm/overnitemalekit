@@ -1,3 +1,4 @@
+// upper half of the timeline
 .timeline-upper {
 	color: var(--text-black);
 
@@ -29,5 +30,135 @@
 			object-fit: contain;
 			overflow: hidden;
 		}
+	}
+}
+// lower half of the timeline
+.timeline-lower {
+	color: var(--text-black);
+
+	&__inner {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
+		text-align: center;
+		p {
+			max-width: 25vw;
+			margin: auto;
+		}
+		h2 {
+			&#year {
+				color: var(--bg-green);
+			}
+		}
+	}
+}
+// timeline functionality
+.wavecontainer {
+	grid-column: viewport;
+	grid-row-start: 3;
+	margin-top: 5vh;
+	.dotcontainer {
+		grid-column: container;
+		width: 80vw;
+		position: relative;
+		top: 200px;
+		.dot {
+			color: $color-navy;
+			z-index: $index-middle;
+			cursor: pointer;
+			position: absolute;
+			&#dot1 {
+				left: 25vw;
+			}
+			&#dot2 {
+				left: 50vw;
+			}
+			&#dot3 {
+				left: 75vw;
+			}
+			&:hover {
+				color: $color-light-blue;
+			}
+		}
+	}
+	.wave {
+		// width: 100%;
+		// overflow: hidden;
+		background: $looping-dots repeat-x;
+		opacity: 60%;
+		position: relative;
+		height: 400px;
+		width: 15564px;
+		margin-top: $spacer-md;
+		margin-bottom: $spacer-xxl;
+		transition: linear ease 0.5s;
+		animation: waveslide 20s linear infinite;
+		animation-play-state: paused;
+		z-index: $index-background;
+		&.play {
+			animation-play-state: running;
+		}
+		&.playBackward {
+			animation-play-state: running;
+			animation-direction: reverse;
+		}
+	}
+}
+
+.timeline-slider {
+	display: flex;
+	position: relative;
+	height: fit-content;
+	z-index: $index-middle;
+	grid-row-start: 2;
+}
+.timeline-slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: all 0.7s ease-in-out;
+	opacity: 0;
+}
+.active {
+	opacity: 1;
+	transform: translateX(0);
+}
+.next_slide {
+	transform: translateX(100%);
+}
+.last_slide {
+	transform: translateX(-100%);
+}
+.prev {
+	position: absolute;
+	left: 20px;
+	top: 80vh;
+	z-index: $index-middle;
+	font-size: $font-size-heading-hero;
+}
+.next {
+	position: absolute;
+	right: 20px;
+	top: 80vh;
+	z-index: $index-middle;
+	font-size: $font-size-heading-hero;
+}
+.vl {
+	border-left: 6px solid $color-navy;
+	height: 15vh;
+	margin-left: 6px;
+	position: relative;
+	top: -20vh;
+}
+@keyframes waveslide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-5188px, 0, 0); /* The image width */
 	}
 }
