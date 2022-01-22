@@ -1,5 +1,5 @@
 // vendor
-@import "../vendor/sss/sss";
+// @import "../vendor/sss/sss";
 
 // base settings
 @import "base/functions";
@@ -24,8 +24,10 @@
 @import "templates/history";
 @import "templates/main";
 @import "templates/sustainability";
+@import "templates/timeline";
 
 // views
 @import "views/capabilities";
 @import "views/careers";
 @import "views/home";
+@import "views/history";

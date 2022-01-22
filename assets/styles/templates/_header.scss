@@ -3,6 +3,9 @@
 	height: $header-height;
 	background: var(--bg-white);
 	z-index: $index-foreground;
+	&__logo {
+		height: $header-height;
+	}
 
 	&__inner {
 		grid-column: container;

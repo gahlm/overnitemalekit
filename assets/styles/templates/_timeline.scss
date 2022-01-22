@@ -1,6 +1,33 @@
-.timeline {
-	// TODO: add bg image
-	// background-image: $looping-dots;
-	object-fit: cover;
-	background-repeat: repeat-x;
+.timeline-upper {
+	color: var(--text-black);
+
+	&__inner {
+		display: grid;
+		grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+		padding-top: $spacer-xxl;
+		padding-bottom: $spacer-xxl;
+		align-items: center;
+		justify-items: center;
+
+		h2 {
+			display: inline-block;
+			text-align: center;
+			&#year {
+				color: var(--bg-green);
+			}
+		}
+		p {
+			text-align: left;
+		}
+
+		article {
+			margin-right: $spacer-md;
+		}
+		img {
+			margin-left: $spacer-xxl;
+			width: 75%;
+			object-fit: contain;
+			overflow: hidden;
+		}
+	}
 }
