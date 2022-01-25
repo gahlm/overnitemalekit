@@ -1,0 +1,29 @@
+.one_column {
+	margin-top: $spacer-xl;
+	width: 100%;
+	object-fit: contain;
+	overflow: none;
+	justify-content: center;
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+	h3 {
+		color: $color-green;
+	}
+	&_row {
+		display: grid;
+		margin-top: $spacer-xl;
+	}
+	button {
+		color: $color-white;
+		background-color: $color-green;
+		width: fit-content;
+		padding: 1em 2em 1em 2em;
+		border-radius: 0.5em;
+		&:hover {
+			filter: brightness(85%);
+		}
+	}
+}
