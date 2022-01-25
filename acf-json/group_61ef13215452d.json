@@ -206,7 +206,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "[ninja_form id='1']",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -233,7 +233,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Let's Work Together",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -260,7 +260,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "The most innovative products come from the most innovative people - and for over 55 years our team has been propelled by curiosity and a steadfast dedication to inventing and creating the best foam formulations for our customers.",
             "placeholder": "",
             "maxlength": "",
             "rows": "",
@@ -285,5 +285,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643073457
+    "modified": 1643075929
 }
