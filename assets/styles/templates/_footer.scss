@@ -1,6 +1,6 @@
 .footer {
 	@include gridInherit();
-	margin-top: $spacer-xxl;
+	// margin-top: $spacer-xxl;
 	background: var(--bg-light-grey);
 
 	&__main {

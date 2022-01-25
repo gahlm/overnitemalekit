@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="one_column">
+		<h1>{{post.meta('headline')}}</h1>
+		<div class="one_column_flexible_content">
+			{% for i in post.meta('one_column') %}
+				<div class="one_column_row">
+					{% if i.subheading %}
+						<h3>{{i.subheading}}</h3>
+					{% endif %}
+					{% if i.image %}
+						<img src="{{Image(i.image).src}}" alt="">
+					{% endif %}
+					{% if i.content_block %}
+						<p>{{i.content_block}}</p>
+					{% endif %}
+					{% if i.file %}
+						<button>
+							<a href="{{i.file.url}}" download>Download
+								{{i.file.title}}</a>
+						</button>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="history__contact">
+		<div class="history__contact__inner">
+
+			<div class="history__contact__inner__text">
+
+
+				<h2>
+					{{post.get_field('contact_heading')}}
+
+				</h2>
+				<p>{{post.get_field('contact_text')}}</p>
+
+			</div>
+			<div class="history__contact__inner__form">
+
+				{% if post.form %}
+					{{ post.form|shortcodes }}
+				{% endif %}
+			</div>
+		</div>
+
+	</div>
+
+
+{% endblock %}
