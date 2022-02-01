@@ -47,6 +47,16 @@ class ModularSite extends TimberSite {
 			'order' => 'ASC'
 		);
 		$context['history'] = Timber::get_posts( $history );
+		$facilities = array(
+			// Get post type project
+			'post_type' => 'Facility',
+			// Get all posts
+			'posts_per_page' => -1,
+			'orderby' => array(
+			    'date' => 'DESC'
+			)
+		);
+		$context['facilities'] = Timber::get_posts( $facilities );
 
 		$all_posts_args = array(
 			'post_type' => 'post',

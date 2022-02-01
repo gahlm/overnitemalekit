@@ -1,5 +1,90 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    page-facilities.twig
+	<div class="content">
+		<h1>hello</h1>
+		<div class="map-filter">
+			<select name="map_location" class="map_location">
+				<option value="all">FILTER BY REGION</option>
+				<option value="all">ALL LOCATIONS</option>
+				<option value="all">--</option>
+				{% for facility in facilities %}
+					{% if facility.domestic_or_foreign == 'domestic' %}
+						<option value="{{facility.classes}}">{{facility.state}}</option>
+					{% endif %}
+				{% endfor %}
+				<option value="all">--</option>
+				<option value="INT-ALL">INTERNATIONAL</option>
+				{% for facility in facilities %}
+					{% if facility.domestic_or_foreign == 'foreign' %}
+						<option value="{{facility.classes}}">{{facility.state}}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<select name="capabilities" class="capabilities">
+				<option value="all">FILTER BY CAPABILITY</option>
+				<option value="all">ALL CAPABILITIES</option>
+				<option value="pouring">Pouring</option>
+				<option value="fabrication">Fabrication</option>
+				<option value="carpet-cushion">Carpet Cushion</option>
+			</select>
+			<select name="dc-select" class="dc-select">
+				<option value="all">DISTRIBUTION CENTERS</option>
+				<option value="dc">Filter by Distribution Centers</option>
+				<option value="all">See All Distribution Centers</option>
+			</select>
+		</div>
+		<div class="facilities">
+			<div class="facility-us-list">
+				{% for facility in facilities %}
+					{% if facility.domestic_or_foreign == 'domestic' %}
+						<div class="facility-city {{facility.city|lower}}">
+							<div class="facility-location-list">
+								<article class="facility-location {{facility.classes}} {% for capability in facility.capabilities %} {{capability}} {% endfor %} {{facility.distribution_center}}">
+
+									<h3>{{facility.name}}</h3>
+									<p>{{facility.address}}</p>
+									<p>{{facility.contact_phone}}</p>
+									<p>{{facility.contact_email}}</p>
+									<p>Capabilites:
+										{% for capability in facility.capabilities %}
+											{{capability|capitalize}}
+										{% endfor %}
+									</p>
+
+								</article>
+							</div>
+						</div>
+
+					{% endif %}
+				{% endfor %}
+			</div>
+			<div class="international">
+				{% for facility in facilities %}
+					{% if facility.domestic_or_foreign == 'foreign' %}
+						<div class="facility-city {{facility.city|lower}}">
+							<div class="facility-location-list">
+								<article class="facility-location {{facility.classes}} {% for capability in facility.capabilities %} {{capability}} {% endfor %} {{facility.distribution_center}}">
+
+									<h3>{{facility.name}}</h3>
+									<p>{{facility.address}}</p>
+									<p>{{facility.contact_phone}}</p>
+									<p>{{facility.contact_email}}</p>
+									<p>Capabilites:
+										{% for capability in facility.capabilities %}
+											{{capability|capitalize}}
+										{% endfor %}
+									</p>
+
+								</article>
+							</div>
+						</div>
+
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+
 {% endblock %}
