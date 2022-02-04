@@ -41,9 +41,104 @@
             "maxlength": ""
         },
         {
+            "key": "field_61e0684fe3637",
+            "label": "City",
+            "name": "city",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f87e1508a72",
+            "label": "State",
+            "name": "state",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61fb327b1a81f",
+            "label": "Zip Code",
+            "name": "zip",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_61e06950ae7e4",
             "label": "Contact Phone",
             "name": "contact_phone",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61fb33155fe1e",
+            "label": "Toll Free#",
+            "name": "toll_free",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61fb32a71a820",
+            "label": "Google Location",
+            "name": "directions",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -91,10 +186,10 @@
                 "id": ""
             },
             "choices": {
-                "all": "All",
                 "pouring": "Pouring",
                 "fabrication": "Fabrication",
-                "carpet-cushion": "Carpet Cushion"
+                "carpet-cushion": "Carpet Cushion",
+                "corporate": "Corporate Office"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -102,6 +197,52 @@
             "toggle": 0,
             "return_format": "value",
             "save_custom": 0
+        },
+        {
+            "key": "field_61fbef4b081be",
+            "label": "Mailing Address",
+            "name": "mailing_address",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61f8c380914b8",
+                        "operator": "==",
+                        "value": "corporate"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61fb32681a81e",
+            "label": "Specialties",
+            "name": "specialties",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_61f8d161fb015",
@@ -117,7 +258,7 @@
                 "id": ""
             },
             "choices": {
-                "dc": "Distribution Center",
+                "distro": "Distribution Center",
                 "not_dc": "Not A Distribution Center"
             },
             "allow_null": 0,
@@ -170,10 +311,10 @@
         },
         {
             "key": "field_61f877bf16f2a",
-            "label": "Classes",
+            "label": "State Class",
             "name": "classes",
             "type": "text",
-            "instructions": "",
+            "instructions": "Format EXACTLY Like This:\r\nUS-NC",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -188,32 +329,21 @@
             "maxlength": ""
         },
         {
-            "key": "field_61e0684fe3637",
-            "label": "City",
-            "name": "city",
+            "key": "field_61fbf0b6d781a",
+            "label": "City Class (When City Is Two Words Only)",
+            "name": "city_class",
             "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61f87e1508a72",
-            "label": "State",
-            "name": "state",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
+            "instructions": "Format EXACTLY Like This:\r\ncouncil-bluffs",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61e0684fe3637",
+                        "operator": "==contains",
+                        "value": " "
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -244,5 +374,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643696567
+    "modified": 1643902810
 }

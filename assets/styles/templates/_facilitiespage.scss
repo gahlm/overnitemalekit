@@ -1,0 +1,147 @@
+.facilities_content {
+	@include gridInherit;
+	grid-column: viewport;
+}
+.facilities_inner {
+	grid-column: container;
+	.intro {
+		width: 85%;
+		p {
+			padding: $spacer-lg 0 $spacer-lg 0;
+		}
+	}
+}
+.facilities-form {
+	background-color: $color-green;
+	padding: $spacer-sm $spacer-lg $spacer-sm $spacer-lg;
+	width: 100%;
+	border-radius: 5px;
+	display: flex;
+	padding: $spacer-md $spacer-sm $spacer-md $spacer-sm;
+	margin: $spacer-lg auto $spacer-lg auto;
+	select {
+		background-color: $color-white;
+		border: none;
+		border-radius: 3px;
+		width: 30%;
+		padding: $spacer-sm $spacer-sm $spacer-sm $spacer-sm;
+		margin: auto;
+	}
+}
+h2 {
+	color: $color-green;
+	font-size: $font-size-heading-lg;
+	padding: $spacer-lg 0 $spacer-lg 0;
+}
+// Map Styling
+.map-background {
+	@include gridInherit;
+	background: url($smaller-wave) 30% 70%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.facility-us-map {
+	position: relative;
+	margin-bottom: 45px;
+	grid-column: container;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+	a {
+		&.city {
+			display: block;
+			position: absolute;
+			z-index: 10;
+			border: none;
+			.title {
+				display: none;
+				position: absolute;
+				font-size: 0.825em;
+				color: #fff;
+				background-color: $color-green;
+				padding: 8px 5px 5px 5px;
+				white-space: nowrap;
+				margin-top: -40px;
+			}
+			&.corporate {
+				z-index: 11;
+				.dot {
+					background: $color-green
+						url(http://future-foam.local/wp-content/uploads/2022/02/CorporateStar.svg)
+						no-repeat center center;
+					background-size: cover;
+				}
+			}
+			&.dim {
+				z-index: 9;
+				.dot {
+					opacity: 0.25;
+				}
+			}
+			.dot {
+				width: 20px;
+				height: 20px;
+				margin: -10px 0 0 -10px;
+				border-radius: 50%;
+				background-color: $color-green;
+				border: 2px solid transparent;
+			}
+		}
+		&:hover {
+			&.city {
+				z-index: 12;
+				.dot {
+					border-color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// Location List Styling
+.facility-us-list-inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+// Individual Locations
+.facility-location {
+	h2 {
+		color: $color-green;
+		font-size: $font-size-heading-sm;
+	}
+	.content {
+		display: grid;
+		grid-template-columns: 0.25fr 3fr;
+		padding-bottom: $spacer-sm;
+		.dot {
+			grid-column-start: 1;
+			display: inline;
+			width: $font-size-heading-sm;
+			height: $font-size-heading-sm;
+			margin: 10px 20px 0 0;
+			border-radius: 50%;
+			background-color: $color-green;
+			border: 2px solid transparent;
+			z-index: 13;
+			&.corporate {
+				background: $color-green
+					url(http://future-foam.local/wp-content/uploads/2022/02/CorporateStar.svg)
+					no-repeat center center;
+				background-size: cover;
+				z-index: 14;
+			}
+		}
+		a {
+			color: $color-light-blue;
+			font-style: italic;
+		}
+		span {
+			font-weight: 500;
+			color: $color-black;
+		}
+	}
+	padding: $spacer-md 0 $spacer-md 0;
+}

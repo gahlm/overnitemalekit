@@ -86,7 +86,7 @@
 	.wave {
 		// width: 100%;
 		// overflow: hidden;
-		background: $looping-dots repeat-x;
+		background: url($looping-dots) repeat-x;
 		opacity: 60%;
 		position: relative;
 		height: 400px;

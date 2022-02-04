@@ -28,7 +28,7 @@ $font-size-heading-hero: 60px;
 
 $line-height: 1.125rem;
 
-$font-stack: Monserrat, Helvetica, sans-serif;
+$font-stack: "Montserrat", Helvetica, sans-serif;
 
 // index stacking
 $index-background: 1;
@@ -52,5 +52,6 @@ $color-light-grey: #e3e5e5;
 $color-white: #fff;
 $color-white-t90: transparentize($color-white, 0.1);
 
-$looping-dots: url("http://future-foam.local/wp-content/uploads/2022/01/doubleloop.svg");
+$looping-dots: "http://future-foam.local/wp-content/uploads/2022/01/doubleloop.svg";
+$smaller-wave: "http://future-foam.local/wp-content/uploads/2022/01/Loop.svg";
 $green-slope-bg: url("http://future-foam.local/wp-content/uploads/2022/01/wavebg-2.svg");
