@@ -2,10 +2,12 @@
 
 {% block content %}
 
-	{% for product in products %}
-		<a href="{{ product.link }}">
-			<h2>{{ product.title }}</h2>
-		</a>
-	{% endfor %}
+	<ul class="products__list">
+		{% for category in products %}
+			<li class="products__category">
+				<a href="{{ category.link }}">{{ category.name }}</a>
+			</li>
+		{% endfor %}
+	</ul>
 
 {% endblock %}

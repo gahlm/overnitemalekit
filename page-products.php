@@ -6,15 +6,11 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 $args = array(
-  // Get post type project
-  'post_type' => 'Product',
-  // Get all posts
-  'posts_per_page' => -1,
-  // Order by post date
-  'orderby' => array(
-      'date' => 'DESC'
-  )
+  'post_type' => 'product',
+  'orderby' => 'menu_order',
+  'post_parent' => 0,
 );
-$context['products'] = Timber::get_posts( $args );
+$products = Timber::get_posts( $args );
+$context['products'] = $products;
 
 Timber::render( array( 'page-products.twig' ), $context );

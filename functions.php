@@ -47,6 +47,8 @@ class ModularSite extends TimberSite {
 			'order' => 'ASC'
 		);
 		$context['history'] = Timber::get_posts( $history );
+
+
 		$facilities = array(
 			// Get post type project
 			'post_type' => 'Facility',
@@ -57,22 +59,6 @@ class ModularSite extends TimberSite {
 			)
 		);
 		$context['facilities'] = Timber::get_posts( $facilities );
-
-		$all_posts_args = array(
-			'post_type' => 'post',
-			'posts_per_page' => -1,
-			'orderby' => array(
-			    'date' => 'DESC'
-			)
-		);
-		$context['all_posts'] = Timber::get_posts( $all_posts_args );
-
-		
-		$post_taxonomies_args = array(
-		    'taxonomy' => 'category',
-		    'hide_empty' => false,
-		);
-		$context['post_taxonomies'] = get_terms( $post_taxonomies_args );
 
 		
 		return $context;

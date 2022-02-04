@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% set hero = post.get_field('hero') %}
-	<div class="home__hero">
+	<section class="home__hero">
 		<div class="hero__inner">
 			<div class="hero__meta">
 				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
@@ -21,10 +21,10 @@
 		</div>
 
 		{# TODO: add hero graphic here #}
-	</div>
+	</section>
 
 	<section class="home__productBlocks blocks">
-		{% for p in post.get_field('main_products') %}
+		{% for p in options.product_headlines %}
 			{% set product = p.product[0] %}
 			<div class="card card__product">
 				<img src="{{ product.image }}" alt="Image of {{ product.post_title }}"/>
