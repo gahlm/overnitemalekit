@@ -60,6 +60,16 @@ class ModularSite extends TimberSite {
 		);
 		$context['facilities'] = Timber::get_posts( $facilities );
 
+
+		$args = array(
+			'post_type' => 'product',
+			'orderby' => 'meta_order',
+			'order' => 'ASC',
+			'post_parent' => 0,
+		);
+		$products = Timber::get_posts( $args );
+		$context['products'] = $products;
+
 		
 		return $context;
 	}

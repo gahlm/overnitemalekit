@@ -3,9 +3,9 @@
 {% block content %}
 
 	<ul class="products__list">
-		{% for category in products %}
+		{% for product in products %}
 			<li class="products__category">
-				<a href="{{ category.link }}">{{ category.name }}</a>
+				<a href="{{ product.link }}">{{ product.name }}</a>
 			</li>
 		{% endfor %}
 	</ul>

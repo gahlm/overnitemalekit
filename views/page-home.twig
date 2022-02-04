@@ -24,8 +24,7 @@
 	</section>
 
 	<section class="home__productBlocks blocks">
-		{% for p in options.product_headlines %}
-			{% set product = p.product[0] %}
+		{% for product in products %}
 			<div class="card card__product">
 				<img src="{{ product.image }}" alt="Image of {{ product.post_title }}"/>
 				<div class="card__product--meta">
