@@ -10,13 +10,15 @@
 
 		<div class="careers__grid">
 			{% for career in careers %}
+
+
 				<details class="career">
 					<summary class="career__summary">
 						<h2 class="career__title">{{ career.title }}</h2>
 						<p class="career__location">{{ career.location }}</p>
+						<p class="career__description">{{ career.description|truncate(50, true)}}</p>
+						<a href="{{ career.link }}" class="career__learn">Learn More</a>
 					</summary>
-					<p class="career__description">{{ career.description }}</p>
-					<a href="{{ career.link }}" class="career">Learn More</a>
 				</details>
 			{% endfor %}
 		</div>

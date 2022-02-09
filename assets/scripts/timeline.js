@@ -59,19 +59,27 @@ function moveLeft() {
 }
 // chevron function calls
 nextBtn.addEventListener("click", () => {
+	// if (window.location.pathname == "/history") {
+	// }
 	startSlider();
 	moveRight();
 });
 prevBtn.addEventListener("click", () => {
+	// if (window.location.pathname == "/history") {
+	// }
 	startSlider("prev");
 	moveLeft();
 });
 // dot function calls
 firstDot.addEventListener("click", () => {
+	// if (window.location.pathname == "/history") {
+	// }
 	startSlider("prev");
 	moveLeft();
 });
 thirdDot.addEventListener("click", () => {
+	// if (window.location.pathname == "/history") {
+	// }
 	startSlider();
 	moveRight();
 });

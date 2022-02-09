@@ -12,6 +12,10 @@
 }
 
 .career {
+	&__learn {
+		color: var(--text-light-blue);
+		font-weight: bold;
+	}
 	&__summary {
 		position: relative;
 
@@ -19,15 +23,15 @@
 			cursor: pointer;
 		}
 
-		&:after {
-			content: "+";
-			display: block;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			right: $spacer-sm;
-			font-size: 18px;
-		}
+		// &:after {
+		// 	content: "+";
+		// 	display: block;
+		// 	position: absolute;
+		// 	top: 50%;
+		// 	transform: translateY(-50%);
+		// 	right: $spacer-sm;
+		// 	font-size: 18px;
+		// }
 	}
 
 	// career summary open state

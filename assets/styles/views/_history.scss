@@ -9,16 +9,15 @@
 	box-sizing: border-box;
 	align-content: center;
 	justify-content: center;
+	h1 {
+		color: $color-green;
+		font-size: $font-size-heading-hero;
+		margin-top: $spacer-xxl;
+		line-height: 0.95;
+		max-width: 45%;
+	}
 }
 
-h1 {
-	color: $color-green;
-	font-size: $font-size-heading-hero;
-	max-width: 45%;
-	margin-top: $spacer-xxl;
-	line-height: 0.95;
-	grid-row-end: 2;
-}
 // contact area box
 .history__contact {
 	@include gridInherit;

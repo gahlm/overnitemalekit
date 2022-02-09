@@ -4,6 +4,21 @@
 	object-fit: contain;
 	overflow: none;
 	justify-content: center;
+	margin-bottom: $spacer-max;
+	h1 {
+		color: $color-green;
+		font-size: $font-size-heading-hero;
+		margin-top: $spacer-xxl;
+		line-height: 0.95;
+		max-width: 80%;
+	}
+	a {
+		color: $color-medium-blue;
+		text-decoration: underline;
+	}
+	strong {
+		font-weight: $font-bold;
+	}
 	img {
 		width: 100%;
 		height: auto;
@@ -24,6 +39,33 @@
 		border-radius: 0.5em;
 		&:hover {
 			filter: brightness(85%);
+		}
+	}
+	ul {
+		margin-left: $spacer-xxl;
+		margin-top: $spacer-lg;
+		margin-bottom: $spacer-lg;
+
+		li {
+			margin-bottom: $spacer-sm;
+			list-style: disc;
+		}
+	}
+	p {
+		margin-left: 0px;
+	}
+	ol {
+		margin-left: $spacer-xxl;
+		margin-top: $spacer-lg;
+		margin-bottom: $spacer-lg;
+
+		strong {
+			text-decoration: underline;
+		}
+
+		li {
+			margin-bottom: $spacer-lg;
+			list-style: decimal;
 		}
 	}
 }
