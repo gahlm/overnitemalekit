@@ -65,7 +65,7 @@ if (!!nextBtn) {
 		// if (window.location.pathname == "/history") {
 		// }
 		startSlider();
-		!!wave ? moveRight() : false;
+		moveRight();
 	});
 }
 if (!!prevBtn) {
@@ -73,7 +73,7 @@ if (!!prevBtn) {
 		// if (window.location.pathname == "/history") {
 		// }
 		startSlider("prev");
-		!!wave ? moveLeft() : false;
+		moveLeft();
 	});
 }
 // dot function calls
@@ -82,7 +82,7 @@ if (!!firstDot) {
 		// if (window.location.pathname == "/history") {
 		// }
 		startSlider("prev");
-		!!wave ? moveLeft() : false;
+		moveLeft();
 	});
 }
 if (!!thirdDot) {
@@ -90,6 +90,6 @@ if (!!thirdDot) {
 		// if (window.location.pathname == "/history") {
 		// }
 		startSlider();
-		!!wave ? moveRight() : false;
+		moveRight();
 	});
 }
