@@ -10,14 +10,16 @@ const wave = document.querySelector(".wave");
 const firstDot = document.querySelector("#dot1");
 const thirdDot = document.querySelector("#dot3");
 // add active and last classes
-window.onload = function() {
-	first.classList.remove("next_slide");
-	first.classList.add("active");
-	last.classList.remove("next_slide");
-	last.classList.add("last_slide");
+window.onload = function () {
+	if (!!first && !!last) {
+		first.classList.remove("next_slide");
+		first.classList.add("active");
+		last.classList.remove("next_slide");
+		last.classList.add("last_slide");
+	}
 };
 // handle sliding classes along loop
-const startSlider = type => {
+const startSlider = (type) => {
 	const active = document.querySelector(".active");
 	const last_slide = document.querySelector(".last_slide");
 	let next = active.nextElementSibling;
@@ -47,39 +49,47 @@ const startSlider = type => {
 // sliding the wave animation along the loop
 function moveRight() {
 	wave.classList.toggle("play");
-	setTimeout(function() {
+	setTimeout(function () {
 		wave.classList.toggle("play");
 	}, 700);
 }
 function moveLeft() {
 	wave.classList.toggle("playBackward");
-	setTimeout(function() {
+	setTimeout(function () {
 		wave.classList.toggle("playBackward");
 	}, 700);
 }
 // chevron function calls
-nextBtn.addEventListener("click", () => {
-	// if (window.location.pathname == "/history") {
-	// }
-	startSlider();
-	moveRight();
-});
-prevBtn.addEventListener("click", () => {
-	// if (window.location.pathname == "/history") {
-	// }
-	startSlider("prev");
-	moveLeft();
-});
+if (!!nextBtn) {
+	nextBtn.addEventListener("click", () => {
+		// if (window.location.pathname == "/history") {
+		// }
+		startSlider();
+		!!wave ? moveRight() : false;
+	});
+}
+if (!!prevBtn) {
+	prevBtn.addEventListener("click", () => {
+		// if (window.location.pathname == "/history") {
+		// }
+		startSlider("prev");
+		!!wave ? moveLeft() : false;
+	});
+}
 // dot function calls
-firstDot.addEventListener("click", () => {
-	// if (window.location.pathname == "/history") {
-	// }
-	startSlider("prev");
-	moveLeft();
-});
-thirdDot.addEventListener("click", () => {
-	// if (window.location.pathname == "/history") {
-	// }
-	startSlider();
-	moveRight();
-});
+if (!!firstDot) {
+	firstDot.addEventListener("click", () => {
+		// if (window.location.pathname == "/history") {
+		// }
+		startSlider("prev");
+		!!wave ? moveLeft() : false;
+	});
+}
+if (!!thirdDot) {
+	thirdDot.addEventListener("click", () => {
+		// if (window.location.pathname == "/history") {
+		// }
+		startSlider();
+		!!wave ? moveRight() : false;
+	});
+}
