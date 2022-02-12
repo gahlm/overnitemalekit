@@ -40,9 +40,21 @@
 
 	.sss {
 		// override SSS presets
+		position: relative;
 		height: var(--sliderDimension);
 		width: var(--sliderDimension);
 		padding-bottom: 0 !important;
+
+		img {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			overflow: hidden;
+		}
 	}
 }
 
