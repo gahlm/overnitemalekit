@@ -1,25 +1,76 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div>
-		<h1 class="heading__xl">About Us</h1>
+	{% set hero = post.get_field('hero') %}
+	<section class="home__hero">
+		<div class="hero__inner">
+			<div class="hero__meta">
+				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
+				<p class="hero__subtitle heading__sm">{{ hero.subtitle }}</p>
+				<div>
+					<a href="/history" class="action__blue">Our History</a>
+				</div>
+			</div>
 
-		{{ post.content|wpautop }}
+			<div class="hero__slider slider">
+				{% for i in hero.product_images %}
+					{% set image = i.image %}
+					<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+				{% endfor %}
+			</div>
+		</div>
 
-		<ul>
-			<li>
-				<a href="/contact">Contact Us</a>
-			</li>
-			<li>
-				<a href="/careers">Careers</a>
-			</li>
-			<li>
-				<a href="/resources">Resources</a>
-			</li>
-		</ul>
+		{# TODO: add hero graphic here #}
+	</section>
 
-		{% if post.form %}
-			{{ post.form|shortcodes }}
-		{% endif %}
-	</div>
+	<section class="home__companyBlocks blocks">
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.experience_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">CONTACT THE</span>
+					<span class="heading__lg">Chemists</span>
+				</h2>
+				<p class="card__company--description">{{ post.experience_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/contact">Contact Us</a>
+			</div>
+		</article>
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.innovation_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">JOIN THE TEAM</span>
+					<span class="heading__lg">Careers</span>
+				</h2>
+				<p class="card__company--description">{{ post.innovation_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/careers">Careers</a>
+			</div>
+		</article>
+		<article class="card card__company">
+			<div>
+				<div class="card__company--image">
+					<img src="{{ post.solutions_icon }}" alt=""/>
+				</div>
+				<h2 class="home__companyBlocks--heading">
+					<span class="text__strong">LEARN MORE</span>
+					<span class="heading__lg">Resources</span>
+				</h2>
+				<p class="card__company--description">{{ post.solutions_description }}</p>
+			</div>
+			<div>
+				<a class="action__black" href="/resources">Resources</a>
+			</div>
+		</article>
+	</section>
+	{% include "templates/contact.twig" %}
+
+
 {% endblock %}

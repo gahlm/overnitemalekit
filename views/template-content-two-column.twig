@@ -2,48 +2,29 @@
 
 {% block content %}
 
-		<h1>{{post.meta('headline')}}</h1>
-		<div class="two_column">
-			{% for row in post.meta('repeater') %}
-     
-<div class="column_1">
-     {% for column in row.flexible_column_1 %}
-          {{ column.text }}
-					<img src="{{ Image(column.image).src }}" />
-     {% endfor %}
-</div>
-<div class="column_2">
-     {% for column in row.flexible_column_2 %}
-          {{ column.text }}
-					<img src="{{ Image(column.image).src }}" />
-     {% endfor %}
-</div>
-{% endfor %}
-		</div>
-	
-	{% if post.add_contact_form == 'true' %}
-		<div class="history__contact">
-			<div class="history__contact__inner">
+	<h1>{{post.meta('headline')}}</h1>
+	<div class="two_column">
+		{% for row in post.meta('repeater') %}
 
-				<div class="history__contact__inner__text">
-
-
-					<h2>
-						{{post.get_field('contact_heading')}}
-
-					</h2>
-					<p>{{post.get_field('contact_text')}}</p>
-
-				</div>
-				<div class="history__contact__inner__form">
-
-					{% if post.form %}
-						{{ post.form|shortcodes }}
-					{% endif %}
-				</div>
+			<div class="column_1">
+				{% for column in row.flexible_column_1 %}
+					{{ column.text }}
+					<img src="{{ Image(column.image).src }}"/>
+				{% endfor %}
 			</div>
+			<div class="column_2">
+				{% for column in row.flexible_column_2 %}
+					{{ column.text }}
+					<img src="{{ Image(column.image).src }}"/>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
 
-		</div>
+	{% if post.add_contact_form == 'true' %}
+		{% include "templates/contact.twig" %}
+
+
 	{% endif %}
 
 {% endblock %}

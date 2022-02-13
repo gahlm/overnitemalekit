@@ -67,28 +67,7 @@
 
 
 	</div>
-	<div class="history__contact">
-		<div class="history__contact__inner">
-
-			<div class="history__contact__inner__text">
-
-
-				<h2>
-					{{post.get_field('contact_heading')}}
-
-				</h2>
-				<p>{{post.get_field('contact_text')}}</p>
-
-			</div>
-			<div class="history__contact__inner__form">
-
-				{% if post.form %}
-					{{ post.form|shortcodes }}
-				{% endif %}
-			</div>
-		</div>
-
-	</div>
+	{% include "templates/contact.twig" %}
 
 
 {% endblock %}
