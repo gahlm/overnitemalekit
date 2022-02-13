@@ -6,11 +6,11 @@
 		display: grid;
 		grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
 		padding-top: $spacer-xxl;
-		padding-bottom: $spacer-xxl;
+		// padding-bottom: $spacer-xxl;
 		align-items: center;
 		justify-items: center;
 
-		h2 {
+		h3 {
 			display: inline-block;
 			text-align: center;
 			&#year {
@@ -41,7 +41,7 @@
 		align-content: center;
 		justify-content: center;
 		padding-top: $spacer-xxl;
-		padding-bottom: $spacer-xxl;
+		// padding-bottom: $spacer-xxl;
 		text-align: center;
 		p {
 			max-width: 25vw;
@@ -58,7 +58,10 @@
 .wavecontainer {
 	grid-column: viewport;
 	grid-row-start: 3;
-	margin-top: 5vh;
+	overflow: hidden;
+	// margin-top: 5vh;
+	background: url($no-loop) no-repeat;
+
 	.dotcontainer {
 		grid-column: container;
 		width: 80vw;
@@ -83,14 +86,19 @@
 			}
 		}
 	}
+	.background_mask {
+		background: linear-gradient(90deg, $color-baby-blue 0%, $color-green 25%);
+	}
 	.wave {
 		// width: 100%;
 		// overflow: hidden;
-		background: url($looping-dots) repeat-x;
+		-webkit-mask: url($looping-dots);
+		mask: url($looping-dots);
+		background-repeat: repeat-x;
 		opacity: 60%;
-		position: relative;
-		height: 400px;
-		width: 15564px;
+		background-position: 0% 50%;
+		height: 30vh;
+		width: 300vw;
 		margin-top: $spacer-md;
 		margin-bottom: $spacer-xxl;
 		transition: linear ease 0.5s;
@@ -134,27 +142,36 @@
 	transform: translateX(-100%);
 }
 .prev {
-	position: absolute;
+	position: fixed;
 	left: 20px;
-	top: 80vh;
-	z-index: $index-middle;
+	top: 50vh;
+	z-index: $index-foreground;
 	font-size: $font-size-heading-hero;
 }
 .next {
-	position: absolute;
+	position: fixed;
 	right: 20px;
-	top: 80vh;
-	z-index: $index-middle;
+	top: 50vh;
+	z-index: $index-foreground;
 	font-size: $font-size-heading-hero;
 }
 .vl {
 	border-left: 6px solid $color-navy;
-	height: 15vh;
+	height: 35vh;
 	margin-left: 6px;
 	position: relative;
-	top: -20vh;
+	top: -37vh;
 }
 @keyframes waveslide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-5188px, 0, 0); /* The image width */
+	}
+}
+
+@keyframes dotslide {
 	0% {
 		transform: translate3d(0, 0, 0);
 	}

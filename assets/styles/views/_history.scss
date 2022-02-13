@@ -2,7 +2,10 @@
 	@include gridInherit;
 	overflow: hidden;
 	margin-top: $spacer-xxl;
-	grid-template-rows: 1fr 4fr 3fr;
+	grid-template-rows: minmax(min-content, 1fr) minmax(min-content, 3.5fr) minmax(
+			min-content,
+			2fr
+		);
 }
 .history__inner {
 	grid-column: container;
@@ -27,6 +30,7 @@
 	background-repeat: no-repeat;
 	height: 90vh;
 	margin-top: $spacer-xxl;
+	z-index: $index-popover;
 
 	&__inner {
 		grid-column: container;
