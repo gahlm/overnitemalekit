@@ -1,0 +1,60 @@
+.green__contact {
+	@include gridInherit;
+	overflow: hidden;
+	background-color: $color-green;
+	margin-top: $spacer-max;
+	@include query("large") {
+		background-image: $green-slope-bg;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: white;
+	}
+	&__inner {
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr;
+		row-gap: 2em;
+		column-gap: 1em;
+		grid-column: container;
+		display: grid;
+		align-items: center;
+
+		@include query("large") {
+			grid-template-rows: 1fr 4fr 0.5fr;
+			grid-template-columns: 1fr 2fr;
+		}
+		&__form {
+			@include query("large") {
+				grid-column-start: 2;
+				grid-row-start: 2;
+				margin-top: $spacer-max;
+				padding: $spacer-xxl;
+			}
+			label {
+				display: none;
+			}
+			input {
+				border-radius: 5px;
+				padding: 5px 10px 5px 10px;
+				border: none;
+			}
+		}
+		&__text {
+			position: relative;
+			h2 {
+				font-size: $font-size-heading-hero;
+				color: $color-white;
+			}
+			p {
+				color: $color-white;
+			}
+			@include query("large") {
+				grid-column-start: 1;
+				grid-row-start: 2;
+				margin-right: $spacer-sm;
+				h2 {
+					margin-bottom: $spacer-sm;
+				}
+			}
+		}
+	}
+}

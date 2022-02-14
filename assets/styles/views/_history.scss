@@ -14,55 +14,16 @@
 	justify-content: center;
 	h1 {
 		color: $color-green;
-		font-size: $font-size-heading-hero;
+		font-size: $font-size-heading-lg;
 		margin-top: $spacer-xxl;
+		margin-bottom: $spacer-md;
 		line-height: 0.95;
-		max-width: 45%;
 	}
-}
-
-// contact area box
-.history__contact {
-	@include gridInherit;
-	overflow: hidden;
-	background: $green-slope-bg;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 90vh;
-	margin-top: $spacer-xxl;
-	z-index: $index-popover;
-
-	&__inner {
-		grid-column: container;
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		align-items: center;
-		&__form {
-			grid-column-start: 2;
-			margin-top: $spacer-max;
-			padding: $spacer-xxl;
-			label {
-				display: none;
-			}
-			input {
-				border-radius: 5px;
-				padding: 5px 10px 5px 10px;
-				border: none;
-			}
-		}
-		&__text {
-			grid-column-start: 1;
-			position: relative;
-			margin-right: $spacer-sm;
-
-			h2 {
-				font-size: $font-size-heading-hero;
-				color: $color-white;
-				margin-bottom: $spacer-xxl;
-			}
-			p {
-				color: $color-white;
-			}
+	@include query("large") {
+		h1 {
+			font-size: $font-size-heading-hero;
+			max-width: 45%;
+			margin-bottom: 0;
 		}
 	}
 }

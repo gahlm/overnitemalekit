@@ -4,48 +4,90 @@
 
 	&__inner {
 		display: grid;
-		grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
-		padding-top: $spacer-xxl;
+		grid-template-columns: 1fr;
 		// padding-bottom: $spacer-xxl;
 		align-items: center;
 		justify-items: center;
-
 		h3 {
 			display: inline-block;
 			text-align: center;
+			font-size: $font-size-small;
+			margin-bottom: $spacer-md;
 			&#year {
 				color: var(--bg-green);
 			}
 		}
 		p {
 			text-align: left;
-		}
-
-		article {
-			margin-right: $spacer-md;
+			margin-bottom: $spacer-xl;
 		}
 		img {
-			margin-left: $spacer-xxl;
-			width: 75%;
+			width: 100%;
 			object-fit: contain;
 			overflow: hidden;
+		}
+		@include query("medium") {
+			grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+			padding-top: $spacer-xxl;
+			h3 {
+				font-size: $font-size-small;
+			}
+			img {
+				margin-left: $spacer-xxl;
+				width: 75%;
+				object-fit: contain;
+				overflow: hidden;
+			}
+		}
+		@include query("large") {
+			grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+			padding-top: $spacer-xxl;
+			h3 {
+				font-size: $font-size-body;
+			}
+			img {
+				margin-left: $spacer-xxl;
+				width: 75%;
+				object-fit: contain;
+				overflow: hidden;
+			}
+			article {
+				margin-right: $spacer-md;
+			}
 		}
 	}
 }
 // lower half of the timeline
 .timeline-lower {
 	color: var(--text-black);
-
 	&__inner {
-		display: flex;
-		align-content: center;
-		justify-content: center;
-		padding-top: $spacer-xxl;
-		// padding-bottom: $spacer-xxl;
-		text-align: center;
-		p {
-			max-width: 25vw;
-			margin: auto;
+		display: none;
+		@include query("medium") {
+			align-content: center;
+			justify-content: center;
+			padding-top: $spacer-lg;
+			text-align: center;
+			display: flex;
+			p {
+				max-width: 40vw;
+				margin: auto;
+			}
+		}
+		h2 {
+			&#year {
+				color: var(--bg-green);
+			}
+		}
+		@include query("large") {
+			align-content: center;
+			justify-content: center;
+			padding-top: $spacer-xxl;
+			text-align: center;
+			display: flex;
+			p {
+				max-width: 25vw;
+				margin: auto;
+			}
 		}
 		h2 {
 			&#year {
@@ -57,11 +99,10 @@
 // timeline functionality
 .wavecontainer {
 	grid-column: viewport;
-	grid-row-start: 3;
+	// grid-row-start: 3;
 	overflow: hidden;
-	// margin-top: 5vh;
 	background: url($no-loop) no-repeat;
-
+	background-size: cover;
 	.dotcontainer {
 		grid-column: container;
 		width: 80vw;
@@ -73,12 +114,14 @@
 			cursor: pointer;
 			position: absolute;
 			&#dot1 {
+				display: none;
 				left: 25vw;
 			}
 			&#dot2 {
 				left: 50vw;
 			}
 			&#dot3 {
+				display: none;
 				left: 75vw;
 			}
 			&:hover {
@@ -86,19 +129,41 @@
 			}
 		}
 	}
+	@include query("medium") {
+		.dotcontainer {
+			.dot {
+				&#dot1 {
+					display: block;
+				}
+				&#dot3 {
+					display: block;
+				}
+			}
+		}
+	}
+	@include query("large") {
+		.dotcontainer {
+			.dot {
+				&#dot1 {
+					display: block;
+				}
+				&#dot3 {
+					display: block;
+				}
+			}
+		}
+	}
 	.background_mask {
 		background: linear-gradient(90deg, $color-baby-blue 0%, $color-green 25%);
 	}
 	.wave {
-		// width: 100%;
-		// overflow: hidden;
 		-webkit-mask: url($looping-dots);
 		mask: url($looping-dots);
 		background-repeat: repeat-x;
 		opacity: 60%;
 		background-position: 0% 50%;
 		height: 30vh;
-		width: 300vw;
+		width: 15500px;
 		margin-top: $spacer-md;
 		margin-bottom: $spacer-xxl;
 		transition: linear ease 0.5s;
@@ -113,6 +178,13 @@
 			animation-direction: reverse;
 		}
 	}
+	// .waveright {
+	// 	animation: waveslideright 20s linear infinite;
+	// 	animation-play-state: paused;
+	// 	&.play {
+	// 		animation-play-state: running;
+	// 	}
+	// }
 }
 
 .timeline-slider {
@@ -141,19 +213,29 @@
 .last_slide {
 	transform: translateX(-100%);
 }
-.prev {
-	position: fixed;
-	left: 20px;
-	top: 50vh;
-	z-index: $index-foreground;
-	font-size: $font-size-heading-hero;
+.left {
+	grid-column-start: 1;
+	grid-row-start: 2;
+	justify-self: center;
+	.prev {
+		position: sticky;
+		top: 50%;
+		z-index: $index-foreground;
+		font-size: $font-size-small;
+		cursor: pointer;
+	}
 }
-.next {
-	position: fixed;
-	right: 20px;
-	top: 50vh;
-	z-index: $index-foreground;
-	font-size: $font-size-heading-hero;
+.right {
+	grid-column-start: 3;
+	grid-row-start: 2;
+	justify-self: center;
+	.next {
+		z-index: $index-foreground;
+		font-size: $font-size-small;
+		cursor: pointer;
+		position: sticky;
+		top: 50%;
+	}
 }
 .vl {
 	border-left: 6px solid $color-navy;
@@ -161,6 +243,39 @@
 	margin-left: 6px;
 	position: relative;
 	top: -37vh;
+}
+#mobile-year {
+	text-align: center;
+}
+@include query("medium") {
+	#mobile-year {
+		display: none;
+	}
+	.left {
+		.prev {
+			font-size: $font-size-body;
+		}
+	}
+	.right {
+		.next {
+			font-size: $font-size-body;
+		}
+	}
+}
+@include query("large") {
+	#mobile-year {
+		display: none;
+	}
+	.left {
+		.prev {
+			font-size: $font-size-heading-hero;
+		}
+	}
+	.right {
+		.next {
+			font-size: $font-size-heading-hero;
+		}
+	}
 }
 @keyframes waveslide {
 	0% {
@@ -170,6 +285,14 @@
 		transform: translate3d(-5188px, 0, 0); /* The image width */
 	}
 }
+// @keyframes waveslideright {
+// 	0% {
+// 		transform: translate3d(0, 0, 0);
+// 	}
+// 	100% {
+// 		transform: translate3d(5188px, 0, 0); /* The image width */
+// 	}
+// }
 
 @keyframes dotslide {
 	0% {
