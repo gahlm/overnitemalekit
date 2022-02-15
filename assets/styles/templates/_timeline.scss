@@ -69,7 +69,7 @@
 			text-align: center;
 			display: flex;
 			p {
-				max-width: 40vw;
+				max-width: 60vw;
 				margin: auto;
 			}
 		}
@@ -85,7 +85,7 @@
 			text-align: center;
 			display: flex;
 			p {
-				max-width: 25vw;
+				max-width: 45vw;
 				margin: auto;
 			}
 		}
@@ -101,8 +101,9 @@
 	grid-column: viewport;
 	// grid-row-start: 3;
 	overflow: hidden;
-	background: url($no-loop) no-repeat;
-	background-size: cover;
+	background: url($stationary-wave) no-repeat;
+	background-size: contain;
+
 	.dotcontainer {
 		grid-column: container;
 		width: 80vw;
@@ -110,6 +111,7 @@
 		top: 200px;
 		.dot {
 			color: $color-navy;
+			font-size: 0.75em;
 			z-index: $index-middle;
 			cursor: pointer;
 			position: absolute;
@@ -160,12 +162,11 @@
 		-webkit-mask: url($looping-dots);
 		mask: url($looping-dots);
 		background-repeat: repeat-x;
-		opacity: 60%;
 		background-position: 0% 50%;
-		height: 30vh;
+		height: 35vh;
 		width: 15500px;
-		margin-top: $spacer-md;
-		margin-bottom: $spacer-xxl;
+		margin-top: $spacer-sm;
+		margin-bottom: $spacer-xl;
 		transition: linear ease 0.5s;
 		animation: waveslide 20s linear infinite;
 		animation-play-state: paused;
@@ -238,10 +239,11 @@
 	}
 }
 .vl {
-	border-left: 6px solid $color-navy;
+	border-left: 3px solid $color-navy;
 	height: 35vh;
-	margin-left: 6px;
+	margin-left: 5px;
 	position: relative;
+	overflow: hidden;
 	top: -37vh;
 }
 #mobile-year {
