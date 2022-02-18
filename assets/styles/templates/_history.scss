@@ -5,10 +5,49 @@
 		display: flex;
 		align-items: center;
 		gap: $spacer-lg;
-		margin-bottom: $spacer-xxl;
+		// margin-bottom: $spacer-md;
 
 		h2 {
 			white-space: nowrap;
+		}
+	}
+	.timeline-slider {
+		grid-column: container;
+		margin-bottom: $spacer-max;
+	}
+}
+.wavecontainer.home_history {
+	margin: $spacer-max 0 $spacer-max 0;
+	@include gridInherit;
+	height: min-content;
+	.wave {
+		grid-column-start: 1;
+		height: 400px;
+	}
+	.left {
+		grid-column-start: 1;
+		justify-self: right;
+		.prev {
+			position: sticky;
+			z-index: $index-foreground;
+			font-size: $font-size-heading-sm;
+			cursor: pointer;
+		}
+	}
+	.right {
+		grid-column-start: 3;
+		justify-self: left;
+		.next {
+			z-index: $index-foreground;
+			font-size: $font-size-heading-sm;
+			cursor: pointer;
+			position: sticky;
+		}
+	}
+	.dotcontainer {
+		grid-column-start: 1;
+		.vl {
+			display: none;
 		}
 	}
 }

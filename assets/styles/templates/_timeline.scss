@@ -102,7 +102,7 @@
 	// grid-row-start: 3;
 	overflow: hidden;
 	background: url($stationary-wave) no-repeat;
-	background-size: contain;
+	background-size: cover;
 
 	.dotcontainer {
 		grid-column: container;
@@ -110,24 +110,26 @@
 		position: relative;
 		top: 200px;
 		.dot {
-			color: $color-navy;
-			font-size: 0.75em;
+			color: $color-light-blue;
+			font-size: 1em;
 			z-index: $index-middle;
 			cursor: pointer;
 			position: absolute;
 			&#dot1 {
 				display: none;
-				left: 25vw;
+				left: 20vw;
+				top: 50px;
 			}
 			&#dot2 {
 				left: 50vw;
 			}
 			&#dot3 {
 				display: none;
-				left: 75vw;
+				left: 80vw;
+				top: -50px;
 			}
 			&:hover {
-				color: $color-light-blue;
+				color: $color-navy;
 			}
 		}
 	}
