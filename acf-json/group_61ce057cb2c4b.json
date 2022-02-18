@@ -3,12 +3,95 @@
     "title": "Page - Capabilities",
     "fields": [
         {
+            "key": "field_620d7176a3281",
+            "label": "Capability",
+            "name": "capability",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Capability",
+            "sub_fields": [
+                {
+                    "key": "field_620d7193a3282",
+                    "label": "Capability Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "MUST be cut out with background entirely removed. Not doing so will make it look odd.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_620d71e4a3283",
+                    "label": "Capability Title",
+                    "name": "capability_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_620d71f8a3284",
+                    "label": "Capability Description",
+                    "name": "capability_description",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
+        },
+        {
             "key": "field_61ce05a09eb03",
             "label": "Capabilities",
             "name": "capabilities",
             "type": "repeater",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -27,7 +110,7 @@
                     "name": "title",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -46,7 +129,7 @@
                     "name": "description",
                     "type": "wysiwyg",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -84,7 +167,7 @@
                     "name": "image_alt",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -140,5 +223,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640892237
+    "modified": 1645048784
 }
