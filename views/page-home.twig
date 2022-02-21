@@ -41,11 +41,12 @@
 		</div>
 	</section>
 
+
 	<section class="home__companyBlocks blocks">
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.experience_icon }}" alt=""/>
+					<img src="{{Image(post.meta('experience_icon'))}}" alt=""/>
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">55+ YEARS OF</span>
@@ -60,7 +61,8 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.innovation_icon }}" alt=""/>
+					<img src="{{Image(post.meta('innovation_icon'))}}" alt=""/>
+
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">DRIVEN BY</span>
@@ -75,7 +77,8 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.solutions_icon }}" alt=""/>
+					<img src="{{Image(post.meta('solutions_icon'))}}" alt=""/>
+
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">TAILORED</span>
