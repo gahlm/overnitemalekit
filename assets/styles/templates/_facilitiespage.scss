@@ -4,6 +4,11 @@
 }
 .facilities_inner {
 	grid-column: container;
+	h1 {
+		color: $color-green;
+		font-size: $font-size-heading-hero;
+		margin-top: $spacer-max;
+	}
 	.intro {
 		width: 85%;
 		p {
@@ -34,6 +39,7 @@ h2 {
 	padding: $spacer-lg 0 $spacer-lg 0;
 }
 // Map Styling
+
 .map-background {
 	@include gridInherit;
 	background: url($smaller-wave) 30% 70%;
