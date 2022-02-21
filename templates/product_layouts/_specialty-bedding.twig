@@ -1,0 +1,56 @@
+{# get product layout specific fields #}
+{% set meta = product.meta('layout')[0] %}
+
+<div class="specialtyBedding__hero">
+	<hgroup class="specialtyBedding__headings">
+		<h1>{{ product.title }}</h1>
+		<h2>{{ product.descriptive_title }}</h2>
+		<p>{{ product.description }}</p>
+	</hgroup>
+
+	{# TODO: firmness slider #}
+	<div>
+		Product Firmness:
+		{{ meta.firmness }}
+	</div>
+
+	{# TODO: add srcset and sizes #}
+	<img class="specialtyBedding__productImage" src="{{ product_image.src }}" alt="{{ product_image.alt }}"/>
+</div>
+
+<div class="product__columns">
+	{% if product.meta('content') %}
+		<div class="content product__main">
+			{{ product.meta('content') }}
+		</div>
+	{% endif %}
+
+	<div class="product__sidebar">
+		{% if meta.specifications %}
+			<div class="product__specifications">
+				<h2>{{ meta.specifications_title }}</h2>
+				<ul class="specifications__list">
+					{% for spec in meta.specifications %}
+						<li>
+							<strong>{{ spec.label }}:</strong>
+							{{ spec.value }}
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
+		{% if meta.downloads %}
+			<div class="product__downloads">
+				{% for download in meta.downloads %}
+					<a class="download__button" href="{{ download.file }}" download={{ download.file_name }}>
+						{{ download.title }}
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+{# TODO: solve for global contact form use case #}
+{% include "templates/contact.twig" %}

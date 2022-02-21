@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="product">
+		<div class="product__hero">
+			{% block hero %}{% endblock %}
+		</div>
+
+		<div class="product__main">
+			{% block main %}{% endblock %}
+		</div>
+
+		<div class="product__sidebar">
+			{% block sidebar %}{% endblock %}
+		</div>
+	</div>
+
+{% endblock %}
