@@ -164,7 +164,6 @@ function fix_svg() {
 }
 add_action( 'admin_head', 'fix_svg' );
 
-
 // removes default post editor
 function remove_editor() {
   remove_post_type_support('page', 'editor');
