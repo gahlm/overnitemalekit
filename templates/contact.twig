@@ -1,22 +1,14 @@
 <div class="green__contact">
 	<div class="green__contact__inner">
-
 		<div class="green__contact__inner__text">
-
-
-			<h2>
-				{{post.get_field('contact_heading')}}
-
-			</h2>
+			<h2>{{post.get_field('contact_heading')}}</h2>
 			<p>{{post.get_field('contact_text')}}</p>
-
 		</div>
-		<div class="green__contact__inner__form">
 
+		<div class="green__contact__inner__form">
 			{% if post.form %}
 				{{ post.form|shortcodes }}
 			{% endif %}
 		</div>
 	</div>
-
 </div>

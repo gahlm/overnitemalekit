@@ -3,26 +3,39 @@
 
 	&__header {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		gap: $spacer-lg;
+		// gap: $spacer-lg;
 		// margin-bottom: $spacer-md;
-
 		h2 {
 			white-space: nowrap;
+		}
+	}
+	@include query("medium") {
+		&__header {
+			flex-direction: row;
+			gap: $spacer-lg;
 		}
 	}
 	.timeline-slider {
 		grid-column: container;
 		margin-bottom: $spacer-max;
 	}
+	.timeline-lower__inner {
+		display: flex;
+		#year {
+			display: none;
+		}
+	}
 }
 .wavecontainer.home_history {
 	margin: $spacer-max 0 $spacer-max 0;
 	@include gridInherit;
 	height: min-content;
+
 	.wave {
 		grid-column-start: 1;
-		height: 400px;
+		height: 100px;
 	}
 	.left {
 		grid-column-start: 1;
@@ -48,6 +61,29 @@
 		grid-column-start: 1;
 		.vl {
 			display: none;
+		}
+	}
+	.timeline-lower__inner {
+		display: flex;
+	}
+	@include query("medium") {
+		.wave {
+			height: 400px;
+		}
+		.left {
+			.prev {
+				font-size: $font-size-heading-lg;
+			}
+		}
+		.right {
+			.next {
+				font-size: $font-size-heading-lg;
+			}
+		}
+		.dotcontainer {
+			.vl {
+				display: block;
+			}
 		}
 	}
 }

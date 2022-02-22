@@ -3,12 +3,31 @@
     "title": "Type - Product",
     "fields": [
         {
+            "key": "field_6213ffe7b5d91",
+            "label": "Title",
+            "name": "descriptive_title",
+            "type": "text",
+            "instructions": "Title text describing product. Unique from Product name. Leave blank to have the product name display as the Title.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6191c176920cd",
             "label": "Description",
             "name": "description",
             "type": "text",
-            "instructions": "Detailed product description",
-            "required": 0,
+            "instructions": "This will appear with the product name and title fields.",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -26,7 +45,7 @@
             "label": "Product Image",
             "name": "image",
             "type": "image",
-            "instructions": "Image of the actual product. For best results, use a high resolution .png with transparency.",
+            "instructions": "Image of the actual product. For best results, use a high resolution .png with transparency. The image will be downsampled automatically where appropriate.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,7 +53,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "url",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -46,11 +65,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_61b51abb42752",
-            "label": "Product Feature Image",
-            "name": "feature_image",
-            "type": "image",
-            "instructions": "Product CTA background. For best results, use a high resolution image with no transparency.",
+            "key": "field_6214021e35939",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,16 +77,92 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_620ffae8a155e",
+            "label": "Layout",
+            "name": "layout",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_620ffaf2d6422": {
+                    "key": "layout_620ffaf2d6422",
+                    "name": "specialty_bedding",
+                    "label": "Specialty Bedding",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6213ff27f5bd0",
+                            "label": "Specialty Bedding",
+                            "name": "specialty_bedding",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_620ffb1b0499f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_620ffcedfbadf": {
+                    "key": "layout_620ffcedfbadf",
+                    "name": "simple",
+                    "label": "Simple",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_620ffc9e2001f",
+                            "label": "Simple",
+                            "name": "simple",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_620ffbb0b0883"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Select Layout",
+            "min": 1,
+            "max": 1
         }
     ],
     "location": [
@@ -88,5 +183,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643583666
+    "modified": 1645482108
 }

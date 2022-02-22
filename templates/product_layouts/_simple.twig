@@ -1,0 +1,20 @@
+<h1>{{ product.title }}</h1>
+<h2>{{ product.descriptive_title }}</h2>
+<p>{{ product.description }}</p>
+
+<div class="content">
+	{% if children %}
+		<h2>Child Products:</h2>
+		<ul>
+			{% for child in children %}
+				<li>
+					<a href="{{ child.link }}">{{ child.title }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if product.meta('content') %}
+		{{ product.meta('content') }}
+	{% endif %}
+</div>

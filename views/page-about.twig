@@ -27,13 +27,14 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.experience_icon }}" alt=""/>
+					<img src="{{Image(post.meta('contact_icon'))}}" alt=""/>
+
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">CONTACT THE</span>
 					<span class="heading__lg">Chemists</span>
 				</h2>
-				<p class="card__company--description">{{ post.experience_description }}</p>
+				<p class="card__company--description">{{ post.contact_description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/contact">Contact Us</a>
@@ -42,13 +43,14 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.innovation_icon }}" alt=""/>
+					<img src="{{Image(post.meta('careers_icon'))}}" alt=""/>
+
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">JOIN THE TEAM</span>
 					<span class="heading__lg">Careers</span>
 				</h2>
-				<p class="card__company--description">{{ post.innovation_description }}</p>
+				<p class="card__company--description">{{ post.careers_description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/careers">Careers</a>
@@ -57,13 +59,14 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{ post.solutions_icon }}" alt=""/>
+					<img src="{{Image(post.meta('resources_icon'))}}" alt=""/>
+
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">LEARN MORE</span>
 					<span class="heading__lg">Resources</span>
 				</h2>
-				<p class="card__company--description">{{ post.solutions_description }}</p>
+				<p class="card__company--description">{{ post.resources_description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/resources">Resources</a>

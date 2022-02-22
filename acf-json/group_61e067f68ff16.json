@@ -178,7 +178,7 @@
             "name": "capabilities",
             "type": "checkbox",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -189,7 +189,8 @@
                 "pouring": "Pouring",
                 "fabrication": "Fabrication",
                 "carpet-cushion": "Carpet Cushion",
-                "corporate": "Corporate Office"
+                "corporate": "Corporate Office",
+                "chemical production": "Chemical Production"
             },
             "allow_custom": 0,
             "default_value": [],
@@ -374,5 +375,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1643902810
+    "modified": 1645467140
 }

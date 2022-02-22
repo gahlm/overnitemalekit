@@ -1,19 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content">
-		<h1>{{ product.title }}</h1>
-		<p>{{ product.description }}</p>
-
-		{% if children %}
-			<h2>Child Products:</h2>
-			<ul>
-				{% for child in children %}
-					<li>
-						<a href="{{ child.link }}">{{ child.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		{% endif %}
-	</div>
+	{% if product.layout %}
+		{% for layout in product.layout %}
+			{% set twig_url = "product_layouts/_" ~ layout|split('_')|join('-') ~ ".twig" %}
+			{% include [ twig_url, 'product_layouts/fallback.twig'] %}
+		{% endfor %}
+	{% endif %}
 {% endblock %}

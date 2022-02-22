@@ -10,22 +10,32 @@
 			{# Selection Box Filters #}
 			<div class="facilities-form">
 				<select name="map_location" id="map_location">
-					<option value>FILTER BY REGION</option>
-					<option value>ALL LOCATIONS</option>
-					<option value>--</option>
+					<option value="">FILTER BY REGION</option>
+					<option value="">ALL LOCATIONS</option>
+					<option value="">--</option>
 					<option value="US-ALL">UNITED STATES</option>
-					{% for facility in facilities %}
-						{% if facility.domestic_or_foreign == 'domestic' %}
-							<option value="{{facility.classes}}">{{facility.state}}</option>
-						{% endif %}
-					{% endfor %}
-					<option value>--</option>
+					<option value="US-CA">California</option>
+					<option value="US-CO">Colorado</option>
+					<option value="US-FL">Florida</option>
+					<option value="US-IA">Iowa</option>
+					<option value="US-KS">Kansas</option>
+					<option value="US-IN">Indiana</option>
+					<option value="US-MA">Massachusetts</option>
+					<option value="US-MN">Minnesota</option>
+					<option value="US-MS">Mississippi</option>
+					<option value="US-MO">Missouri</option>
+					<option value="US-NE">Nebraska</option>
+					<option value="US-NC">North Carolina</option>
+					<option value="US-OK">Oklahoma</option>
+					<option value="US-PA">Pennsylvania</option>
+					<option value="US-TX">Texas</option>
+					<option value="US-UT">Utah</option>
+					<option value="US-WA">Washington</option>
+					<option value="US-WI">Wisconsin</option>
+					<option value="">--</option>
 					<option value="INT-ALL">INTERNATIONAL</option>
-					{% for facility in facilities %}
-						{% if facility.domestic_or_foreign == 'foreign' %}
-							<option value="{{facility.classes}}">{{facility.state}}</option>
-						{% endif %}
-					{% endfor %}
+					<option value="INT-China">China</option>
+					<option value="INT-Europe">Germany</option>
 				</select>
 				<select name="capabilities" id="capabilities">
 					<option value>FILTER BY CAPABILITY</option>
@@ -127,7 +137,7 @@
 					<div class="dot"></div>
 				</a>
 				<!--  Hayward -->
-				<a href="#" class="city US-CA fabrication" data-city="-hayward" style="left:2.2%; top:43%;">
+				<a href="#" class="city US-CA fabrication" data-city="hayward" style="left:2.2%; top:43%;">
 					<div class="title">
 						Hayward, CA</div>
 					<div class="dot"></div>
@@ -256,19 +266,25 @@
 												<p>
 													<span>Phone:</span>
 													{{facility.contact_phone}}</p>
-												<p>
-													<span>Toll Free:</span>
-													{{facility.toll_free}}</p>
+												{% if facility.toll_free %}
+													<p>
+														<span>Toll Free:</span>
+														{{facility.toll_free}}</p>
+												{% endif %}
 												<p>
 													<span>Email:</span>
-													{{facility.contact_email}}</p>
+													<a href="mailto:{{facility.contact_email}}">{{facility.contact_email}}</a>
+												</p>
+
 												{% if facility.capabilities != 'corporate' %}
-													<p>
-														<span>Capabilities:</span>
-														{% for capability in facility.capabilities %}
-															{{capability|capitalize ~ (not loop.last ? ', ')}}
-														{% endfor %}
-													</p>
+													{% if facility.capabilities %}
+														<p>
+															<span>Capabilities:</span>
+															{% for capability in facility.capabilities %}
+																{{capability|capitalize ~ (not loop.last ? ', ')}}
+															{% endfor %}
+														</p>
+													{% endif %}
 												{% endif %}
 												{% if facility.specialties %}
 													<p>
@@ -304,21 +320,26 @@
 									<p>
 										<span>Phone:</span>
 										{{facility.contact_phone}}</p>
-									<p>
-										<span>Toll Free:</span>
-										{{facility.toll_free}}</p>
+									{% if facility.toll_free %}
+										<p>
+											<span>Toll Free:</span>
+											{{facility.toll_free}}</p>
+									{% endif %}
 									<p>
 										<span>Email:</span>
-										{{facility.contact_email}}</p>
+										<a href="mailto:{{facility.contact_email}}">{{facility.contact_email}}</a>
+									</p>
 									<p>
 										<span>Capabilities:</span>
 										{% for capability in facility.capabilities %}
 											{{capability|capitalize ~ (not loop.last ? ', ')}}
 										{% endfor %}
 									</p>
-									<p>
-										<span>Specialties:</span>
-										{{facility.specialties}}</p>
+									{% if facility.specialties %}
+										<p>
+											<span>Specialties:</span>
+											{{facility.specialties}}</p>
+									{% endif %}
 								</article>
 							</div>
 						</div>
@@ -327,20 +348,6 @@
 
 			</div>
 		</div>
-		<div class="history__contact">
-			<div class="history__contact__inner">
-				<div class="history__contact__inner__text">
-					<h2>
-						{{post.get_field('contact_heading')}}
-					</h2>
-					<p>{{post.get_field('contact_text')}}</p>
-				</div>
-				<div class="history__contact__inner__form">
-					{% if post.form %}
-						{{ post.form|shortcodes }}
-					{% endif %}
-				</div>
-			</div>
-		</div>
+		{% include "templates/contact.twig" %}
 	</div>
 {% endblock %}
