@@ -4,10 +4,11 @@
 	<div class="capability_wave"></div>
 	<div class="capability">
 		<h1 class="heading__xl">Capabilities</h1>
-		{% for row in post.meta('capability') %}
+		{% for row in post.get_field('capability') %}
+
 			<div class="capability__blocks">
 				<div class="capability__blocks--img">
-					<img src="{{ Image(row.image).src }}"/>
+					<img src="{{ row.image.url }}"/>
 				</div>
 
 				<h3 class="capability__blocks--meta">{{row.capability_title}}</h3>
@@ -19,24 +20,3 @@
 		{% endfor %}
 	</div>
 {% endblock %}
-
-{# <ul class="capabilities__list">
-												{% for this in capabilities %}
-													<li>
-														<a href="#{{ this.title }}">{{ this.title }}</a>
-													</li>
-												{% endfor %}
-											</ul> #}
-
-{# <div class="capabilities">
-										{% for this in capabilities %}
-											<article id="{{ this.title }}" class="capabilities__item">
-												<h2 class="heading__md">{{ this.title }}</h2>
-												{{ this.description|wpautop }}
-												{% if this.image %}
-							to do optimize image
-													<img src="{{ this.image }}" alt="{{ this.image_alt }}"/>
-												{% endif %}
-											</article>
-										{% endfor %}
-									</div> #}
