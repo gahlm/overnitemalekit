@@ -1,7 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
+	<h1>{{post.headline}}</h1>
+	{{post.meta('content')}}
 	<ul class="products__list">
 		{% for product in products %}
 			<li class="products__category">
@@ -9,5 +10,6 @@
 			</li>
 		{% endfor %}
 	</ul>
+	{% include "templates/contact.twig" %}
 
 {% endblock %}
