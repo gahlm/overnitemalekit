@@ -1,0 +1,31 @@
+.products__list {
+	display: grid;
+	grid-template-columns: 1fr;
+
+	@include query("medium") {
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		margin: $spacer-max 0 $spacer-lg 0;
+	}
+	grid-auto-rows: 220px;
+	justify-items: center;
+	align-items: center;
+	.products__category {
+		display: grid;
+		grid-template-rows: 2fr 1fr;
+		width: 95%;
+		height: 95%;
+		background-color: $color-white;
+		box-shadow: 1px 1px 4px $color-black-t10;
+		text-align: center;
+		box-sizing: content-box;
+		&img {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		&--meta {
+			grid-row: 2;
+			margin: 0 $spacer-lg $spacer-md $spacer-lg;
+		}
+	}
+}
