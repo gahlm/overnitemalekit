@@ -5,9 +5,9 @@
 	{{post.meta('content')}}
 	<div class="products__list">
 		{% for product in products %}
-		<a href="{{ product.link }}" class="products__category">
+			<a href="{{ product.link }}" class="products__category">
 				<img src="{{ Image(product.meta('image')).src }}" alt="">
-				
+
 				<div class="products__category--meta">{{ product.name }}</div>
 			</a>
 		{% endfor %}
