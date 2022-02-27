@@ -1,9 +1,13 @@
 .specialtyBedding__hero {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
+	--columns: 1fr;
+	@include query("large") {
+		--columns: 3fr 2fr;
+	}
 
-// .specialtyBedding__headings
+	display: grid;
+	gap: $spacer-lg;
+	grid-template-columns: var(--columns);
+}
 
 .specialtyBedding__productImage {
 	max-width: 100%;

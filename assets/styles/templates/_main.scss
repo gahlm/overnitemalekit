@@ -1,5 +1,6 @@
 .main {
 	@include gridInherit;
+	padding-top: $spacer-xxl;
 
 	> *,
 	.main-contained {
