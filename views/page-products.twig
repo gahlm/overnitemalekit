@@ -2,16 +2,19 @@
 
 {% block content %}
 	<h1>{{post.headline}}</h1>
-	{{post.meta('content')}}
+
+	{{ post.meta('content') }}
+
 	<div class="products__list">
 		{% for product in products %}
 			<a href="{{ product.link }}" class="products__category">
-				<img src="{{ Image(product.meta('image')).src }}" alt="">
+				<img src="{{ Image(product.meta('image')).src }}" alt="{{ Image(product.meta('image')).alt }}">
 
 				<div class="products__category--meta">{{ product.name }}</div>
 			</a>
 		{% endfor %}
 	</div>
+
 	{% include "templates/contact.twig" %}
 
 {% endblock %}
