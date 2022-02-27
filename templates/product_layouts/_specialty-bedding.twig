@@ -2,16 +2,14 @@
 {% set meta = product.meta('layout')[0] %}
 
 <div class="specialtyBedding__hero">
-	<hgroup class="specialtyBedding__headings">
-		<h1>{{ product.title }}</h1>
-		<h2>{{ product.descriptive_title }}</h2>
-		<p>{{ product.description }}</p>
-	</hgroup>
+	<div class="specialtyBedding__description">
+		<hgroup class="specialtyBedding__headings">
+			<h1>{{ product.title }}</h1>
+			<h2>{{ product.descriptive_title }}</h2>
+			<p>{{ product.description }}</p>
+		</hgroup>
 
-	{# TODO: firmness slider #}
-	<div>
-		Product Firmness:
-		{{ meta.firmness }}
+		{% include 'templates/product_layouts/partials/_firmness.twig' with {firmness: meta.firmness} %}
 	</div>
 
 	{# TODO: add srcset and sizes #}
