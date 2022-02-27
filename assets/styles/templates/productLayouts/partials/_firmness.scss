@@ -20,22 +20,6 @@
 		z-index: $index-initial - 1;
 	}
 
-	&__point {
-		display: flex;
-		flex-flow: column;
-		color: var(--firmness-color, $color-black);
-		z-index: inherit;
-
-		&::before {
-			content: "";
-			display: block;
-			height: $point-dimension;
-			width: $point-dimension;
-			border-radius: 50%;
-			background-color: var(--firmness-color, $color-black);
-		}
-	}
-
 	&__dot {
 		position: relative;
 		display: flex;
@@ -56,13 +40,37 @@
 		}
 	}
 
+	%firmnessLabel {
+		$gap: 12px;
+		display: flex;
+		margin-top: $gap;
+		flex-flow: column;
+		font-size: var(--font-heading-md);
+		font-weight: bold;
+		color: var(--firmness-color, $color-black);
+		z-index: inherit;
+
+		&::before {
+			content: "";
+			display: block;
+			position: relative;
+			top: -$gap;
+			height: $point-dimension;
+			width: $point-dimension;
+			border-radius: 50%;
+			background-color: var(--firmness-color, $color-black);
+		}
+	}
+
 	&__soft {
 		--firmness-color: #{$color-green};
+		@extend %firmnessLabel;
 		align-items: flex-start;
 	}
 
 	&__firm {
 		--firmness-color: #{$color-navy};
+		@extend %firmnessLabel;
 		align-items: flex-end;
 	}
 }
