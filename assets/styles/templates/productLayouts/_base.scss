@@ -1,4 +1,14 @@
-// .product__columns
+.product__columns {
+	--columns: 1fr;
+
+	display: grid;
+	gap: $spacer-md;
+	grid-template-columns: var(--columns);
+
+	@include query("large") {
+		--columns: 5fr 2fr;
+	}
+}
 // .product__main
 // .product__sidebar
 // .product__specifications

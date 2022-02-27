@@ -1,5 +1,6 @@
 %action {
 	display: inline-block;
+	width: max-content;
 	padding: $spacer-sm $spacer-md;
 	color: var(--action-text);
 	font-weight: bold;

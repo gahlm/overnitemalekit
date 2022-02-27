@@ -3,7 +3,7 @@
 
 <div class="specialtyBedding__hero">
 	<div class="specialtyBedding__description">
-		<hgroup class="specialtyBedding__headings">
+		<hgroup class="specialtyBedding__headings stack-xxl">
 			<h1>{{ product.title }}</h1>
 			<h2>{{ product.descriptive_title }}</h2>
 			<p>{{ product.description }}</p>
@@ -25,8 +25,8 @@
 
 	<div class="product__sidebar">
 		{% if meta.specifications %}
-			<div class="product__specifications">
-				<h2>{{ meta.specifications_title }}</h2>
+			<div class="product__specifications stack-md">
+				<h3 class="heading__content">{{ meta.specifications_title }}</h3>
 				<ul class="specifications__list">
 					{% for spec in meta.specifications %}
 						<li>
@@ -41,7 +41,7 @@
 		{% if meta.downloads %}
 			<div class="product__downloads">
 				{% for download in meta.downloads %}
-					<a class="download__button" href="{{ download.file }}" download={{ download.file_name }}>
+					<a class="download__button action__green" href="{{ download.file }}" download={{ download.file_name }}>
 						{{ download.title }}
 					</a>
 				{% endfor %}
