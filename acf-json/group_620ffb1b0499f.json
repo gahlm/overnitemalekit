@@ -80,8 +80,12 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645482085
+<<<<<<< HEAD
+    "modified": 1645664737
+=======
+    "modified": 1645718122
+>>>>>>> 63c2686f063391a6337e928e2d4d6008e103c6ec
 }

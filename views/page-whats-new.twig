@@ -1,5 +1,40 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	page-whats-new.twig
+	<div class="whats_new">
+		<h1>{{post.headline}}</h1>
+		<div class="whats_new_featured">
+			<div class="whats_new_featured_info">
+				{% set featured = post.meta('featured_product') %}
+				<article>
+					<h3 class="category">{{featured.category}}</h3>
+					<h2 class="whats_new_featured_title">{{featured.featured_product_title}}</h2>
+					<p class="description">{{featured.description}}</p>
+					<button class="learn_more">
+						<a href="{{featured.button}}">
+							Learn More
+						</a>
+					</button>
+				</article>
+			</div>
+			<div class="whats_new_featured_img">
+				<img src="{{ Image(featured.image).src }}" alt="{{ Image(featured.image).alt }}">
+			</div>
+		</div>
+		<hr>
+		<div class="whats_new_subproduct">
+			{% for sub in post.meta('subproduct') %}
+				{% set i = sub %}
+				<article class="subproduct">
+					<img src="{{Image(i.image).src}}" alt="">
+					<h3 class="category">{{i.category}}</h3>
+					<h2 class="name">{{i.name}}</h2>
+					<p class="description">{{i.description}}</p>
+					<button class="learn_more">
+						<a href="{{i.button}}">Learn More</a>
+					</button>
+				</article>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock %}

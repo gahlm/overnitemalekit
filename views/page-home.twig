@@ -25,7 +25,7 @@
 	<section class="home__productBlocks blocks">
 		{% for product in products %}
 			<div class="card card__product">
-				<img src="{{ product.image }}" alt="Image of {{ product.post_title }}"/>
+				<img src="{{ Image(product.meta('image')).src }}" alt="Image of {{ product.post_title }}">
 				<div class="card__product--meta">
 					<h2>{{ product.post_title }}</h2>
 					<a class="action__link" href="{{ product.link }}">Learn More</a>

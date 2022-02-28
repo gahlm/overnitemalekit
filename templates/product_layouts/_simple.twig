@@ -4,14 +4,17 @@
 
 <div class="content">
 	{% if children %}
-		<h2>Child Products:</h2>
-		<ul>
+
+
+		<div class="products__list">
 			{% for child in children %}
-				<li>
-					<a href="{{ child.link }}">{{ child.title }}</a>
-				</li>
+				<a href="{{ child.link }}" class="products__category">
+					<img src="{{ Image(child.meta('image')).src }}" alt="">
+
+					<div class="products__category--meta">{{ child.name }}</div>
+				</a>
 			{% endfor %}
-		</ul>
+		</div>
 	{% endif %}
 
 	{% if product.meta('content') %}
