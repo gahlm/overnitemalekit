@@ -2,15 +2,10 @@
 
 {% block content %}
 	<h1>{{post.headline}}</h1>
-<<<<<<< HEAD
-	{{post.meta('content')}}
-	<ul class="products__list">
-=======
 
 	{{ post.meta('content') }}
 
 	<div class="products__list">
->>>>>>> 1e4f125ff4e0733b442098cf3726a1d13e81aaa7
 		{% for product in products %}
 			<a href="{{ product.link }}" class="products__category">
 				<img src="{{ Image(product.meta('image')).src }}" alt="{{ Image(product.meta('image')).alt }}">
@@ -18,12 +13,8 @@
 				<div class="products__category--meta">{{ product.name }}</div>
 			</a>
 		{% endfor %}
-<<<<<<< HEAD
-	</ul>
-=======
 	</div>
 
->>>>>>> 1e4f125ff4e0733b442098cf3726a1d13e81aaa7
 	{% include "templates/contact.twig" %}
 
 {% endblock %}

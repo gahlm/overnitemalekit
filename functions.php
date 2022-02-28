@@ -154,17 +154,6 @@ function cc_mime_types( $mimes ){
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
 
-// function fix_svg() {
-//   echo '<style type="text/css">
-//         .attachment-266x266, .thumbnail img {
-//              width: 100% !important;
-//              height: auto !important;
-//         }
-//         </style>';
-// }
-// add_action( 'admin_head', 'fix_svg' );
-
-// removes default post editor
 function remove_editor() {
   remove_post_type_support('page', 'editor');
 }
