@@ -99,27 +99,27 @@
                             "mime_types": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_621feeab414d6",
+                    "label": "content",
+                    "name": "content",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
-        },
-        {
-            "key": "field_61cdfae05a7d7",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
-            "instructions": "About Us page content.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
         },
         {
             "key": "field_62140cf55b837",
@@ -377,5 +377,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645481311
+    "modified": 1646259907
 }
