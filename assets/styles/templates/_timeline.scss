@@ -32,6 +32,11 @@
 			h3 {
 				font-size: $font-size-small;
 			}
+			video {
+				margin-left: $spacer-xxl;
+				width: 75%;
+				object-fit: contain;
+			}
 			img {
 				margin-left: $spacer-xxl;
 				width: 75%;
