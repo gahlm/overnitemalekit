@@ -1,91 +1,83 @@
 {
-    "key": "group_620ffb1b0499f",
-    "title": "Product Layout - Specialty Bedding",
-    "fields": [
-        {
-            "key": "field_62140a73bd4a1",
-            "label": "Firmness",
-            "name": "firmness",
-            "type": "range",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": 1,
-            "max": 10,
-            "step": "",
-            "prepend": "Soft",
-            "append": "Firm"
-        },
-        {
-            "key": "field_6214027a20692",
-            "label": "Specifications",
-            "name": "specifications",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_6214016553433"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_621401d620691",
-            "label": "Downloads",
-            "name": "downloads",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_621400fc6904f"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": false,
-    "description": "",
-    "show_in_rest": 0,
-<<<<<<< HEAD
-    "modified": 1645664737
-=======
-    "modified": 1645718122
->>>>>>> 63c2686f063391a6337e928e2d4d6008e103c6ec
+  "key": "group_620ffb1b0499f",
+  "title": "Product Layout - Specialty Bedding",
+  "fields": [
+    {
+      "key": "field_62140a73bd4a1",
+      "label": "Firmness",
+      "name": "firmness",
+      "type": "range",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "min": 1,
+      "max": 10,
+      "step": "",
+      "prepend": "Soft",
+      "append": "Firm"
+    },
+    {
+      "key": "field_6214027a20692",
+      "label": "Specifications",
+      "name": "specifications",
+      "type": "clone",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "clone": ["group_6214016553433"],
+      "display": "seamless",
+      "layout": "block",
+      "prefix_label": 0,
+      "prefix_name": 0
+    },
+    {
+      "key": "field_621401d620691",
+      "label": "Downloads",
+      "name": "downloads",
+      "type": "clone",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "clone": ["group_621400fc6904f"],
+      "display": "seamless",
+      "layout": "block",
+      "prefix_label": 0,
+      "prefix_name": 0
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "post"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": false,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1645718122
 }
