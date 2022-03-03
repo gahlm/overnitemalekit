@@ -96,13 +96,15 @@ class ModularSite extends TimberSite {
 
 	// Unit conversion for sustainability module
 	public static function sustainability_conversion( $date, $rate ) {
+		$past_deeds = 1613760000;
 		$origin = new DateTime($date);
 		$target = new DateTime('now');
 		$interval = $origin->diff($target);
 		$totalHours = ($interval->y * 365 * 24) + ($interval->m * 30 * 24) + ($interval->d + 24) + $interval->h;
-		// TODO: add initial number
+		// TODO: fix it's calculating per hour not per min
 		return $totalHours * $rate;
 	}
+
 }
 
 new ModularSite();
