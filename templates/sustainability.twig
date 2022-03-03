@@ -1,21 +1,45 @@
 {# depends on `options` fields in context #}
+{% set rate = options.sustainability__calc.rate %}
+{% set iDate = options.sustainability__calc.initialDate %}
 
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+
+const sustainNum = document.querySelector('.sustainability__number')
+let rate = {{ rate }}
+let orgDate = new Date(2010, 1, 1, 00, 00, 0)
+let orgTime = orgDate.getTime()
+let orgVal = 1613760000
+
+
+function sustainability() {
+let today = new Date().getTime();
+let t = today - orgTime
+let diff = t / (1000 * 60)
+let currentSustain = Math.round(diff * rate)
+sustainNum.innerHTML = `${
+currentSustain.toLocaleString('en-US')
+} lbs.`
+}
+let countup = setInterval(sustainability, 1000)
+sustainability()
+})
+</script>
 <div class="sustainability">
 	<div class="sustainability__inner">
 		<h2 class="heading__lg">{{ options.sustainability__title }}</h2>
 		<p>{{ options.sustainability__description }}</p>
 
 		<div>
-			<p class="sustainability__number">
-				{{ function(
-					['ModularSite', 'sustainability_conversion'], 
-					options.sustainability__calc.initialDate, 
-					options.sustainability__calc.rate)
-				}}
-			</p>
+			<p class="sustainability__number">0</p>
 			<p class="text__strong">{{ options.sustainability__context }}</p>
 		</div>
 
 		<a class="action__blue" href="/about">Learn More</a>
 	</div>
 </div>
+{# {{ function(
+						['ModularSite', 'sustainability_conversion'], 
+						options.sustainability__calc.initialDate, 
+						options.sustainability__calc.rate)
+					}} #}

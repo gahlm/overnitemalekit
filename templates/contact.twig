@@ -13,8 +13,8 @@
 		</div>
 
 		<div class="green__contact__inner__form">
-			{% if post.form %}
-				{{ post.form|shortcodes }}
+			{% if options.form_shortcode %}
+				{{ options.form_shortcode|shortcodes }}
 			{% endif %}
 		</div>
 	</div>
