@@ -9,6 +9,12 @@
 {% endblock %}
 
 <main role="main" class="main" id="main">
+{# {% block breadcrumbs %}
+          {% if breadcrumbs %}
+              {{ breadcrumbs }}
+          {% endif %} 
+      {% endblock %} #}
+{{ my_breadcrumbs() }}
 	{% block content %}
 		Sorry, no content
 	{% endblock %}
