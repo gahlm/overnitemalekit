@@ -10,6 +10,9 @@
 		padding-top: $spacer-xxl;
 		padding-bottom: $spacer-xxl;
 		text-align: center;
+		h2 {
+			color: white;
+		}
 
 		> :not(:last-child) {
 			margin-bottom: $spacer-xl;

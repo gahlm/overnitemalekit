@@ -2,8 +2,8 @@
 
 {% block content %}
 	<div class="whats_new">
-		<h1>{{post.headline}}</h1>
-		<div class="whats_new_featured">
+		<h1 class="heading__hero">{{post.headline}}</h1>
+		<div class=" whats_new_featured">
 			<div class="whats_new_featured_info">
 				{% set featured = post.meta('featured_product') %}
 				<article>
@@ -37,4 +37,6 @@
 			{% endfor %}
 		</div>
 	</div>
+	{% include "templates/contact.twig" %}
+
 {% endblock %}

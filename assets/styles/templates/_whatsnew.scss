@@ -9,9 +9,7 @@
 	}
 	h1 {
 		grid-row: 1;
-		font-size: $font-size-heading-hero;
-		margin: $spacer-max 0 $spacer-lg 0;
-		color: $color-green;
+		margin: 0 0 $spacer-lg 0;
 	}
 	&_featured {
 		grid-row: 2;

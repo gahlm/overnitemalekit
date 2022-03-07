@@ -3,11 +3,11 @@
     "title": "Page - Contact",
     "fields": [
         {
-            "key": "field_61ca8ab9a2ba1",
-            "label": "Contact Form Shortcode",
-            "name": "form",
-            "type": "text",
-            "instructions": "Shortcode from Ninja Forms",
+            "key": "field_62264c56d10bf",
+            "label": "Content",
+            "name": "content",
+            "type": "textarea",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,9 +17,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -40,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1640663901
+    "modified": 1646677280
 }

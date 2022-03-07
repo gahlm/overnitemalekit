@@ -1,7 +1,10 @@
 .heading__hero {
-	font-size: var(--font-heading-hero);
 	font-weight: bold;
 	color: $color-green;
+	font-size: var(--font-heading-lg);
+	@include query("medium") {
+		font-size: var(--font-heading-hero);
+	}
 }
 
 .heading__xl {

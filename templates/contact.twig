@@ -1,21 +1,29 @@
-{#
-	if useGlobal bool = true
-		set heading = globalHeading
-	else
-		set from post
- #}
-
-<div class="green__contact">
-	<div class="green__contact__inner">
-		<div class="green__contact__inner__text">
-			<h2>{{post.get_field('contact_heading')}}</h2>
-			<p>{{post.get_field('contact_text')}}</p>
-		</div>
-
-		<div class="green__contact__inner__form">
-			{% if options.form_shortcode %}
-				{{ options.form_shortcode|shortcodes }}
-			{% endif %}
+{% if post.add_contact_form == true %}
+	<div class="green__contact">
+		<div class="green__contact__inner">
+			<div class="green__contact__inner__text">
+				<h2>{{post.contact_heading}}</h2>
+				<p>{{post.contact_text}}</p>
+			</div>
+			<div class="green__contact__inner__form">
+				{% if post.form %}
+					{{ post.form|shortcodes }}
+				{% endif %}
+			</div>
 		</div>
 	</div>
-</div>
+{% else %}
+	<div class="green__contact">
+		<div class="green__contact__inner">
+			<div class="green__contact__inner__text">
+				<h2>{{options.contact_heading}}</h2>
+				<p>{{options.contact_text}}</p>
+			</div>
+			<div class="green__contact__inner__form">
+				{% if options.form_shortcode %}
+					{{ options.form_shortcode|shortcodes }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endif %}

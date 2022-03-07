@@ -27,7 +27,7 @@
 		display: flex;
 		justify-self: flex-end;
 		align-self: flex-start;
-		height: $header-height;
+		height: 76px;
 	}
 
 	&__nav {
@@ -35,6 +35,7 @@
 		display: flex;
 		justify-content: flex-end;
 		align-items: flex-end;
+		text-align: right;
 
 		li {
 			display: inline-block;
