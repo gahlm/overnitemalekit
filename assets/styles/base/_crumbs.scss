@@ -2,6 +2,7 @@
 .breadcrumbs {
 	display: none;
 	@include query("medium") {
+		display: initial;
 		margin: $spacer-max 0 $spacer-md 0;
 		font-size: $font-size-small;
 		a:first-child {
