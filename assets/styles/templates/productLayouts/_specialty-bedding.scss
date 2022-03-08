@@ -11,4 +11,8 @@
 
 .specialtyBedding__productImage {
 	max-width: 100%;
+
+	@include query("large", "max") {
+		display: none;
+	}
 }
