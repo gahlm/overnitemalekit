@@ -1,16 +1,12 @@
-<h1 class="heading__hero">{{ product.title }}</h1>
-{# <h2>{{ product.descriptive_title }}</h2> #}
-<p>{{ product.description }}</p>
+<h1 class="heading__hero stack-md">{{ product.title }}</h1>
+<p class="stack-md">{{ product.description }}</p>
 
 <div class="content">
 	{% if children %}
-
-
 		<div class="products__list">
 			{% for child in children %}
 				<a href="{{ child.link }}" class="products__category">
 					<img src="{{ Image(child.meta('image')).src }}" alt="">
-
 					<div class="products__category--meta">{{ child.name }}</div>
 				</a>
 			{% endfor %}
