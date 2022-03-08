@@ -10,7 +10,7 @@
 					{% for item in options.contact_phone_numbers %}
 						<li>
 							<a href="tel:{{ item.number }}">
-								{{ item.type }}:
+								<strong>{{ item.type }}</strong>:
 								{{ item.number|format_phone_number }}
 							</a>
 						</li>

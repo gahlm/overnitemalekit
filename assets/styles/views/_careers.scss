@@ -8,7 +8,7 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: min-content;
 	gap: $spacer-xl;
-	margin-top: $spacer-xl;
+	margin: $spacer-xl 0 $spacer-xl 0;
 }
 
 .career {
@@ -52,5 +52,19 @@
 	&__description {
 		margin-top: $spacer-md;
 		margin-bottom: $spacer-sm;
+	}
+	&__details {
+		p {
+			margin-top: $spacer-md;
+			margin-bottom: $spacer-sm;
+		}
+		ul {
+			padding-left: $spacer-lg;
+		}
+	}
+	&__compensation {
+		margin-top: $spacer-lg;
+		font-weight: $font-bold;
+		color: var(--text-light-blue);
 	}
 }

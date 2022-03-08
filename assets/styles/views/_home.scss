@@ -6,24 +6,39 @@
 	@include query("x-large") {
 		--sliderDimension: 450px;
 	}
+	background: url($home-wave) no-repeat;
+	background-size: auto 40%;
+	background-position: 0% 90%;
+	@include query("medium") {
+		background-size: contain;
+	}
 }
 
 .hero__inner {
 	grid-column: container;
 	display: grid;
 	grid-template-columns: 1fr min-content;
-	height: 75vh;
+	height: 50vh;
+	@include query("medium") {
+		align-items: center;
+	}
 }
 
 .hero__meta {
 	display: flex;
 	flex-direction: column;
 	gap: $spacer-md;
-	margin-top: 10vh;
+}
+.hero__content {
+	padding-right: $spacer-xl;
 }
 
 .hero__title {
 	color: var(--text-green);
+	font-size: $font-size-heading-xl;
+	@include query("medium") {
+		font-size: $font-size-heading-hero;
+	}
 }
 
 .hero__subtitle {
@@ -33,9 +48,11 @@
 
 .hero__slider {
 	display: none;
+	vertical-align: middle;
 
 	@include query("large") {
 		display: initial;
+		justify-self: center;
 	}
 
 	.sss {

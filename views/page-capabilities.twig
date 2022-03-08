@@ -3,7 +3,7 @@
 {% block content %}
 	<div class="capability_wave"></div>
 	<div class="capability">
-		<h1 class="heading__xl">Capabilities</h1>
+		<h1 class="heading__hero">Capabilities</h1>
 		{% for row in post.get_field('capability') %}
 
 			<div class="capability__blocks">
@@ -19,4 +19,7 @@
 			</div>
 		{% endfor %}
 	</div>
+	{% include "templates/contact.twig" %}
+
+
 {% endblock %}

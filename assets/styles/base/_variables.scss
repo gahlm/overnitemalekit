@@ -2,7 +2,7 @@ $breakpoints: (
 	"small": 420px,
 	"medium": 780px,
 	"large": 1160px,
-	"x-large": 1400px
+	"x-large": 1400px,
 );
 
 // spacers
@@ -15,7 +15,10 @@ $spacer-xxl: 60px;
 $spacer-max: 120px;
 
 // global heights
-$header-height: 120px;
+$header-padding: $spacer-xl;
+$header-padding-small: $spacer-md;
+$logo-height: 80px;
+$logo-height-small: 40px;
 
 // font properties
 $font-size-small: 16px;
@@ -59,9 +62,18 @@ $color-baby-blue: #9acadf;
 $color-rich-green: #15603a;
 $color-steel-blue: #b0b6c7;
 
+$header-shadow: 0px 1px 10px 0px $color-black-t30;
+
+// transitions
+$transition-nav: 0.125s ease-in-out;
+
+// urls
 $looping-dots: "/wp-content/uploads/2022/02/infinite-loop.svg";
 $smaller-wave: "/wp-content/uploads/2022/01/Loop.svg";
 $green-slope-bg: url("/wp-content/uploads/2022/01/wavebg-2.svg");
 $no-loop: "/wp-content/uploads/2022/01/NoLoop.svg";
 $stationary-wave: "/wp-content/uploads/2022/02/smallhelix.svg";
 $sustainability: "/wp-content/uploads/2022/02/Sustainability.svg";
+$home-crumb: "/wp-content/uploads/2022/03/home-link.svg";
+$child-crumb: "/wp-content/uploads/2022/03/Child-Link.svg";
+$home-wave: "/wp-content/uploads/2022/03/homewave_2.svg";

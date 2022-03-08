@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="header">
 	<a href="#main" class="header__skip-nav">Skip Navigation</a>
 
 	<div class="header__inner">
@@ -7,6 +7,12 @@
 		</a>
 		<nav class="header__nav">
 			<ul>
+				<li class="show-at-large">
+					<button id="megaMenuTrigger" class="action__nav">Products</button>
+				</li>
+				<li class="hide-at-large">
+					<a href="/products">Products</a>
+				</li>
 				{% for item in header_nav_menu.get_items %}
 					<li>
 						<a href="{{ item.link }}">{{ item.title }}</a>
@@ -15,5 +21,15 @@
 				{% endfor %}
 			</ul>
 		</nav>
+	</div>
+	<div id="megaMenu" class="header__megaMenu">
+		<div class="megaMenu__products">
+			{% for product in products %}
+				<a class="megaMenu__item" href="{{ product.link }}">
+					<img src="{{ Image(product.meta('image')).src }}" alt="Image of {{ product.post_title }}">
+					<p>{{ product.post_title }}</p>
+				</a>
+			{% endfor %}
+		</div>
 	</div>
 </header>

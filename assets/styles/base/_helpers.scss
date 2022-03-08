@@ -1,0 +1,11 @@
+.hide-at-large {
+	@include query("large") {
+		display: none;
+	}
+}
+
+.show-at-large {
+	@include query("large", "max") {
+		display: none;
+	}
+}

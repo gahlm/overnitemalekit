@@ -28,7 +28,7 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	font-size: 16px;
-
+	overflow-x: hidden;
 	// prevents the window from being entirely squished and unusable
 	min-width: 320px;
 }
@@ -99,6 +99,9 @@ legend {
 	margin: 0;
 }
 
+p{
+	line-height: 1.5em;
+}
 i,
 cite {
 	font-style: normal;

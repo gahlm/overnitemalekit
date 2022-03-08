@@ -2,8 +2,8 @@
 
 {% block content %}
 
-	<h1>{{post.meta('headline')}}</h1>
-	<div class="two_column">
+	<h1 class="heading__hero">{{post.meta('headline')}}</h1>
+	<div class=" two_column">
 		{% for row in post.meta('repeater') %}
 
 			<div class="column_1">

@@ -3,12 +3,19 @@
 	{% include 'html-header.twig' %}
 
 	{% block head %}{% endblock %}
-</head>{% endblock %}<body data-template="base.twig" class="body">
+</head>{% endblock %}<body data-template="base.twig" class="body" id="body">
+
 {% block header %}
 	{% include 'header.twig' %}
 {% endblock %}
 
 <main role="main" class="main" id="main">
+{# {% block breadcrumbs %}
+          {% if breadcrumbs %}
+              {{ breadcrumbs }}
+          {% endif %} 
+      {% endblock %} #}
+{{ my_breadcrumbs() }}
 	{% block content %}
 		Sorry, no content
 	{% endblock %}

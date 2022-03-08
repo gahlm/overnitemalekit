@@ -99,27 +99,27 @@
                             "mime_types": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_621feeab414d6",
+                    "label": "content",
+                    "name": "content",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
-        },
-        {
-            "key": "field_61cdfae05a7d7",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
-            "instructions": "About Us page content.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
         },
         {
             "key": "field_62140cf55b837",
@@ -285,63 +285,6 @@
                     "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_620ab7be52031",
-            "label": "Contact Heading",
-            "name": "contact_heading",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_620ab7d3f9f36",
-            "label": "Contact Text",
-            "name": "contact_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_61ce02ba3d7db",
-            "label": "Contact Form Shortcode",
-            "name": "form",
-            "type": "text",
-            "instructions": "Shortcode from Ninja Forms",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -366,7 +309,6 @@
         "comments",
         "revisions",
         "slug",
-        "author",
         "format",
         "page_attributes",
         "featured_image",
@@ -377,5 +319,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1645481311
+    "modified": 1646348959
 }

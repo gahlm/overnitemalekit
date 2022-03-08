@@ -3,11 +3,21 @@
 	overflow: hidden;
 	background-color: $color-green;
 	margin-top: $spacer-max;
+	.nf-response-msg {
+		padding: $spacer-md;
+		color: white;
+		font-weight: $font-bold;
+	}
 	@include query("large") {
 		background-image: $green-slope-bg;
 		background-size: cover;
 		background-repeat: no-repeat;
-		background-color: white;
+		background-color: initial;
+		.nf-response-msg {
+			padding: $spacer-max;
+			color: white;
+			font-weight: $font-bold;
+		}
 	}
 	&__inner {
 		grid-template-rows: 1fr;

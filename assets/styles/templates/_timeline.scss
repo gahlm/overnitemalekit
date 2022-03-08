@@ -22,7 +22,12 @@
 			margin-bottom: $spacer-xl;
 		}
 		img {
-			width: 100%;
+			width: 70%;
+			object-fit: contain;
+			overflow: hidden;
+		}
+		video {
+			width: 70%;
 			object-fit: contain;
 			overflow: hidden;
 		}
@@ -31,6 +36,11 @@
 			padding-top: $spacer-xxl;
 			h3 {
 				font-size: $font-size-small;
+			}
+			video {
+				margin-left: $spacer-xxl;
+				width: 75%;
+				object-fit: contain;
 			}
 			img {
 				margin-left: $spacer-xxl;

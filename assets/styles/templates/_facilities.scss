@@ -1,16 +1,17 @@
 .facilities {
 	display: grid;
 	grid-template-columns: 1fr;
-	margin-bottom: $spacer-max;
+
 	gap: $spacer-xl;
 
 	@include query("medium") {
 		grid-template-columns: 1fr 2fr;
-	}
+		margin-bottom: $spacer-max;
 
-	&__meta {
-		:not(:last-child) {
-			margin-bottom: $spacer-xxl;
+		&__meta {
+			:not(:last-child) {
+				margin-bottom: $spacer-xxl;
+			}
 		}
 	}
 }
