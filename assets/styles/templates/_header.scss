@@ -21,7 +21,7 @@
 	padding-bottom: var(--navPadding);
 	background: var(--bg-white);
 	border-bottom: 1px solid var(--navBorderColor);
-	z-index: $index-foreground;
+	z-index: $index-header;
 	transition: $transition-nav;
 
 	&__logo {
@@ -59,7 +59,7 @@
 			position: absolute;
 			background-color: white;
 			padding: $spacer-sm;
-			z-index: $index-foreground;
+			z-index: $index-header;
 		}
 	}
 
@@ -94,7 +94,7 @@
 		background: white;
 		color: black;
 		font-weight: bold;
-		z-index: $index-foreground;
+		z-index: $index-header;
 
 		&:focus {
 			transform: translateY(0);
