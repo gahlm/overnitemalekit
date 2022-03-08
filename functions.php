@@ -36,12 +36,10 @@ class ModularSite extends TimberSite {
 		$context['site'] = $this;
 		$context['options'] = get_fields('options');
 
+
 		$history = array(
-			// Get post type project
 			'post_type' => 'event',
-			// Get all posts
 			'posts_per_page' => -1,
-			// Order by post date
 			'meta_key' => 'year',
 			'orderby'	=> 'meta_value',
 			'order' => 'ASC'
@@ -50,31 +48,27 @@ class ModularSite extends TimberSite {
 
 
 		$facilities = array(
-			// Get post type project
 			'post_type' => 'Facility',
-			// Get all posts
 			'posts_per_page' => -1,
 			'meta_key' => 'facility_name',
 			'orderby'	=> 'meta_value',
 			'order' => 'ASC'
-			// 'orderby' => array(
-			//     'title&order' => 'ASC'
-			// )
 		);
 		$context['facilities'] = Timber::get_posts( $facilities );
 
 
-		$args = array(
+		$products = array(
 			'post_type' => 'product',
 			'orderby' => 'meta_order',
 			'order' => 'ASC',
 			'post_parent' => 0,
 		);
-		$products = Timber::get_posts( $args );
-		$context['products'] = $products;
-          if ( function_exists( 'yoast_breadcrumb' ) ) {
-      $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
-  }
+		$context['products'] = Timber::get_posts( $products );
+
+        
+        if ( function_exists( 'yoast_breadcrumb' ) ) {
+            $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
+        }
 		
 		return $context;
 	}
@@ -128,8 +122,8 @@ if( function_exists('acf_add_options_page') ) {
 // load application scripts
 function app_scripts() {
 	wp_enqueue_script('jquery');
-  wp_enqueue_style('app-css', (get_template_directory_uri() . "/dist/application.css"), null, null);
-  wp_enqueue_script('app-js', (get_template_directory_uri() . "/dist/application.js"), ['jquery'], null, true);
+    wp_enqueue_style('app-css', (get_template_directory_uri() . "/dist/application.css"), null, null);
+    wp_enqueue_script('app-js', (get_template_directory_uri() . "/dist/application.js"), ['jquery'], null, true);
 }
 
 add_action('wp_enqueue_scripts', 'app_scripts');
@@ -141,6 +135,8 @@ function app_get_types() {
 }
 
 add_action('init', 'app_get_types');
+
+
 // Allow Svg Upload In Wordpress Wp v4.7.1 and higher
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
   $filetype = wp_check_filetype( $filename, $mimes );
@@ -152,17 +148,21 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 
 }, 10, 4 );
 
+
 function cc_mime_types( $mimes ){
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
+
 add_filter( 'upload_mimes', 'cc_mime_types' );
+
 
 function remove_editor() {
   remove_post_type_support('page', 'editor');
 }
 
 add_action('admin_init', 'remove_editor');
+
 
 function fix_svg() {
   echo '<style type="text/css">
@@ -172,7 +172,9 @@ function fix_svg() {
         }
         </style>';
 }
+
 add_action( 'admin_head', 'fix_svg' );
+
 
 /*=============================================
                 BREADCRUMBS
@@ -319,6 +321,5 @@ function my_breadcrumbs() {
         }
  
         echo '</div><!-- .breadcrumbs -->';
- 
     }
 }

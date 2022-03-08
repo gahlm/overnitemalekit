@@ -1,14 +1,12 @@
-// vendor
-// @import "../vendor/sss/sss";
-
 // base settings
 @import "base/functions";
 @import "base/variables";
-@import "base/themes";
+@import "base/root";
 @import "base/mixins";
 @import "base/query";
 @import "base/base";
 @import "base/typography";
+@import "base/helpers";
 @import "base/layout";
 @import "base/crumbs";
 
