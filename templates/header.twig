@@ -8,20 +8,47 @@
 		<nav class="header__nav">
 			<ul>
 				<li class="show-at-large">
-					<button id="megaMenuTrigger" class="action__nav">Products</button>
+					<button id="megaMenuTrigger" class="action__nav ">Products</button>
+
 				</li>
-				<li class="hide-at-large">
-					<a href="/products">Products</a>
-				</li>
+				{# <li class="hide-at-large">
+																																																																													<a href="/products">Products</a>
+																																																																												</li> #}
 				{% for item in header_nav_menu.get_items %}
-					<li>
-						<a href="{{ item.link }}">{{ item.title }}</a>
-						{% include "menu.twig" with {'menu': item.get_children} %}
-					</li>
+					{% if item.title == 'Products'%}
+						<li class="hide-at-large">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+							{% include "menu.twig" with {'menu': item.get_children} %}
+						</li>
+					{% else %}
+						<li>
+							<a href="{{ item.link }}">{{ item.title }}</a>
+							{% include "menu.twig" with {'menu': item.get_children} %}
+						</li>
+
+					{% endif %}
+
 				{% endfor %}
 			</ul>
 		</nav>
+		{# Mobile Menu Styling #}
+		<button class="nav-toggle hide-at-large ">
+			<i class="fas fa-bars"></i>
+		</button>
 	</div>
+	<nav class="mobile-nav">
+		<ul>
+			{% for item in header_nav_menu.get_items %}
+				<li>
+					<a href="{{ item.link }}">{{ item.title }}</a>
+					{% include "menu.twig" with {'menu': item.get_children} %}
+				</li>
+			{% endfor %}
+		</ul>
+		<a href="/contact" class="action__blue">Contact Us</a>
+
+	</nav>
+
 	<div id="megaMenu" class="header__megaMenu">
 		<div class="megaMenu__products">
 			{% for product in products %}

@@ -2,7 +2,8 @@
 
 {% block content %}
 	{% set hero = post.get_field('hero') %}
-	<section class="home__hero">
+	<section class="home__hero aboutus">
+
 		<div class="hero__inner">
 			<div class="hero__meta">
 				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
@@ -20,11 +21,9 @@
 				{% endfor %}
 			</div>
 		</div>
-
-		{# TODO: add hero graphic here #}
 	</section>
 
-	<section class="home__companyBlocks blocks">
+	<section class="home__companyBlocks blocks ">
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
