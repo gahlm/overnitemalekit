@@ -307,6 +307,11 @@
 					{% if facility.domestic_or_foreign == 'foreign' %}
 						<div class="facility-country {{facility.city|lower}}">
 							<div class="facility-location-list">
+								{% if facility.city|lower == 'china' %}
+									<img class="country" src="http://future-foam.local/wp-content/uploads/2022/03/map-china1.png">
+								{% else %}
+									<img class="country" src="/wp-content/uploads/2022/03/map-europe.png">
+								{% endif %}
 								<article class="facility-location {{facility.classes}} {% for capability in facility.capabilities %} {{capability}} {% endfor %} {{facility.distribution_center}}">
 									<h2>{{facility.facility_name}}</h2>
 									<p>{{facility.address}}
