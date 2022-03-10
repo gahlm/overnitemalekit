@@ -101,6 +101,6 @@
 .aboutus {
 	height: 100vh;
 	@include query("medium") {
-		height: inherit;
+		height: 70vh;
 	}
 }

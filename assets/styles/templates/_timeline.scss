@@ -113,6 +113,14 @@
 	overflow: hidden;
 	background: url($stationary-wave) no-repeat;
 	background-size: cover;
+	@include query("medium") {
+		@media (max-height: 720px) {
+			padding-top: $spacer-max;
+		}
+		@media (max-height: 950px) {
+			padding-top: $spacer-max;
+		}
+	}
 
 	.dotcontainer {
 		grid-column: container;
@@ -176,9 +184,7 @@
 		background-repeat: repeat-x;
 		background-position: 0% 50%;
 		height: 35vh;
-		@include query("medium") {
-			width: 15500px;
-		}
+		width: 15500px;
 		margin-top: $spacer-sm;
 		margin-bottom: $spacer-xl;
 		transition: linear ease 0.5s;

@@ -44,6 +44,11 @@
 		display: grid;
 		grid-template-rows: 1fr 100px;
 		text-align: center;
+		height: 30vh;
+		@include query("medium") {
+			height: 100%;
+		}
+
 		box-shadow: 1px 1px 4px $color-black-t10;
 		img {
 			grid-row: 1;
