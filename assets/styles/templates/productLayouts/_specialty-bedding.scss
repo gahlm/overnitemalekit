@@ -16,3 +16,12 @@
 		display: none;
 	}
 }
+.product_content {
+	display: grid;
+	padding-right: $spacer-xl;
+	grid-template-columns: 1fr;
+	strong {
+		color: $color-green;
+		padding-top: $spacer-lg;
+	}
+}

@@ -28,7 +28,8 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	font-size: 16px;
-	overflow-x: hidden;
+	width: 100vw;
+	overflow-x: hidden !important;
 	// prevents the window from being entirely squished and unusable
 	min-width: 320px;
 }
@@ -43,6 +44,7 @@ select {
 	font-family: $font-stack;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
+	// overflow-x: hidden;
 }
 
 article,
@@ -99,7 +101,7 @@ legend {
 	margin: 0;
 }
 
-p{
+p {
 	line-height: 1.5em;
 }
 i,

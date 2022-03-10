@@ -176,7 +176,9 @@
 		background-repeat: repeat-x;
 		background-position: 0% 50%;
 		height: 35vh;
-		width: 15500px;
+		@include query("medium") {
+			width: 15500px;
+		}
 		margin-top: $spacer-sm;
 		margin-bottom: $spacer-xl;
 		transition: linear ease 0.5s;

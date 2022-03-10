@@ -1,5 +1,6 @@
 // Slider functionality for the history page. Adds and removes classes within the twig for loop using active, next and last to loop through slide content.
 // access variables
+
 const slide = document.querySelectorAll(".timeline-slide");
 const slider = document.querySelector("timeline-slider");
 const prevBtn = document.querySelector(".prev");

@@ -1,7 +1,7 @@
 {# get product layout specific fields #}
 {% set meta = product.meta('layout')[0] %}
 
-<div class="specialtyBedding__hero stack-section">
+<div class="specialtyBedding__hero">
 	<div class="specialtyBedding__description">
 		<hgroup class="stack-xxl">
 			<h1 class="heading__hero stack-lg">{{ product.title }}</h1>
@@ -15,10 +15,11 @@
 	{# TODO: add srcset and sizes #}
 	<img class="specialtyBedding__productImage" src="{{ product_image.src }}" alt="{{ product_image.alt }}"/>
 </div>
-
+<div class="product_page_hero">
+</div>
 <div class="product__columns">
 	{% if product.meta('content') %}
-		<div class="content product__main">
+		<div class="product_content">
 			{{ product.meta('content') }}
 		</div>
 	{% endif %}

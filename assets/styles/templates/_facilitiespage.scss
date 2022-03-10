@@ -104,7 +104,13 @@ h2 {
 // Location List Styling
 .facility-us-list-inner {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
+	max-width: 80vw;
+	font-size: 0.8em;
+	@include query("medium") {
+		font-size: initial;
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 // Individual Locations
@@ -117,6 +123,7 @@ h2 {
 		display: grid;
 		grid-template-columns: 0.25fr 3fr;
 		padding-bottom: $spacer-sm;
+		max-width: 90vw;
 		.dot {
 			grid-column-start: 1;
 			display: inline;
@@ -135,6 +142,9 @@ h2 {
 				z-index: 14;
 			}
 		}
+		.details {
+			max-width: 100%;
+		}
 		a {
 			color: $color-light-blue;
 			font-style: italic;
@@ -145,4 +155,33 @@ h2 {
 		}
 	}
 	padding: $spacer-md 0 $spacer-md 0;
+}
+
+.facility-international-list {
+	.facility-country {
+		max-height: 30vh;
+	}
+	.facility-location-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		max-width: 80vw;
+		font-size: 0.8em;
+		img {
+			display: none;
+		}
+		@include query("medium") {
+			grid-template-columns: 1fr 2fr;
+			font-size: initial;
+			max-width: initial;
+			img {
+				grid-column-start: 1;
+				display: inline;
+				width: auto;
+				max-height: 50%;
+			}
+			article {
+				grid-column-start: 2;
+			}
+		}
+	}
 }

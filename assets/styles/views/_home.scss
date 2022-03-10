@@ -48,11 +48,11 @@
 
 .hero__slider {
 	display: none;
-	vertical-align: middle;
+	// vertical-align: middle;
 
 	@include query("large") {
 		display: initial;
-		justify-self: center;
+		// justify-self: center;
 	}
 
 	.sss {
@@ -96,5 +96,11 @@
 				margin-bottom: $spacer-sm;
 			}
 		}
+	}
+}
+.aboutus {
+	height: 100vh;
+	@include query("medium") {
+		height: inherit;
 	}
 }

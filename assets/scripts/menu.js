@@ -2,7 +2,7 @@
 const menuButton = document.getElementById("megaMenuTrigger");
 menuButton.addEventListener(
 	"click",
-	function (event) {
+	function(event) {
 		event.preventDefault();
 		document
 			.getElementById("megaMenu")
@@ -14,7 +14,7 @@ menuButton.addEventListener(
 // handle nav resizing based on scroll position
 const body = document.getElementById("body");
 const triggerNav = 120;
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", function() {
 	const pos = window.scrollY;
 
 	const scrollingDownAndInactive =
@@ -29,4 +29,12 @@ document.addEventListener("scroll", function () {
 	} else {
 		return;
 	}
+});
+
+const navToggle = document.querySelector(".nav-toggle");
+const mobileNav = document.querySelector(".mobile-nav");
+
+navToggle.addEventListener("click", function() {
+	mobileNav.classList.toggle("toggled");
+	navToggle.classList.toggle("move");
 });

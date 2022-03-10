@@ -12,8 +12,10 @@
 }
 
 .header {
+	grid-column: container;
 	@include gridInherit();
 	position: fixed;
+	width: 100vw;
 	top: 0;
 	right: 0;
 	left: 0;
@@ -32,12 +34,18 @@
 	&__inner {
 		grid-column: container;
 		display: grid;
-		grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+		grid-template-columns: 2fr 1fr;
+		@include query("large") {
+			grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+		}
 		align-items: center;
 	}
 
 	&__nav {
-		display: contents;
+		display: none;
+		@include query("large") {
+			display: contents;
+		}
 
 		ul {
 			display: flex;
@@ -64,21 +72,25 @@
 	}
 
 	&__megaMenu {
-		grid-column: viewport;
-		position: absolute;
-		top: calc(var(--navPadding) * 2 + var(--logoHeight));
-		left: 0;
-		right: 0;
-		background: white;
-		border-bottom: 1px solid $color-light-grey;
-		height: 300px;
-		opacity: 0;
-		transition: $transition-nav;
-		visibility: hidden;
+		display: none;
+		@include query("large") {
+			display: initial;
+			grid-column: viewport;
+			position: absolute;
+			top: calc(var(--navPadding) * 2 + var(--logoHeight));
+			left: 0;
+			right: 0;
+			background: white;
+			border-bottom: 1px solid $color-light-grey;
+			height: 300px;
+			opacity: 0;
+			transition: $transition-nav;
+			visibility: hidden;
 
-		&--is-open {
-			visibility: visible;
-			opacity: 1;
+			&--is-open {
+				visibility: visible;
+				opacity: 1;
+			}
 		}
 	}
 
