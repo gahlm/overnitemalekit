@@ -10,19 +10,24 @@
 			padding-left: 15px;
 		}
 		a {
-			background-color: $color-light-blue;
-			color: $color-white;
+			// background-color: $color-light-blue;
+			// color: $color-white;
 			margin-right: $spacer-sm;
 			padding: 5px $spacer-sm 5px $spacer-sm;
 		}
 		span {
-			background-color: $color-light-blue;
-			color: $color-white;
+			// background-color: $color-light-blue;
+			// color: $color-white;
 			margin-right: $spacer-sm;
 			padding: 5px $spacer-sm 5px $spacer-sm;
 			&.current {
 				border-radius: 0 50px 50px 0;
+				text-decoration: underline;
 			}
 		}
+	}
+
+	@include query("medium", "max") {
+		display: none;
 	}
 }

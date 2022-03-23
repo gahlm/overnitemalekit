@@ -27,7 +27,21 @@
 	font-weight: bold;
 }
 
+.heading__content {
+	@extend .heading__md;
+	@extend .color__green;
+	margin-bottom: $spacer-md;
+}
+
 .text__strong {
 	font-size: var(--font-strong);
 	font-weight: bold;
+}
+
+.color__green {
+	color: $color-green;
+}
+
+.color__navy {
+	color: $color-navy;
 }

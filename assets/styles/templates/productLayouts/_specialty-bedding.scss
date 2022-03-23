@@ -1,7 +1,27 @@
-// .specialtyBedding__hero
+.specialtyBedding__hero {
+	--columns: 1fr;
+	@include query("large") {
+		--columns: 3fr 2fr;
+	}
 
-// .specialtyBedding__headings
+	display: grid;
+	gap: $spacer-xl;
+	grid-template-columns: var(--columns);
+}
 
 .specialtyBedding__productImage {
 	max-width: 100%;
+
+	@include query("large", "max") {
+		display: none;
+	}
+}
+.product_content {
+	display: grid;
+	padding-right: $spacer-xl;
+	grid-template-columns: 1fr;
+	strong {
+		color: $color-green;
+		padding-top: $spacer-lg;
+	}
 }

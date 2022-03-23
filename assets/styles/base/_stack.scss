@@ -1,0 +1,27 @@
+.stack-sm {
+	margin-bottom: $spacer-sm;
+}
+
+.stack-md {
+	margin-bottom: $spacer-md;
+}
+
+.stack-lg {
+	margin-bottom: $spacer-lg;
+}
+
+.stack-xl {
+	margin-bottom: $spacer-xl;
+}
+
+.stack-xxl {
+	margin-bottom: $spacer-xxl;
+}
+
+.stack-section {
+	margin-bottom: $spacer-xxl;
+
+	@include query("large") {
+		margin-bottom: 180px;
+	}
+}

@@ -2,33 +2,32 @@
 {% set meta = product.meta('layout')[0] %}
 
 <div class="specialtyBedding__hero">
-	<hgroup class="specialtyBedding__headings">
-		<h1 class="heading__hero">{{ product.title }}</h1>
-		{# <h2>{{ product.descriptive_title }}</h2> #}
-		<p>{{ product.description }}</p>
-	</hgroup>
+	<div class="specialtyBedding__description">
+		<hgroup class="stack-xxl">
+			<h1 class="heading__hero stack-lg">{{ product.title }}</h1>
+			{# <h2>{{ product.descriptive_title }}</h2> #}
+			<p>{{ product.description }}</p>
+		</hgroup>
 
-	{# TODO: firmness slider #}
-	<div>
-		Product Firmness:
-		{{ meta.firmness }}
+		{% include 'templates/product_layouts/partials/_firmness.twig' with {firmness: meta.firmness} %}
 	</div>
 
 	{# TODO: add srcset and sizes #}
 	<img class="specialtyBedding__productImage" src="{{ product_image.src }}" alt="{{ product_image.alt }}"/>
 </div>
-
+<div class="product_page_hero">
+</div>
 <div class="product__columns">
 	{% if product.meta('content') %}
-		<div class="content product__main">
+		<div class="product_content">
 			{{ product.meta('content') }}
 		</div>
 	{% endif %}
 
 	<div class="product__sidebar">
 		{% if meta.specifications %}
-			<div class="product__specifications">
-				<h2>{{ meta.specifications_title }}</h2>
+			<div class="product__specifications stack-md">
+				<h3 class="heading__content">{{ meta.specifications_title }}</h3>
 				<ul class="specifications__list">
 					{% for spec in meta.specifications %}
 						<li>
@@ -43,7 +42,7 @@
 		{% if meta.downloads %}
 			<div class="product__downloads">
 				{% for download in meta.downloads %}
-					<a class="download__button" href="{{ download.file }}" download={{ download.file_name }}>
+					<a class="download__button action__green" href="{{ download.file }}" download={{ download.file_name }}>
 						{{ download.title }}
 					</a>
 				{% endfor %}
@@ -51,6 +50,3 @@
 		{% endif %}
 	</div>
 </div>
-
-{# TODO: solve for global contact form use case #}
-{% include "templates/contact.twig" %}

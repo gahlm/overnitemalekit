@@ -5,6 +5,14 @@
 		margin-bottom: $spacer-md;
 	}
 
+	h1,
+	h2,
+	h3 {
+		color: $color-green;
+		font-size: var(--font-heading-md);
+		font-weight: bold;
+	}
+
 	ul {
 		margin-left: $spacer-lg;
 
