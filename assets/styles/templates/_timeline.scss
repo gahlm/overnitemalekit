@@ -184,9 +184,7 @@
 		background-repeat: repeat-x;
 		background-position: 0% 50%;
 		height: 35vh;
-		@include query("medium") {
-			width: 15500px;
-		}
+		width: 15500px;
 		margin-top: $spacer-sm;
 		margin-bottom: $spacer-xl;
 		transition: linear ease 0.5s;
@@ -228,13 +226,13 @@
 }
 .active {
 	opacity: 1;
-	transform: translateX(0);
+	transform: translateY(0);
 }
 .next_slide {
-	transform: translateX(100%);
+	transform: translateY(100%);
 }
 .last_slide {
-	transform: translateX(-100%);
+	transform: translateY(-100%);
 }
 .left {
 	grid-column-start: 1;

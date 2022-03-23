@@ -1,0 +1,45 @@
+:root {
+	// background colors
+	--bg-navy: #{$color-navy};
+	--bg-green: #{$color-green};
+	// --bg-light-blue: #{$color-light-blue};
+	--bg-black: #{$color-black};
+	// --bg-true-black: #{$color-true-black};
+	--bg-light-grey: #{$color-light-grey};
+	--bg-white: #{$color-white};
+
+	// text colors
+	--text-navy: #{$color-navy};
+	--text-green: #{$color-green};
+	--text-light-blue: #{$color-light-blue};
+	--text-black: #{$color-black};
+	--text-true-black: #{$color-true-black};
+	--text-light-grey: #{$color-light-grey};
+	--text-white: #{$color-white};
+
+	// action colors
+	--action-text: #{$color-white-t90};
+	--action-blue: #{$color-light-blue};
+	--action-green: #{$color-green};
+	--action-navy: #{$color-navy};
+	--action-black: #{$color-black};
+
+	// font sizes
+	--font-small: #{$font-size-small};
+	--font-body: #{$font-size-body};
+	--font-strong: #{$font-size-body};
+	--font-heading-sm: #{$font-size-heading-sm};
+	--font-heading-md: #{$font-size-heading-md};
+	--font-heading-lg: #{$font-size-heading-lg};
+	--font-heading-xl: #{$font-size-heading-xl};
+	--font-heading-hero: #{$font-size-heading-hero};
+}
+
+// TODO: high contrast mode
+//       adjust background and text colors to be minimum 4.5:1 contrast
+//       images may need some sort of outline or other treatment
+// .mode__high-contrast
+
+// TODO: large text mode
+//       adjust text sizes up ~25%
+// .mode__large-text

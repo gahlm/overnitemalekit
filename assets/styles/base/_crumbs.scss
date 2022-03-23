@@ -1,29 +1,30 @@
 /* Position arrows absolutely and set the correct size */
 .breadcrumbs {
-	display: none;
-	@include query("medium") {
-		display: initial;
-		margin: 0 0 $spacer-md 0;
-		font-size: $font-size-small;
-		a:first-child {
-			border-radius: 50px 0 0 50px;
-			padding-left: 15px;
-		}
-		a {
-			// background-color: $color-light-blue;
-			// color: $color-white;
-			margin-right: $spacer-sm;
-			padding: 5px $spacer-sm 5px $spacer-sm;
-		}
-		span {
-			// background-color: $color-light-blue;
-			// color: $color-white;
-			margin-right: $spacer-sm;
-			padding: 5px $spacer-sm 5px $spacer-sm;
-			&.current {
-				border-radius: 0 50px 50px 0;
-				text-decoration: underline;
-			}
+	margin: $spacer-sm 0 $spacer-xl 0;
+	font-size: $font-size-small;
+
+	a:first-child {
+		border-radius: 50px 0 0 50px;
+		padding-left: 15px;
+	}
+
+	a {
+		// background-color: $color-light-blue;
+		// color: $color-white;
+		text-decoration: underline;
+		margin-right: $spacer-sm;
+		padding: 5px $spacer-sm 5px $spacer-sm;
+	}
+
+	span {
+		// background-color: $color-light-blue;
+		// color: $color-white;
+
+		margin-right: $spacer-sm;
+		padding: 5px $spacer-sm 5px $spacer-sm;
+		&.current {
+			border-radius: 0 50px 50px 0;
+			font-weight: 600;
 		}
 	}
 

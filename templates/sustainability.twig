@@ -1,7 +1,7 @@
 {# depends on `options` fields in context #}
 {% set rate = options.sustainability__calc.rate %}
 {% set iDate = options.sustainability__calc.initialDate %}
-<script>
+{# <script>
 document.addEventListener("DOMContentLoaded", function () {
 	const sustainNum = document.querySelector(".sustainability__number");
 	let rate = sustainNum.dataset.rate;
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let countup = setInterval(sustainability, 1000);
 	sustainability();
 });
-</script>
+</script> #}
 
 <div class="sustainability">
 	<div class="sustainability__inner">

@@ -11,16 +11,19 @@ const wave = document.querySelector(".wave");
 const firstDot = document.querySelector("#dot1");
 const thirdDot = document.querySelector("#dot3");
 // add active and last classes
-window.onload = function() {
+window.addEventListener("DOMContentLoaded", addClasses);
+
+function addClasses() {
 	if (!!first && !!last) {
 		first.classList.remove("next_slide");
 		first.classList.add("active");
 		last.classList.remove("next_slide");
 		last.classList.add("last_slide");
 	}
-};
+}
+
 // handle sliding classes along loop
-const startSlider = type => {
+const startSlider = (type) => {
 	const active = document.querySelector(".active");
 	const last_slide = document.querySelector(".last_slide");
 	let next = active.nextElementSibling;
@@ -50,13 +53,13 @@ const startSlider = type => {
 // sliding the wave animation along the loop
 function moveRight() {
 	wave.classList.toggle("play");
-	setTimeout(function() {
+	setTimeout(function () {
 		wave.classList.toggle("play");
 	}, 700);
 }
 function moveLeft() {
 	wave.classList.toggle("playBackward");
-	setTimeout(function() {
+	setTimeout(function () {
 		wave.classList.toggle("playBackward");
 	}, 700);
 }
