@@ -61,7 +61,7 @@ h2 {
 				position: absolute;
 				font-size: 0.825em;
 				color: #fff;
-				background-color: $color-green;
+				background-color: $color-light-blue;
 				padding: 8px 5px 5px 5px;
 				white-space: nowrap;
 				margin-top: -40px;
@@ -69,8 +69,8 @@ h2 {
 			&.corporate {
 				z-index: 11;
 				.dot {
-					background: $color-green
-						url(/wp-content/uploads/2022/02/CorporateStar.svg) no-repeat center
+					background: $color-light-blue
+						url(/wp-content/uploads/2022/04/CorporateStar.svg) no-repeat center
 						center;
 					background-size: cover;
 				}
@@ -86,7 +86,7 @@ h2 {
 				height: 20px;
 				margin: -10px 0 0 -10px;
 				border-radius: 50%;
-				background-color: $color-green;
+				background-color: $color-light-blue;
 				border: 2px solid transparent;
 			}
 		}
@@ -127,11 +127,11 @@ h2 {
 			height: $font-size-heading-sm;
 			margin: 10px 20px 0 0;
 			border-radius: 50%;
-			background-color: $color-green;
+			background-color: $color-light-blue;
 			border: 2px solid transparent;
 			z-index: 13;
 			&.corporate {
-				background: $color-green
+				background: $color-light-blue
 					url(/wp-content/uploads/2022/02/CorporateStar.svg) no-repeat center
 					center;
 				background-size: cover;
