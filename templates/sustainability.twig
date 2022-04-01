@@ -1,25 +1,27 @@
 {# depends on `options` fields in context #}
 {% set rate = options.sustainability__calc.rate %}
 {% set iDate = options.sustainability__calc.initialDate %}
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-	const sustainNum = document.querySelector(".sustainability__number");
-	let rate = sustainNum.dataset.rate;
-	let orgDate = new Date(2010, 1, 1, 00, 00, 0);
-	let orgTime = orgDate.getTime();
-	let orgVal = 1613760000;
+{# <script>
+	document.addEventListener("DOMContentLoaded", function () {
+const sustainNum = document.querySelector(".sustainability__number");
+let rate = sustainNum.dataset.rate;
+let orgDate = new Date(2010, 1, 1, 00, 00, 0);
+let orgTime = orgDate.getTime();
+let orgVal = 1613760000;
 
-	function sustainability() {
-		let today = new Date().getTime();
-		let t = today - orgTime;
-		let diff = t / (1000 * 60);
-		let currentSustain = Math.round(diff * rate);
-		sustainNum.innerHTML = `${currentSustain.toLocaleString("en-US")} lbs.`;
-	}
-	let countup = setInterval(sustainability, 1000);
-	sustainability();
+async function sustainability() {
+let today = new Date().getTime();
+let t = today - orgTime;
+let diff = t / (1000 * 60);
+let currentSustain = Math.round(diff * rate);
+sustainNum.innerHTML = `${
+currentSustain.toLocaleString("en-US")
+} lbs.`;
+}
+let countup = setInterval(sustainability, 1000);
+sustainability();
 });
-</script>
+</script> #}
 
 <div class="sustainability">
 	<div class="sustainability__inner">

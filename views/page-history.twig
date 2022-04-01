@@ -33,12 +33,16 @@
 									<img src="{{ Image(post.meta('image')).src }}" alt="">
 								{% endif %}
 								{% if post.video %}
-									<video class="video" controls>
-										<source src="{{post.video}}" type="video/mp4">
-										<source src="{{post.video}}" type="video/ogg">
-										Your browser does not support the video tag.
-									</video>
+									<iframe src="{{post.video}}" frameborder="0"></iframe>
+
+									{# <video class="video" controls>
+																																														<source src="{{post.video}}" type="video/mp4">
+																																														<source src="{{post.video}}" type="video/ogg">
+																																														Your browser does not support the video tag.
+																																													</video> #}
 								{% endif %}
+
+
 							</div>
 						</div>
 						<h2 id="mobile-year">{{post.year}}</h2>

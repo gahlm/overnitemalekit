@@ -26,7 +26,8 @@
 			object-fit: contain;
 			overflow: hidden;
 		}
-		video {
+		iframe {
+			height: 100%;
 			width: 70%;
 			object-fit: contain;
 			overflow: hidden;
@@ -226,13 +227,13 @@
 }
 .active {
 	opacity: 1;
-	transform: translateX(0);
+	transform: translateY(0);
 }
 .next_slide {
-	transform: translateX(100%);
+	transform: translateY(100%);
 }
 .last_slide {
-	transform: translateX(-100%);
+	transform: translateY(-100%);
 }
 .left {
 	grid-column-start: 1;

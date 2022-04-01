@@ -49,7 +49,7 @@
 			&.corporate {
 				z-index: 11;
 				.dot {
-					background: $color-green
+					background: $color-light-blue
 						url(http://future-foam.local/wp-content/uploads/2022/02/CorporateStar.svg)
 						no-repeat center center;
 					background-size: cover;
@@ -66,7 +66,7 @@
 				height: 20px;
 				margin: -10px 0 0 -10px;
 				border-radius: 50%;
-				background-color: $color-green;
+				background-color: $color-light-blue;
 				border: 2px solid transparent;
 			}
 		}
