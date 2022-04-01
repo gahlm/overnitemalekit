@@ -49,9 +49,9 @@
 			&.corporate {
 				z-index: 11;
 				.dot {
-					background: $color-light-blue
-						url(http://future-foam.local/wp-content/uploads/2022/02/CorporateStar.svg)
-						no-repeat center center;
+					background: $color-green
+						url(/wp-content/uploads/2022/02/CorporateStar.svg) no-repeat center
+						center;
 					background-size: cover;
 				}
 			}

@@ -11,21 +11,27 @@
 			white-space: nowrap;
 		}
 	}
-	@include query("medium") {
-		&__header {
-			flex-direction: row;
-			gap: $spacer-lg;
-		}
-	}
-	.timeline-slider {
-		grid-column: container;
-		margin-bottom: $spacer-max;
-	}
 	.timeline-lower__inner {
 		display: flex;
 		#year {
 			display: none;
 		}
+	}
+	@include query("medium") {
+		&__header {
+			flex-direction: row;
+			gap: $spacer-lg;
+		}
+		.timeline-lower__inner {
+			display: flex;
+			#year {
+				display: initial;
+			}
+		}
+	}
+	.timeline-slider {
+		grid-column: container;
+		margin-bottom: $spacer-max;
 	}
 }
 .wavecontainer.home_history {
