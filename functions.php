@@ -18,6 +18,8 @@ if ( ! class_exists( 'Timber' ) ) {
 Timber::$dirname = array('templates', 'views');
 
 
+require_once get_template_directory() . '/breadcrumbs.php';
+
 // Initialize Timber
 class ModularSite extends TimberSite {
 	function __construct() {
@@ -64,18 +66,13 @@ class ModularSite extends TimberSite {
 			'post_parent' => 0,
 		);
 		$context['products'] = Timber::get_posts( $products );
-
-        
-        if ( function_exists( 'yoast_breadcrumb' ) ) {
-            $context['breadcrumbs'] = yoast_breadcrumb('<nav id="breadcrumbs" class="main-breadcrumbs">','</nav>', false );
-        }
 		
 		return $context;
 	}
 
 	function add_to_twig( $twig ) {
 		$twig->addFilter( new Twig_SimpleFilter('format_phone_number', array($this, 'format_phone_number')));
-		$twig->addFunction( new Twig_SimpleFunction( 'my_breadcrumbs', 'my_breadcrumbs'  ) );
+		$twig->addFunction( new Twig_SimpleFunction( 'breadcrumbs', 'breadcrumbs'  ) );
 		return $twig;
 	}
 
@@ -88,19 +85,6 @@ class ModularSite extends TimberSite {
 
 		return $formattedNumber;
 	}
-
-
-	// Unit conversion for sustainability module
-	// public static function sustainability_conversion( $date, $rate ) {
-	// 	$past_deeds = 1613760000;
-	// 	$origin = new DateTime($date);
-	// 	$target = new DateTime('now');
-	// 	$interval = $origin->diff($target);
-	// 	$totalHours = ($interval->y * 365 * 24) + ($interval->m * 30 * 24) + ($interval->d + 24) + $interval->h;
-	// 	// TODO: fix it's calculating per hour not per min
-	// 	return $totalHours * $rate;
-	// }
-
 }
 
 new ModularSite();

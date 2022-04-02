@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
+	{{ breadcrumbs() }}
 	{% if product.layout %}
 		{% for layout in product.layout %}
 			{% set twig_url = "product_layouts/_" ~ layout|split('_')|join('-') ~ ".twig" %}
