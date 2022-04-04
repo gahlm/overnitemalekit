@@ -19,10 +19,9 @@
 				{% endfor %}
 			</div>
 		</div>
-		{# TODO: add hero graphic here #}
 	</section>
 
-	<section class="home__productBlocks blocks">
+	<section class="home__productBlocks blocks" id="homeProducts">
 		{% for product in products %}
 			<div class="card card__product">
 				<img src="{{ Image(product.meta('image')).src }}" alt="Image of {{ product.post_title }}">

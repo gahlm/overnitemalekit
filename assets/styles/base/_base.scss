@@ -162,8 +162,7 @@ a {
 	touch-action: manipulation; // remove double-tap zoom
 
 	&:active,
-	&:hover,
-	&:focus {
+	&:hover {
 		outline: 0;
 	}
 }

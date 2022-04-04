@@ -1,15 +1,13 @@
-
 <div class="product__main">
-<h1 class="heading__hero stack-md">{{ product.title }}</h1>
-<p class="stack-md">{{ product.description }}</p>
+	<h1 class="heading__hero stack-md">{{ product.title }}</h1>
+	<p class="stack-md">{{ product.description }}</p>
 
 	<div class="product_hero_img">
 		<img src="{{ Image(product.meta('image')).src }}" alt="">
 	</div>
 
 </div>
-<div class="product_page_hero">
-</div>
+<div class="product_page_hero"></div>
 <div class="content">
 	{% if children %}
 
@@ -23,9 +21,9 @@
 		</div>
 	{% endif %}
 	<div class="sub_content">
-	
-	{% if product.meta('content') %}
-		{{ product.meta('content') }}
-	{% endif %}
+
+		{% if product.meta('content') %}
+			{{ product.meta('content') }}
+		{% endif %}
 	</div>
 </div>

@@ -49,8 +49,9 @@
 			&.corporate {
 				z-index: 11;
 				.dot {
-					background: $color-green
-						url(/wp-content/uploads/2022/02/CorporateStar.svg) no-repeat center
+
+					background: $color-light-blue
+						url(/wp-content/uploads/2022/04/CorporateStar.svg) no-repeat center
 						center;
 					background-size: cover;
 				}
