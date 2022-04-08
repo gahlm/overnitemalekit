@@ -25,6 +25,14 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	z-index: $index-foreground;
+	.product_hero_img {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		img {
+			max-width: 70vw;
+		}
+	}
 	@include query("medium") {
 		grid-template-columns: 2fr 3fr;
 		grid-auto-rows: auto;
