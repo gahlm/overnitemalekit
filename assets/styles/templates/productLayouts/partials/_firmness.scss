@@ -32,12 +32,13 @@
 			display: block;
 			position: absolute;
 			top: 4px;
-			left: calc(var(--firmness) - 9px);
 			height: 19px;
 			width: 19px;
 			border-radius: 50%;
 			background-color: $color-black;
 			z-index: inherit;
+			-webkit-animation: firmslide 1.5s forwards;
+			animation: firmslide 1.5s forwards;
 		}
 	}
 
@@ -73,5 +74,22 @@
 		--firmness-color: #{$color-navy};
 		@extend %firmnessLabel;
 		align-items: flex-end;
+	}
+	@-webkit-keyframes firmslide {
+		0% {
+			left: 0;
+		}
+		100% {
+			left: calc(var(--firmness) - 9px);
+		}
+	}
+
+	@keyframes firmslide {
+		0% {
+			left: 0;
+		}
+		100% {
+			left: calc(var(--firmness) - 9px);
+		}
 	}
 }
