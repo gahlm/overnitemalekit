@@ -22,6 +22,7 @@
 			margin-bottom: $spacer-xl;
 		}
 		img {
+			max-height: 20vh;
 			width: 70%;
 			object-fit: contain;
 			overflow: hidden;
@@ -33,6 +34,7 @@
 			overflow: hidden;
 		}
 		@include query("medium") {
+			grid-row: 2;
 			grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
 			padding-top: $spacer-xxl;
 			h3 {
@@ -74,9 +76,9 @@
 	&__inner {
 		display: none;
 		@include query("medium") {
-			align-content: center;
+			grid-row: 3;
+			align-content: flex-end;
 			justify-content: center;
-			padding-top: $spacer-lg;
 			text-align: center;
 			display: flex;
 			p {
@@ -90,9 +92,7 @@
 			}
 		}
 		@include query("large") {
-			align-content: center;
 			justify-content: center;
-			padding-top: $spacer-xxl;
 			text-align: center;
 			display: flex;
 			p {
@@ -109,8 +109,10 @@
 }
 // timeline functionality
 .wavecontainer {
+	position: relative;
+	display: block;
+
 	grid-column: viewport;
-	// grid-row-start: 3;
 	overflow: hidden;
 	background: url($stationary-wave) no-repeat;
 	background-size: cover;
@@ -210,11 +212,12 @@
 }
 
 .timeline-slider {
-	display: flex;
+	grid-row: 2;
+	display: grid;
+	grid-template-rows: 2fr 1fr;
 	position: relative;
 	height: fit-content;
 	z-index: $index-middle;
-	grid-row-start: 2;
 }
 .timeline-slide {
 	position: absolute;

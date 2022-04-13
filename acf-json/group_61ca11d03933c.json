@@ -22,6 +22,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_6256feb8ace30",
+            "label": "Short Description",
+            "name": "short_description",
+            "type": "text",
+            "instructions": "250 characters or less.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 250
+        },
+        {
             "key": "field_621d4cb12b149",
             "label": "Video or Image",
             "name": "video_or_image",
@@ -141,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646087473
+    "modified": 1649868516
 }
