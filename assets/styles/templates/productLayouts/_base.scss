@@ -61,14 +61,11 @@
 	grid-template-columns: 1fr;
 	gap: $spacer-md;
 	@include query("medium") {
-<<<<<<< HEAD
-=======
 		a {
 			list-style: none;
 			text-decoration: underline;
 			color: $color-light-blue;
 		}
->>>>>>> 7fe1687bd2c88069b28d23176be7928c8e71631d
 		grid-template-columns: 1fr 1fr;
 		p {
 			grid-column: 1 / span 2;
