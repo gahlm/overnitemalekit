@@ -58,6 +58,19 @@
 			</div>
 		</div>
 	</div>
-	{% include "templates/contact.twig" %}
+	<div class="green__contact">
+		<div class="green__contact__inner">
+			<div class="green__contact__inner__text">
+				<h2>{{options.facContact_heading}}</h2>
+				<p>{{options.facContact_text}}</p>
+			</div>
+			<div class="green__contact__inner__form">
+				{% if options.facForm_shortcode %}
+					{{ options.facForm_shortcode|shortcodes }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
 
 {% endblock %}

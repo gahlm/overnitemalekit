@@ -11,17 +11,28 @@
 }
 .product_page_hero {
 	grid-column: viewport;
-	height: 20vh;
+	height: 30vh;
+	margin-top: -20vh;
 	background: url($home-wave);
 	background-repeat: no-repeat;
 	background-position: 0% 10%;
 	background-size: cover;
 	margin-bottom: $spacer-xl;
+	z-index: $index-background;
 }
 .product__main {
 	grid-column: container;
 	display: grid;
 	grid-template-columns: 1fr;
+	z-index: $index-foreground;
+	.product_hero_img {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		img {
+			max-width: 70vw;
+		}
+	}
 	@include query("medium") {
 		grid-template-columns: 2fr 3fr;
 		grid-auto-rows: auto;
@@ -37,6 +48,10 @@
 			max-width: 60%;
 			justify-self: center;
 			align-self: center;
+			z-index: $index-foreground;
+			img {
+				max-height: 25vh;
+			}
 		}
 	}
 }

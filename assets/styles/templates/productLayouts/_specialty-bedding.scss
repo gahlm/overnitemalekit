@@ -1,5 +1,6 @@
 .specialtyBedding__hero {
 	--columns: 1fr;
+	z-index: $index-foreground;
 	@include query("large") {
 		--columns: 3fr 2fr;
 	}

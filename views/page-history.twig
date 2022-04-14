@@ -29,17 +29,14 @@
 									<p>{{post.description}}</p>
 
 								</article>
-								{% if post.image %}
+								{% if post.video_or_image == 'image' %}
+
 									<img src="{{ Image(post.meta('image')).src }}" alt="">
 								{% endif %}
-								{% if post.video %}
-									<iframe src="{{post.video}}" frameborder="0"></iframe>
+								{% if post.video_or_image == 'video' %}
 
-									{# <video class="video" controls>
-																																														<source src="{{post.video}}" type="video/mp4">
-																																														<source src="{{post.video}}" type="video/ogg">
-																																														Your browser does not support the video tag.
-																																													</video> #}
+									<iframe src="{{post.video}}" frameborder="0" allowfullscreen></iframe>
+
 								{% endif %}
 
 
@@ -52,7 +49,7 @@
 
 									<h2 id="year">{{post.year}}</h2>
 									<h3>{{post.title}}</h3>
-									<p>{{post.description}}</p>
+									<p>{{post.short_description}}</p>
 								</article>
 							</div>
 						</div>
@@ -62,24 +59,9 @@
 				{% endfor %}
 			</Section>
 		</div>
-
-
-		<div class="wavecontainer">
-			<div class="dotcontainer">
-
-				<i class="fas fa-circle dot" id="dot1"></i>
-				<i class="fas fa-circle dot" id="dot2">
-
-					<div class="vl"></div>
-				</i>
-				<i class="fas fa-circle dot" id="dot3"></i>
-			</div>
-			<div class="stationary_wave"></div>
-			<div class="wave background_mask" id="wave"></div>
-		</div>
-
-
 	</div>
+
+	{% include "templates/wave.twig" %}
 	{% include "templates/contact.twig" %}
 
 
