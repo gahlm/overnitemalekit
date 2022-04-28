@@ -5,15 +5,15 @@
 		<a href="/">
 			<img class="header__logo" src="/wp-content/uploads/2021/12/FFLogoGrey-1.svg" alt="Future Foam Logo"/>
 		</a>
-		<nav class="header__nav">
+		<nav class="header__nav" aria-label="header navigation">
 			<ul>
 				<li class="show-at-large">
 					<button id="megaMenuTrigger" class="action__nav ">Products</button>
 
 				</li>
 				{# <li class="hide-at-large">
-																																																																																	<a href="/products">Products</a>
-																																																																																</li> #}
+																																																																																					<a href="/products">Products</a>
+																																																																																				</li> #}
 				{% for item in header_nav_menu.get_items %}
 					{% if item.title == 'Products'%}
 						<li class="hide-at-large">

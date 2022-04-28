@@ -4,26 +4,59 @@
 	padding: $spacer-sm $spacer-md;
 	color: var(--action-text);
 	font-weight: bold;
+	transition: background .125s ease-out;
 }
 
 .action__blue {
 	@extend %action;
-	background: var(--action-blue);
+	color: $color-navy;
+	background: $color-white;
+	border: 2px solid $color-navy;
+	border-radius: 3px;
+
+	&:hover {
+		background: transparentize($color-navy, .9);
+	}
 }
 
 .action__green {
 	@extend %action;
-	background: var(--action-green);
+	color: $color-rich-green;
+	background: $color-white;
+	border: 2px solid $color-rich-green;
+	border-radius: 3px;
+
+	&:hover {
+		background: transparentize($color-rich-green, .95);
+	}
 }
 
 .action__navy {
 	@extend %action;
-	background: var(--action-navy);
+	background: $color-navy;
+
+	&:hover {
+		background: transparentize($color-navy, .15);
+	}
 }
 
 .action__black {
 	@extend %action;
-	background: var(--action-black);
+	background: $color-black;
+
+	&:hover {
+		background: transparentize($color-black, .075);
+	}
+}
+
+.action__white {
+	@extend %action;
+	color: $color-navy;
+	background: $color-white;
+
+	&:hover {
+		background: transparentize($color-white, .075);
+	}
 }
 
 .action__link {
