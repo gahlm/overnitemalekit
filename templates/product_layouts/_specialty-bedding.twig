@@ -9,14 +9,13 @@
 			<p>{{ product.description }}</p>
 		</hgroup>
 
-		{% include 'templates/product_layouts/partials/_firmness.twig' with {firmness: meta.firmness} %}
+		{# {% include 'templates/product_layouts/partials/_firmness.twig' with {firmness: meta.firmness} %} #}
 	</div>
 
 	{# TODO: add srcset and sizes #}
 	<img class="specialtyBedding__productImage" src="{{ product_image.src }}" alt="{{ product_image.alt }}"/>
 </div>
-<div class="product_page_hero">
-</div>
+<div class="product_page_hero"></div>
 <div class="product__columns">
 	{% if product.meta('content') %}
 		<div class="product_content">

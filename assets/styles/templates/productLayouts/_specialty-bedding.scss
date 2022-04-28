@@ -17,6 +17,11 @@
 		display: none;
 	}
 }
+.specialtyBedding__description {
+	p {
+		max-width: 70%;
+	}
+}
 .product_content {
 	display: grid;
 	padding-right: $spacer-xl;
