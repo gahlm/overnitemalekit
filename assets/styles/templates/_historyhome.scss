@@ -5,8 +5,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		// gap: $spacer-lg;
-		// margin-bottom: $spacer-md;
+		justify-content: center;
+		// remove justify to add options description in history.twig
 		h2 {
 			white-space: nowrap;
 		}
