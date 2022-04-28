@@ -67,4 +67,14 @@
 			}
 		}
 	}
+
+	// selector from ninja forms
+	.nf-form-content button, .nf-form-content input[type=button], .nf-form-content input[type=submit] {
+		@extend .action__navy;
+		border-radius: unset;
+
+		&:hover {
+			color: $color-white !important;
+		}
+	}
 }

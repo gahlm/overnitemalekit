@@ -20,11 +20,11 @@
 		</div>
 		<img class="footer__logo" src="/wp-content/uploads/2022/01/FFLogoBlk.svg" alt="Future Foam Logo"/>
 
-		<nav class="footer__nav">
+		<nav class="footer__nav" aria-label="footer navigation">
 			<ul>
 				{% for item in footer_nav_menu.get_items %}
 					<li>
-						<a class="" href="{{ item.link }}">{{ item.title }}</a>
+						<a class="action__link" href="{{ item.link }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>
@@ -34,11 +34,11 @@
 		&copy;
 		{{ now|date('Y') }}
 		Future Foam
-		<nav class="footer__copy--nav">
+		<nav class="footer__copy--nav" aria-label="footer sub-navigation">
 			<ul>
 				{% for item in copy_nav_menu.get_items %}
 					<li>
-						<a href="{{ item.link }}">{{ item.title }}</a>
+						<a class="action__link" href="{{ item.link }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
 			</ul>
