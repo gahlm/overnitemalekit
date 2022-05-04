@@ -17,15 +17,21 @@
 	width: 100%;
 	border-radius: 5px;
 	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	padding: $spacer-md $spacer-sm $spacer-md $spacer-sm;
 	margin: $spacer-lg auto $spacer-lg auto;
+	@include query("medium") {
+		flex-direction: row;
+	}
 	select {
 		background-color: $color-white;
 		border: none;
 		border-radius: 3px;
-		width: 30%;
+		width: 80%;
 		padding: $spacer-sm $spacer-sm $spacer-sm $spacer-sm;
 		margin: auto;
+		font-size: 0.8em;
 	}
 }
 h2 {
@@ -139,7 +145,10 @@ h2 {
 			}
 		}
 		.details {
-			max-width: 100%;
+			max-width: 70%;
+			@include query("medium") {
+				max-width: 100%;
+			}
 		}
 		a {
 			color: $color-light-blue;
