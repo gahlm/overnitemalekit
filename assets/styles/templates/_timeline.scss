@@ -232,6 +232,11 @@
 	opacity: 1;
 	transform: translateY(0);
 	z-index: $index-foreground;
+	@include query("medium") {
+		display: grid;
+		grid-template-rows: minmax(375px, 3fr) minmax(100px, 2fr);
+		transition: ease-in-out;
+	}
 }
 .next_slide {
 	transform: translateY(100%);

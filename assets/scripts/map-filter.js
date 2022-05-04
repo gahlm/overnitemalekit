@@ -117,6 +117,7 @@ jQuery(function($) {
 		$(".facility-us-title").hide();
 		$(".facility-us-map").hide();
 		$(".facility-us-map .city").addClass("dim");
+		$(".facility-us-list").hide();
 		$(".facility-us-list .facility-city").hide();
 		$(".facility-us-list .facility-city .facility-location-list").hide();
 		$(
@@ -162,6 +163,7 @@ jQuery(function($) {
 		if (map_filter_location == "") {
 			$(".facility-us-title").show();
 			$(".facility-us-map").show();
+			$(".facility-us-list").show();
 			$(".facility-us-map .city" + str_class).removeClass("dim");
 			$(".facility-us-list .facility-location" + str_class)
 				.parent()
@@ -187,6 +189,7 @@ jQuery(function($) {
 		} else if (map_filter_location.substr(0, 2) == "US") {
 			$(".facility-us-title").show();
 			$(".facility-us-map").show();
+			$(".facility-us-list").show();
 			$(".facility-us-map .city" + str_class).removeClass("dim");
 			$(".facility-us-list .facility-location" + str_class)
 				.parent()
