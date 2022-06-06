@@ -26,7 +26,8 @@
 			{% for sub in post.meta('subproduct') %}
 				{% set i = sub %}
 				<article class="subproduct">
-					<img src="{{Image(i.image).src}}" alt="">
+					<img src="{{Image(i.image).src}}" alt="{{ Image(i.image).alt }}">
+
 					<h3 class="category">{{i.category}}</h3>
 					<h2 class="name">{{i.name}}</h2>
 					<p class="description">{{i.description}}</p>

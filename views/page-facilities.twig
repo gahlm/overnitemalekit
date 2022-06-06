@@ -308,9 +308,9 @@
 						<div class="facility-country {{facility.city|lower}}">
 							<div class="facility-location-list">
 								{% if facility.city|lower == 'china' %}
-									<img class="country" src="/wp-content/uploads/2022/03/china.png">
+									<img class="country" src="/wp-content/uploads/2022/03/china.png" alt="China">
 								{% else %}
-									<img class="country" src="/wp-content/uploads/2022/03/map-europe-1.png">
+									<img class="country" src="/wp-content/uploads/2022/03/map-europe-1.png" alt="Europe">
 								{% endif %}
 								<article class="facility-location {{facility.classes}} {% for capability in facility.capabilities %} {{capability}} {% endfor %} {{facility.distribution_center}}">
 									<h2>{{facility.facility_name}}</h2>

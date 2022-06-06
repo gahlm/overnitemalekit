@@ -4,6 +4,7 @@
 }
 .facilities_inner {
 	grid-column: container;
+	overflow-x: hidden;
 	.intro {
 		width: 85%;
 		p {
@@ -121,10 +122,14 @@ h2 {
 	h2 {
 		color: $color-green;
 		font-size: $font-size-heading-sm;
+		max-width: 80%;
+		@include query("medium") {
+			max-width: 100%;
+		}
 	}
 	.content {
 		display: grid;
-		grid-template-columns: 0.25fr 3fr;
+		grid-template-columns: 0.25fr 2.5fr;
 		padding: 0 $spacer-md 0 $spacer-sm;
 		.dot {
 			grid-column-start: 1;

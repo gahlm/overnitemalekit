@@ -15,7 +15,7 @@
 			<div class="hero__slider slider">
 				{% for i in hero.product_images %}
 					{% set image = i.image %}
-					<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+					<img src="{{ image.url }}" alt="{{ image.alt }}"/>
 				{% endfor %}
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{Image(post.meta('experience_icon'))}}" alt=""/>
+					<img src="{{Image(post.meta('experience_icon'))}}" alt="Experience"/>
 				</div>
 				<h2 class="home__companyBlocks--heading">
 					<span class="text__strong">55+ YEARS OF</span>
@@ -60,7 +60,7 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{Image(post.meta('innovation_icon'))}}" alt=""/>
+					<img src="{{Image(post.meta('innovation_icon'))}}" alt="Innovation"/>
 
 				</div>
 				<h2 class="home__companyBlocks--heading">
@@ -76,7 +76,7 @@
 		<article class="card card__company">
 			<div>
 				<div class="card__company--image">
-					<img src="{{Image(post.meta('solutions_icon'))}}" alt=""/>
+					<img src="{{Image(post.meta('solutions_icon'))}}" alt="Solutions"/>
 
 				</div>
 				<h2 class="home__companyBlocks--heading">

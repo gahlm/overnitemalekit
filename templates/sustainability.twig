@@ -1,46 +1,7 @@
 {# depends on `options` fields in context #}
 {% set rate = options.sustainability__calc.rate %}
 {% set iDate = options.sustainability__calc.initialDate %}
-{# <script>
-<<<<<<< HEAD
-	document.addEventListener("DOMContentLoaded", function () {
-const sustainNum = document.querySelector(".sustainability__number");
-let rate = sustainNum.dataset.rate;
-let orgDate = new Date(2010, 1, 1, 00, 00, 0);
-let orgTime = orgDate.getTime();
-let orgVal = 1613760000;
 
-async function sustainability() {
-let today = new Date().getTime();
-let t = today - orgTime;
-let diff = t / (1000 * 60);
-let currentSustain = Math.round(diff * rate);
-sustainNum.innerHTML = `${
-currentSustain.toLocaleString("en-US")
-} lbs.`;
-}
-let countup = setInterval(sustainability, 1000);
-sustainability();
-=======
-document.addEventListener("DOMContentLoaded", function () {
-	const sustainNum = document.querySelector(".sustainability__number");
-	let rate = sustainNum.dataset.rate;
-	let orgDate = new Date(2010, 1, 1, 00, 00, 0);
-	let orgTime = orgDate.getTime();
-	let orgVal = 1613760000;
-
-	function sustainability() {
-		let today = new Date().getTime();
-		let t = today - orgTime;
-		let diff = t / (1000 * 60);
-		let currentSustain = Math.round(diff * rate);
-		sustainNum.innerHTML = `${currentSustain.toLocaleString("en-US")} lbs.`;
-	}
-	let countup = setInterval(sustainability, 1000);
-	sustainability();
->>>>>>> 7fe1687bd2c88069b28d23176be7928c8e71631d
-});
-</script> #}
 
 <div class="sustainability">
 	<div class="sustainability__inner">
@@ -52,11 +13,5 @@ document.addEventListener("DOMContentLoaded", function () {
 			<p class="text__strong">{{ options.sustainability__context }}</p>
 		</div>
 
-		{# <a class="action__blue" href="/about">Learn More</a> #}
 	</div>
 </div>
-{# {{ function(
-						['ModularSite', 'sustainability_conversion'], 
-						options.sustainability__calc.initialDate, 
-						options.sustainability__calc.rate)
-					}} #}
