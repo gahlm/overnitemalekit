@@ -150,7 +150,7 @@ h2 {
 			}
 		}
 		.details {
-			max-width: 80%;
+			max-width: 70%;
 			@include query("medium") {
 				max-width: 100%;
 			}
