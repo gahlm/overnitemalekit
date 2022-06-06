@@ -5,14 +5,17 @@
 	<p class="stack-md">{{ product.description }}</p>
 	{% if product.single_image_or_slider == 'single' %}
 		<div class="product_hero_img">
-			<img src="{{ Image(product.meta('image')).src }}" alt="">
+
+			<img src="{{ Image(product.image).src }}" alt="{{ Image(product.image).alt }}">
+
+
 		</div>
 	{% endif %}
 	{% if product.single_image_or_slider == 'slider' %}
 		<div class="product__slider slider">
 			{% for i in slider.slider_images %}
 				{% set image = i.image %}
-				<img src="{{ image.url }}" alt="{{ image.caption }}"/>
+				<img src="{{ image.url }}" alt="{{ image.alt }}"/>
 			{% endfor %}
 		</div>
 	{% endif %}
@@ -25,7 +28,9 @@
 		<div class="products__list">
 			{% for child in children %}
 				<a href="{{ child.link }}" class="products__category">
-					<img src="{{ Image(child.meta('image')).src }}" alt="">
+					<img src="{{ Image(child.image).src }}" alt="{{ Image(child.image).alt }}">
+
+
 					<div class="products__category--meta">{{ child.name }}</div>
 				</a>
 			{% endfor %}

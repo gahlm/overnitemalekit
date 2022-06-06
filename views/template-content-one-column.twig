@@ -10,16 +10,16 @@
 						<h3>{{i.subheading}}</h3>
 					{% endif %}
 					{% if i.image %}
-						<img src="{{i.image.url}}" alt="">
+						<img src="{{i.image.url}}" alt="{{i.image.alt}}">
 					{% endif %}
 					{% if i.content_block %}
 						<p>{{i.content_block}}</p>
 					{% endif %}
 					{% if i.file %}
-						<button>
-							<a href="{{i.file.url}}" download>Download
-								{{i.file.title}}</a>
-						</button>
+
+						<a href="{{i.file.url}}" download class="download__button action__green">Download
+							{{i.file.title}}</a>
+
 					{% endif %}
 				</div>
 			{% endfor %}
