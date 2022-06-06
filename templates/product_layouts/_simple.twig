@@ -1,4 +1,6 @@
 {% set slider = product.get_field('slider') %}
+{% set meta = product.meta('layout')[0] %}
+
 
 <div class="product__main">
 	<h1 class="heading__hero stack-md">{{ product.title }}</h1>
@@ -41,5 +43,15 @@
 		{% if product.meta('content') %}
 			{{ product.meta('content') }}
 		{% endif %}
+		{% if meta.downloads %}
+			<div class="product__downloads">
+				{% for download in meta.downloads %}
+					<a class="download__button action__green" href="{{ download.file }}" download={{ download.file_name }}>
+						{{ download.title }}
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+
 	</div>
 </div>
