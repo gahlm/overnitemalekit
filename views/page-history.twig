@@ -1,67 +1,70 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="history__hero">
-		<div class="left">
-			<i class="fas fa-chevron-left prev"></i>
-		</div>
-		<div class="right">
-			<i class="fas fa-chevron-right next"></i>
-		</div>
+	<div class="history_main">
+
+		<div class="history__hero">
+			<div class="left">
+				<i class="fas fa-chevron-left prev"></i>
+			</div>
+			<div class="right">
+				<i class="fas fa-chevron-right next"></i>
+			</div>
 
 
-		<div class="history__inner">
+			<div class="history__inner">
 
-			<h1 class="heading__hero">{{ post.get_field('headline') }}</h1>
-
-
-			<Section class="timeline-slider">
-				{% for post in history %}
-					<div class="timeline-slide next_slide">
-						<div class="timeline-upper">
-							<div class="timeline-upper__inner">
-								<article>
-									<a href="{{ post.link }}">
-										<h3 id="year">{{post.year}}</h3>
-										<h3>
-											{{ post.title }}</h3>
-									</a>
-									<p>{{post.description}}</p>
-
-								</article>
-								{% if post.video_or_image == 'image' %}
-
-									<img src="{{ Image(post.meta('image')).src }}" alt="">
-								{% endif %}
-								{% if post.video_or_image == 'video' %}
-
-									<iframe src="{{post.video}}" frameborder="0" allowfullscreen></iframe>
-
-								{% endif %}
+				<h1 class="heading__hero">{{ post.get_field('headline') }}</h1>
 
 
+				<Section class="timeline-slider">
+					{% for post in history %}
+						<div class="timeline-slide next_slide">
+							<div class="timeline-upper">
+								<div class="timeline-upper__inner">
+									<article>
+										<a href="{{ post.link }}">
+											<h3 id="year">{{post.year}}</h3>
+											<h3>
+												{{ post.title }}</h3>
+										</a>
+										<p>{{post.description}}</p>
+
+									</article>
+									{% if post.video_or_image == 'image' %}
+
+										<img src="{{ Image(post.meta('image')).src }}" alt="">
+									{% endif %}
+									{% if post.video_or_image == 'video' %}
+
+										<iframe src="{{post.video}}" frameborder="0" allowfullscreen></iframe>
+
+									{% endif %}
+
+
+								</div>
+							</div>
+							<h2 id="mobile-year">{{post.year}}</h2>
+							<div class="timeline-lower">
+								<div class="timeline-lower__inner">
+									<article>
+
+										<h2 id="year">{{post.year}}</h2>
+										<h3>{{post.title}}</h3>
+										<p>{{post.short_description}}</p>
+									</article>
+								</div>
 							</div>
 						</div>
-						<h2 id="mobile-year">{{post.year}}</h2>
-						<div class="timeline-lower">
-							<div class="timeline-lower__inner">
-								<article>
-
-									<h2 id="year">{{post.year}}</h2>
-									<h3>{{post.title}}</h3>
-									<p>{{post.short_description}}</p>
-								</article>
-							</div>
-						</div>
-					</div>
 
 
-				{% endfor %}
-			</Section>
+					{% endfor %}
+				</Section>
+			</div>
 		</div>
 	</div>
-
 	{% include "templates/wave.twig" %}
+
 	{% include "templates/contact.twig" %}
 
 

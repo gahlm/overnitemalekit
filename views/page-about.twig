@@ -2,6 +2,10 @@
 
 {% block content %}
 	{% set hero = post.get_field('hero') %}
+	{% set contact = post.get_field('contact') %}
+	{% set careers = post.get_field('careers') %}
+	{% set resources = post.get_field('resources') %}
+	{% set tour = post.get_field('tour') %}
 	<section class="home__hero aboutus">
 
 		<div class="hero__inner">
@@ -34,7 +38,7 @@
 					<span class="text__strong">CONTACT THE</span>
 					<span class="heading__lg">Team</span>
 				</h2>
-				<p class="card__company--description">{{ post.contact_description }}</p>
+				<p class="card__company--description">{{ contact.description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/contact">Contact Us</a>
@@ -50,7 +54,7 @@
 					<span class="text__strong">JOIN THE TEAM</span>
 					<span class="heading__lg">Careers</span>
 				</h2>
-				<p class="card__company--description">{{ post.careers_description }}</p>
+				<p class="card__company--description">{{ careers.description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/careers">Careers</a>
@@ -66,7 +70,7 @@
 					<span class="text__strong">LEARN MORE</span>
 					<span class="heading__lg">Resources</span>
 				</h2>
-				<p class="card__company--description">{{ post.resources_description }}</p>
+				<p class="card__company--description">{{ resources.description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="/resources">Resources</a>
@@ -82,7 +86,7 @@
 					<span class="text__strong">LEARN MORE</span>
 					<span class="heading__lg">Virtual Tour</span>
 				</h2>
-				<p class="card__company--description">{{ post.tour_description }}</p>
+				<p class="card__company--description">{{ tour.description }}</p>
 			</div>
 			<div>
 				<a class="action__black" href="https://benaco.com/view/b2276352-0afc-417b-b712-b136400ca0c5">Virtual Tour</a>

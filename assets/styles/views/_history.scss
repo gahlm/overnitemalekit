@@ -1,3 +1,6 @@
+.history_main {
+	min-height: 100%;
+}
 .history__hero {
 	@include gridInherit;
 	overflow: hidden;
@@ -6,7 +9,7 @@
 .history__inner {
 	grid-column: container;
 	display: grid;
-	grid-template-rows: 1fr minmax(auto, 8fr);
+	grid-template-rows: 1fr minmax(auto, 9fr);
 	box-sizing: border-box;
 	align-content: center;
 	justify-content: center;

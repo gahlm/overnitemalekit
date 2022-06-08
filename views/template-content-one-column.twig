@@ -26,6 +26,20 @@
 		</div>
 	</div>
 
-	{% include "templates/contact.twig" %}
+
+	<div class="green__contact">
+		<div class="green__contact__inner">
+			<div class="green__contact__inner__text">
+				<h2>{{post.contact_heading}}</h2>
+				<p>{{post.contact_text}}</p>
+			</div>
+			<div class="green__contact__inner__form">
+				{% if post.form %}
+					{{ post.form|shortcodes }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
 
 {% endblock %}

@@ -1,7 +1,5 @@
 <?php
-@ini_set( 'upload_max_size' , '120M' );
-@ini_set( 'post_max_size', '120M');
-@ini_set( 'max_execution_time', '300' );
+
 // Handle no Timber plugin case
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {

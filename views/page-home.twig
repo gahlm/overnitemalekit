@@ -2,6 +2,10 @@
 
 {% block content %}
 	{% set hero = post.get_field('hero') %}
+	{% set experience = post.get_field('experience') %}
+	{% set innovation = post.get_field('innovation') %}
+	{% set solutions = post.get_field('solutions') %}
+
 	<section class="home__hero">
 		<div class="hero__inner">
 			<div class="hero__meta">
@@ -24,7 +28,9 @@
 	<section class="home__productBlocks blocks" id="homeProducts">
 		{% for product in products %}
 			<div class="card card__product">
-				<img src="{{ Image(product.meta('image')).src }}" alt="Image of {{ product.post_title }}">
+				<img src="{{ Image(product.image).src }}" alt="{{ Image(product.image).alt }}">
+
+
 				<div class="card__product--meta">
 					<h2>{{ product.post_title }}</h2>
 					<a class="action__link" href="{{ product.link }}">Learn More</a>
@@ -51,7 +57,7 @@
 					<span class="text__strong">55+ YEARS OF</span>
 					<span class="heading__lg">Experience</span>
 				</h2>
-				<p class="card__company--description">{{ post.experience_description }}</p>
+				<p class="card__company--description">{{ experience.description}}</p>
 			</div>
 			<div>
 				<a class="action__green" href="/about">About Us</a>
@@ -67,7 +73,7 @@
 					<span class="text__strong">DRIVEN BY</span>
 					<span class="heading__lg">Innovation</span>
 				</h2>
-				<p class="card__company--description">{{ post.innovation_description }}</p>
+				<p class="card__company--description">{{ innovation.description }}</p>
 			</div>
 			<div>
 				<a class="action__green" href="/whats-new">See What's New</a>
@@ -83,7 +89,7 @@
 					<span class="text__strong">TAILORED</span>
 					<span class="heading__lg">Solutions</span>
 				</h2>
-				<p class="card__company--description">{{ post.solutions_description }}</p>
+				<p class="card__company--description">{{ solutions.description }}</p>
 			</div>
 			<div>
 				<a class="action__green" href="/contact">Contact Us</a>
