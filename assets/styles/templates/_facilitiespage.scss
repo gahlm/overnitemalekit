@@ -77,8 +77,7 @@ h2 {
 				z-index: 11;
 				.dot {
 					background: $color-light-blue
-						url(/wp-content/uploads/2022/04/CorporateStar.svg) no-repeat center
-						center;
+						url(/wp-content/uploads/CorporateStar.svg) no-repeat center center;
 					background-size: cover;
 				}
 			}
@@ -142,9 +141,8 @@ h2 {
 			border: 2px solid transparent;
 			z-index: 13;
 			&.corporate {
-				background: $color-light-blue
-					url(/wp-content/uploads/2022/04/CorporateStar.svg) no-repeat center
-					center;
+				background: $color-light-blue url(/wp-content/uploads/CorporateStar.svg)
+					no-repeat center center;
 				background-size: cover;
 				z-index: 14;
 			}
