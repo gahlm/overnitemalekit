@@ -1,0 +1,17 @@
+.page404 {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	margin-bottom: $spacer-max;
+	img {
+		grid-column: 1;
+		width: 60%;
+	}
+	.return_home {
+		grid-column: 1;
+		margin: $spacer-md 0 $spacer-md 0;
+		cursor: pointer;
+		z-index: $index-foreground;
+	}
+}

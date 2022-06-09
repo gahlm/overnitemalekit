@@ -1,5 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+
+	<div class="page404">
+		<img src="/wp-content/uploads/404.png" alt="404">
+		<h1>Oops, the page you are looking for doesn't exist.
+		</h1>
+		<a href="/" class="action__green return_home">Go To Home</a>
+	</div>
+	<div class="product_page_hero"></div>
+	{% include "templates/contact.twig" %}
 {% endblock %}
