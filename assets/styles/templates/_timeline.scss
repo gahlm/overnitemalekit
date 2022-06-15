@@ -247,26 +247,28 @@
 }
 .left {
 	grid-column-start: 1;
-	grid-row-start: 2;
+	grid-row-start: 1;
 	justify-self: center;
 	.prev {
 		position: sticky;
 		top: 50%;
 		z-index: $index-foreground;
-		font-size: $font-size-small;
+		font-size: $font-size-heading-sm;
 		cursor: pointer;
+		margin-right: 6px;
 	}
 }
 .right {
 	grid-column-start: 3;
-	grid-row-start: 2;
+	grid-row-start: 1;
 	justify-self: center;
 	.next {
 		z-index: $index-foreground;
-		font-size: $font-size-small;
+		font-size: $font-size-heading-sm;
 		cursor: pointer;
 		position: sticky;
 		top: 50%;
+		margin-left: 6px;
 	}
 }
 .vl {
@@ -286,12 +288,12 @@
 	}
 	.left {
 		.prev {
-			font-size: $font-size-body;
+			font-size: $font-size-heading-lg;
 		}
 	}
 	.right {
 		.next {
-			font-size: $font-size-body;
+			font-size: $font-size-heading-lg;
 		}
 	}
 }

@@ -19,10 +19,10 @@
 		grid-row: 1;
 	}
 	@include query("medium") {
-		grid-template-rows: 1fr minmax(auto, 4.75fr);
+		grid-template-rows: 1fr minmax(auto, 5fr);
 	}
 	@include query("large") {
-		grid-template-rows: 1fr minmax(auto, 4.25fr);
+		grid-template-rows: 1fr minmax(auto, 4.5fr);
 		h1 {
 			font-size: $font-size-heading-hero;
 			max-width: 65%;
