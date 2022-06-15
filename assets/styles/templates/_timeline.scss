@@ -235,7 +235,7 @@
 	z-index: $index-foreground;
 	@include query("medium") {
 		display: grid;
-		grid-template-rows: minmax(375px, 3fr) minmax(100px, 2fr);
+		grid-template-rows: auto;
 		transition: ease-in-out;
 	}
 }

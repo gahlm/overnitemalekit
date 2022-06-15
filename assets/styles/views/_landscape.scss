@@ -1,0 +1,42 @@
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+	.hero__inner {
+		height: 75vh;
+	}
+	.header {
+		width: 100vw;
+	}
+	.history__inner {
+		grid-template-rows: 1fr minmax(auto, 4.5fr);
+	}
+	.wavecontainer {
+		padding-top: 0px !important;
+		.dotcontainer {
+			display: none;
+		}
+	}
+	.mobile-nav {
+		li {
+			line-height: 2.5em;
+		}
+	}
+	.whats_new_subproduct {
+		grid-template-columns: 1fr;
+		grid-template-rows: max-content;
+		article {
+			img {
+				max-height: 40vh;
+			}
+		}
+	}
+	.whats_new_featured {
+		grid-template-rows: 85vh;
+	}
+	.product__main {
+		.product_hero_img {
+			img {
+				max-height: 50vh;
+				max-width: 45vw;
+			}
+		}
+	}
+}

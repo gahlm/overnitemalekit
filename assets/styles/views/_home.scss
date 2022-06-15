@@ -99,12 +99,17 @@
 	}
 }
 .aboutus {
-	height: 80vh;
 	@include query("tiny") {
 		height: 110vh;
 	}
+	@include query("small") {
+		height: 75vh;
+	}
 	@include query("medium") {
 		height: 70vh;
+	}
+	@include query("large") {
+		height: 60vh;
 	}
 }
 .aboutslider {

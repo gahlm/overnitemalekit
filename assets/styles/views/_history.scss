@@ -18,6 +18,9 @@
 		line-height: 0.95;
 		grid-row: 1;
 	}
+	@include query("medium") {
+		grid-template-rows: 1fr minmax(auto, 4.75fr);
+	}
 	@include query("large") {
 		grid-template-rows: 1fr minmax(auto, 4.25fr);
 		h1 {
