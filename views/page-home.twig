@@ -19,7 +19,7 @@
 			<div class="hero__slider slider">
 				{% for i in hero.product_images %}
 					{% set image = i.image %}
-					<img src="{{ image.url }}" alt="{{ image.alt }}"/>
+					<img src="{{ image.url }}" alt="{{ image.alt }}" fetchpriority="high"/>
 				{% endfor %}
 			</div>
 		</div>
