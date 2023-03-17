@@ -18,7 +18,7 @@ if ( ! class_exists( 'Timber' ) ) {
 Timber::$dirname = array('templates', 'views');
 
 
-require_once get_template_directory() . '/breadcrumbs.php';
+// require_once get_template_directory() . '/breadcrumbs.php';
 
 // Initialize Timber
 class ModularSite extends TimberSite {
@@ -34,38 +34,21 @@ class ModularSite extends TimberSite {
 	function add_to_context( $context ) {
 		$context['header_nav_menu'] = new TimberMenu('header_nav');
 		$context['footer_nav_menu'] = new TimberMenu('footer_nav');
-		$context['copy_nav_menu'] = new TimberMenu('footer_copy_nav');
 		$context['site'] = $this;
 		$context['options'] = get_fields('options');
 
 
-		$history = array(
-			'post_type' => 'event',
-			'posts_per_page' => -1,
-			'meta_key' => 'year',
-			'orderby'	=> 'meta_value',
-			'order' => 'ASC'
-		);
-		$context['history'] = Timber::get_posts( $history );
 
 
-		$facilities = array(
-			'post_type' => 'Facility',
-			'posts_per_page' => -1,
-			'meta_key' => 'facility_name',
-			'orderby'	=> 'meta_value',
-			'order' => 'ASC'
-		);
-		$context['facilities'] = Timber::get_posts( $facilities );
+		// $facilities = array(
+		// 	'post_type' => 'Facility',
+		// 	'posts_per_page' => -1,
+		// 	'meta_key' => 'facility_name',
+		// 	'orderby'	=> 'meta_value',
+		// 	'order' => 'ASC'
+		// );
+		// $context['facilities'] = Timber::get_posts( $facilities );
 
-
-		$products = array(
-			'post_type' => 'product',
-			'orderby' => 'meta_order',
-			'order' => 'ASC',
-			'post_parent' => 0,
-		);
-		$context['products'] = Timber::get_posts( $products );
 		
 		return $context;
 	}

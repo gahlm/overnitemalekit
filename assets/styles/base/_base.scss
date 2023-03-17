@@ -41,7 +41,7 @@ button,
 select {
 	padding: 0;
 	font-size: var(--font-body);
-	font-family: $font-stack;
+	font-family: $text-stack;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 	// overflow-x: hidden;
@@ -130,8 +130,8 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $font-stack;
-	font-weight: 600;
+	font-family: $heading-stack;
+	font-weight: 500;
 	font-size: 100%;
 }
 

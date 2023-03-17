@@ -1,0 +1,89 @@
+:root {
+	--navBorderColor: #{$color-white};
+	--navPadding: #{$header-padding};
+	--logoHeight: #{$logo-height};
+}
+
+// body class toggled by scroll event in menu.js
+.header__is-small {
+	--navBorderColor: #{$color-white};
+	--navPadding: #{$header-padding-small};
+	--logoHeight: #{$logo-height-small};
+}
+
+.header {
+	@include gridInherit;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding-top: var(--navPadding);
+	padding-bottom: var(--navPadding);
+	z-index: $index-header;
+	transition: $transition-nav;
+
+	&__logo {
+		height: var(--logoHeight);
+		transition: $transition-nav;
+	}
+
+	&__inner {
+		grid-column: container;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		@include query("large") {
+			grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+		}
+		align-items: center;
+	}
+
+	&__nav {
+		display: none;
+		@include query("large") {
+			display: contents;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: var(--logoHeight);
+		}
+
+		li {
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+			}
+		}
+
+		li > ul {
+			display: none;
+			position: absolute;
+			background-color: white;
+			padding: $spacer-sm;
+			z-index: $index-header;
+		}
+	}
+
+	&__skip-nav {
+		transform: translateY(-120%);
+		position: absolute;
+		top: $spacer-sm;
+		left: $spacer-lg;
+		transition: transform 0.125s ease-in;
+		padding: $spacer-sm;
+		border: 2px solid black;
+		border-radius: 4px;
+		background: white;
+		color: black;
+		font-weight: bold;
+		z-index: $index-header;
+
+		&:focus {
+			transform: translateY(0);
+		}
+	}
+}

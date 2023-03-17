@@ -1,27 +1,27 @@
 :root {
 	// background colors
-	--bg-navy: #{$color-navy};
-	--bg-green: #{$color-green};
+	--bg-deep-blue: #{$color-deep-blue};
+	--bg-deep-blue: #{$color-deep-blue};
 	// --bg-light-blue: #{$color-light-blue};
 	--bg-black: #{$color-black};
 	// --bg-true-black: #{$color-true-black};
-	--bg-light-grey: #{$color-light-grey};
+	--bg-light-tan: #{$color-light-tan};
 	--bg-white: #{$color-white};
 
 	// text colors
-	--text-navy: #{$color-navy};
-	--text-green: #{$color-green};
+	--text-navy: #{$color-deep-blue};
+	--text-deep-blue: #{$color-deep-blue};
 	--text-light-blue: #{$color-light-blue};
 	--text-black: #{$color-black};
 	--text-true-black: #{$color-true-black};
-	--text-light-grey: #{$color-light-grey};
+	--text-light-tan: #{$color-light-tan};
 	--text-white: #{$color-white};
 
 	// action colors
 	--action-text: #{$color-white-t90};
 	--action-blue: #{$color-light-blue};
-	--action-green: #{$color-green};
-	--action-navy: #{$color-navy};
+	--action-deep-blue: #{$color-deep-blue};
+	--action-navy: #{$color-deep-blue};
 	--action-black: #{$color-black};
 
 	// font sizes

@@ -1,21 +1,18 @@
 %action {
 	display: inline-block;
 	width: max-content;
-	padding: $spacer-sm $spacer-md;
+	padding: $spacer-sm $spacer-xl;
 	color: var(--action-text);
-	font-weight: bold;
-	transition: background .125s ease-out;
+	transition: background 0.125s ease-out;
 }
 
 .action__blue {
 	@extend %action;
-	color: $color-navy;
-	background: $color-white;
-	border: 2px solid $color-navy;
-	border-radius: 3px;
-
+	color: $color-white;
+	background: $color-deep-blue;
+	border-radius: 15px;
 	&:hover {
-		background: transparentize($color-navy, .9);
+		background: transparentize($color-light-blue, 0.3);
 	}
 }
 
@@ -27,16 +24,16 @@
 	border-radius: 3px;
 
 	&:hover {
-		background: transparentize($color-rich-green, .95);
+		background: transparentize($color-rich-green, 0.95);
 	}
 }
 
-.action__navy {
+.action__deep-blue {
 	@extend %action;
-	background: $color-navy;
+	background: $color-deep-blue;
 
 	&:hover {
-		background: transparentize($color-navy, .15);
+		background: transparentize($color-deep-blue, 0.15);
 	}
 }
 
@@ -45,17 +42,17 @@
 	background: $color-black;
 
 	&:hover {
-		background: transparentize($color-black, .075);
+		background: transparentize($color-black, 0.075);
 	}
 }
 
 .action__white {
 	@extend %action;
-	color: $color-navy;
+	color: $color-deep-blue;
 	background: $color-white;
 
 	&:hover {
-		background: transparentize($color-white, .075);
+		background: transparentize($color-white, 0.075);
 	}
 }
 

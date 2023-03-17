@@ -1,103 +1,54 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% set hero = post.get_field('hero') %}
-	{% set experience = post.get_field('experience') %}
-	{% set innovation = post.get_field('innovation') %}
-	{% set solutions = post.get_field('solutions') %}
-
-	<section class="home__hero">
+	<div class="home__hero">
 		<div class="hero__inner">
-			<div class="hero__meta">
-				<h1 class="hero__title heading__hero">{{ hero.title }}</h1>
-				<p class="hero__subtitle heading__sm">{{ hero.subtitle }}</p>
-				<div>
-					<a href="/contact" class="action__blue">Contact Us</a>
-				</div>
-			</div>
-
-			<div class="hero__slider slider">
-				{% for i in hero.product_images %}
-					{% set image = i.image %}
-					<img src="{{ image.url }}" alt="{{ image.alt }}" fetchpriority="high"/>
-				{% endfor %}
+			<h1 class="heading__hero">{{post.headline}}
+				<span id="colorword">{{post.colorword}}</span>
+			</h1>
+			<div class="hero__meta">{{post.subhead}}</div>
+			<div class="action">
+				<a href="" class="action__blue">Connect</a>
 			</div>
 		</div>
-	</section>
-
-	<section class="home__productBlocks blocks" id="homeProducts">
-		{% for product in products %}
-			<div class="card card__product">
-				<img src="{{ Image(product.image).src }}" alt="{{ Image(product.image).alt }}">
-
-
-				<div class="card__product--meta">
-					<h2>{{ product.post_title }}</h2>
-					<a class="action__link" href="{{ product.link }}">Learn More</a>
-				</div>
+	</div>
+	<div class="flow">
+		<div class="flow__inner">
+			<h2>Streams Flow</h2>
+			<div class="flow__inner__bar">
+				<div id="dot1"></div>
+				<div id="line1"></div>
+				<div id="dot2"></div>
+				<div id="line2"></div>
+				<div id="dot3"></div>
+				<div id="line3"></div>
+				<div id="dot4"></div>
 			</div>
-		{% endfor %}
-
-		<div class="card card__contact">
-			<h2 class="heading__md color__white">Looking for something?</h2>
-			<div>
-				<a href="/contact" class="action__white">Contact Us</a>
+			<div class="flow__inner__content">
+				{% for item in post.meta('capabilities')%}
+					<article>
+						<h3>{{item.capability_title}}</h3>
+						<p>{{item.capability_text}}</p>
+					</article>
+					{% endfor%}
+				</div>
+				<div class="button">
+					<a href="" class="action__blue">Connect</a>
+				</div>
 			</div>
 		</div>
-	</section>
-
-
-	<section class="home__companyBlocks blocks">
-		<article class="card card__company">
-			<div>
-				<div class="card__company--image">
-					<img src="{{Image(post.meta('experience_icon'))}}" alt="Experience"/>
+		<div class="work">
+			<div class="work__inner">
+				<h2>Past Work</h2>
+				<p>{{post.work_content}}</p>
+				<div class="work__inner__slideshow">
+					{% for item in post.meta('work_image')%}
+						<article>
+							<img src="{{Image(item.work_slide_img).src}}" alt="{{item.work_slide_img.alt}}">
+							<h3>{{item.work_slide_title}}</h3>
+						</article>
+						{% endfor%}
+					</div>
 				</div>
-				<h2 class="home__companyBlocks--heading">
-					<span class="text__strong">55+ YEARS OF</span>
-					<span class="heading__lg">Experience</span>
-				</h2>
-				<p class="card__company--description">{{ experience.description}}</p>
 			</div>
-			<div>
-				<a class="action__green" href="/about">About Us</a>
-			</div>
-		</article>
-		<article class="card card__company">
-			<div>
-				<div class="card__company--image">
-					<img src="{{Image(post.meta('innovation_icon'))}}" alt="Innovation"/>
-
-				</div>
-				<h2 class="home__companyBlocks--heading">
-					<span class="text__strong">DRIVEN BY</span>
-					<span class="heading__lg">Innovation</span>
-				</h2>
-				<p class="card__company--description">{{ innovation.description }}</p>
-			</div>
-			<div>
-				<a class="action__green" href="/whats-new">See What's New</a>
-			</div>
-		</article>
-		<article class="card card__company">
-			<div>
-				<div class="card__company--image">
-					<img src="{{Image(post.meta('solutions_icon'))}}" alt="Solutions"/>
-
-				</div>
-				<h2 class="home__companyBlocks--heading">
-					<span class="text__strong">TAILORED</span>
-					<span class="heading__lg">Solutions</span>
-				</h2>
-				<p class="card__company--description">{{ solutions.description }}</p>
-			</div>
-			<div>
-				<a class="action__green" href="/contact">Contact Us</a>
-			</div>
-		</article>
-	</section>
-
-	{% include "templates/facilities.twig" %}
-	{% include "templates/history.twig" %}
-	{% include "templates/sustainability.twig" %}
-{% endblock %}
+		{% endblock %}

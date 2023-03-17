@@ -1,6 +1,5 @@
 .heading__hero {
-	font-weight: bold;
-	color: $color-green;
+	color: $color-deep-blue;
 	font-size: var(--font-heading-lg);
 	@include query("medium") {
 		font-size: var(--font-heading-hero);
@@ -9,27 +8,23 @@
 
 .heading__xl {
 	font-size: var(--font-heading-xl);
-	font-weight: bold;
 }
 
 .heading__lg {
 	font-size: var(--font-heading-lg);
-	font-weight: bold;
 }
 
 .heading__md {
 	font-size: var(--font-heading-md);
-	font-weight: bold;
 }
 
 .heading__sm {
 	font-size: var(--font-heading-sm);
-	font-weight: bold;
 }
 
 .heading__content {
 	@extend .heading__md;
-	@extend .color__green;
+	@extend .color__deep-blue;
 	margin-bottom: $spacer-md;
 }
 
@@ -38,14 +33,23 @@
 	font-weight: bold;
 }
 
-.color__green {
-	color: $color-green;
+.color__deep-blue {
+	color: $color-deep-blue;
 }
 
 .color__navy {
-	color: $color-navy;
+	color: $color-deep-blue;
 }
 
 .color__white {
 	color: $color-white;
+}
+@font-face {
+	font-family: "phenomenaregular";
+	src: url("/wp-content/themes/stream/Phenomena/phenomena-regular1-webfont.woff2")
+			format("woff2"),
+		url("/wp-content/themes/stream/Phenomena/phenomena-regular1-webfont.woff")
+			format("woff");
+	font-weight: normal;
+	font-style: normal;
 }

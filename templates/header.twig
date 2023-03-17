@@ -1,62 +1,27 @@
 <header class="header" id="header">
-	<a href="#main" class="header__skip-nav">Skip Navigation</a>
+
 
 	<div class="header__inner">
 		<a href="/">
-			<img class="header__logo" src="/wp-content/uploads/FFLogoGrey.svg" alt="Future Foam Logo"/>
+			<img class="header__logo" src="/wp-content/uploads/streamlogo.svg" alt="Stream Logo"/>
 		</a>
-		<nav class="header__nav" aria-label="header navigation">
-			<ul>
-				<li class="show-at-large">
-					<button id="megaMenuTrigger" class="action__nav ">Products</button>
-
-				</li>
-				{# <li class="hide-at-large">
-																																																																																													<a href="/products">Products</a>
-																																																																																												</li> #}
-				{% for item in header_nav_menu.get_items %}
-					{% if item.title == 'Products'%}
-						<li class="hide-at-large">
-							<a href="{{ item.link }}">{{ item.title }}</a>
-							{% include "menu.twig" with {'menu': item.get_children} %}
-						</li>
-					{% else %}
-						<li>
-							<a href="{{ item.link }}">{{ item.title }}</a>
-							{% include "menu.twig" with {'menu': item.get_children} %}
-						</li>
-
-					{% endif %}
-
-				{% endfor %}
-			</ul>
-		</nav>
+		<nav class="header__nav" aria-label="header navigation"></nav>
 		{# Mobile Menu Styling #}
-		<button class="nav-toggle hide-at-large ">
+		<button class="nav-toggle ">
 			<i class="fas fa-bars"></i>
 		</button>
 	</div>
-	<nav class="mobile-nav">
-		<ul>
-			{% for item in header_nav_menu.get_items %}
-				<li>
-					<a href="{{ item.link }}">{{ item.title }}</a>
-					{% include "menu.twig" with {'menu': item.get_children} %}
-				</li>
-			{% endfor %}
-		</ul>
-		<a href="/contact" class="action__blue">Contact Us</a>
+	<nav
+		class="mobile-nav">{# <ul>
+						{% for item in header_nav_menu.get_items %}
+							<li>
+								<a href="{{ item.link }}">{{ item.title }}</a>
+								{% include "menu.twig" with {'menu': item.get_children} %}
+							</li>
+						{% endfor %}
+					</ul> #}
+
 
 	</nav>
 
-	<div id="megaMenu" class="header__megaMenu">
-		<div class="megaMenu__products">
-			{% for product in products %}
-				<a class="megaMenu__item" href="{{ product.link }}">
-					<img src="{{ Image(product.meta('image')).src }}" alt="Image of {{ product.post_title }}">
-					<p>{{ product.post_title }}</p>
-				</a>
-			{% endfor %}
-		</div>
-	</div>
 </header>
