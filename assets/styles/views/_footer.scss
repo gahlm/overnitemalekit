@@ -1,0 +1,61 @@
+.footer {
+	@include gridInherit;
+
+	width: 100vw;
+	padding: $spacer-lg;
+	z-index: $index-header;
+	transition: $transition-nav;
+	background-color: $color-BGgreen;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	background-image: url($streams);
+	background-repeat: no-repeat;
+	background-color: $color-BGgreen;
+	background-size: cover;
+
+	&__main {
+		grid-column: container;
+		display: grid;
+		grid-template-columns: 1fr;
+		height: fit-content;
+		padding: $spacer-md 0 $spacer-md 0;
+		align-items: center;
+		justify-items: center;
+		&__details {
+			padding: $spacer-md 0 $spacer-md 0;
+			a {
+				color: white;
+				line-height: 1.8;
+				font-size: $font-size-small;
+			}
+		}
+		@include query("medium") {
+			grid-template-columns: 1fr 2fr;
+
+			&__logo {
+				grid-column: 1;
+				justify-self: left;
+			}
+			&__details {
+				grid-column: 2;
+				justify-self: center;
+				a {
+					color: white;
+					line-height: 2.5;
+				}
+			}
+		}
+	}
+}
+.footer__logo {
+	height: 50px;
+	@include query("medium") {
+		height: 100px;
+	}
+}
+.copyright {
+	color: $color-white;
+	font-size: $font-size-small;
+	@include query("medium") {
+		grid-column: 1 / span 2;
+	}
+}

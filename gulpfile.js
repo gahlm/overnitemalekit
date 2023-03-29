@@ -37,7 +37,10 @@ function scripts() {
 
 // watchers
 function watcher() {
-	watch(["./assets/styles/**/*.scss"], series(style));
+	watch(
+		["./assets/styles/**/*.scss", "./assets/vendor/**/*.css"],
+		series(style)
+	);
 	watch(["./assets/scripts/*.js"], series(scripts));
 }
 

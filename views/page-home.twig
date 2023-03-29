@@ -8,7 +8,7 @@
 			</h1>
 			<div class="hero__meta">{{post.subhead}}</div>
 			<div class="action">
-				<a href="" class="action__blue">Connect</a>
+				<a href="#contact" class="action__blue">Connect</a>
 			</div>
 		</div>
 	</div>
@@ -33,7 +33,8 @@
 					{% endfor%}
 				</div>
 				<div class="button">
-					<a href="" class="action__blue">Connect</a>
+					<a href="#contact" class="action__blue">Connect</a>
+
 				</div>
 			</div>
 		</div>
@@ -41,14 +42,56 @@
 			<div class="work__inner">
 				<h2>Past Work</h2>
 				<p>{{post.work_content}}</p>
-				<div class="work__inner__slideshow">
-					{% for item in post.meta('work_image')%}
-						<article>
-							<img src="{{Image(item.work_slide_img).src}}" alt="{{item.work_slide_img.alt}}">
-							<h3>{{item.work_slide_title}}</h3>
-						</article>
-						{% endfor%}
+				<div class="work__inner__slideshow slide-container swiper">
+					<div class="carousel swiper-wrapper" data-target="carousel">
+						{% for item in post.meta('work_image')%}
+							<article class="card swiper-slide" data-target="card">
+								<img src="{{Image(item.work_slide_img).src}}" alt="{{item.work_slide_img.alt}}">
+								<div class="slide-description">
+									<h3>{{item.work_slide_title}}</h3>
+								</div>
+							</article>
+							{% endfor%}
+						</div>
+						<div class="swiper-button-next swiper-navBtn"></div>
+						<div class="swiper-button-prev swiper-navBtn"></div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
-		{% endblock %}
+			<div class="testimonials">
+				<div class="testimonials__inner">
+					<h2 class="subtitle">{{post.testimonial_title}}</h2>
+					<div class="logos">
+						{% for item in post.meta('client_logo')%}
+							<img src="{{Image(item.logo).src}}" alt="{{item.logo.alt}}">
+							{% endfor%}
+						</div>
+						<div class="testimonial-divider">
+							<div class="testimonial-divider__inner">
+								<h3>
+									And Kind Words
+								</h3>
+							</div>
+						</div>
+						<div class="testimonials__inner__slideshow testimonial-slide-container swiper">
+							<div class="carousel swiper-wrapper" data-target="carousel">
+								{% for item in post.meta('client_testimonial')%}
+									<article class="card swiper-slide" data-target="card">
+										<p>{{item.nice_thing}}</p>
+										<div class="slide-description">
+											<h3>{{item.client}}</h3>
+										</div>
+									</article>
+									{% endfor%}
+								</div>
+								<div class="swiper-button-next swiper-navBtn"></div>
+								<div class="swiper-button-prev swiper-navBtn"></div>
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% include "templates/contact.twig" %}
+
+			{% endblock %}

@@ -3,25 +3,35 @@
 
 	<div class="header__inner">
 		<a href="/">
-			<img class="header__logo" src="/wp-content/uploads/streamlogo.svg" alt="Stream Logo"/>
+			<img class="header__logo" src="/wp-content/uploads/2023/03/streamlogo.svg" alt="Stream Logo"/>
+
 		</a>
-		<nav class="header__nav" aria-label="header navigation"></nav>
-		{# Mobile Menu Styling #}
+		<nav class="header__nav" aria-label="header navigation">
+			<ul>
+				{% for item in header.get_items %}
+					<li>
+						<a href="{{ item.link }}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+
 		<button class="nav-toggle ">
 			<i class="fas fa-bars"></i>
 		</button>
 	</div>
-	<nav
-		class="mobile-nav">{# <ul>
-						{% for item in header_nav_menu.get_items %}
-							<li>
-								<a href="{{ item.link }}">{{ item.title }}</a>
-								{% include "menu.twig" with {'menu': item.get_children} %}
-							</li>
-						{% endfor %}
-					</ul> #}
+	<nav class="mobile-nav">
+		<ul>
+			{% for item in header.get_items %}
+				<li>
+					<a href="{{ item.link }}">{{ item.title }}</a>
+					{% include "menu.twig" with {'menu': item.get_children} %}
+				</li>
+			{% endfor %}
+		</ul>
 
 
 	</nav>
+
 
 </header>

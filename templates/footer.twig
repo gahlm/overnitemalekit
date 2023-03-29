@@ -1,47 +1,19 @@
 <footer class="footer">
 	<div class="footer__main">
-		<div class="footer__contact">
-			<p class="heading__md">{{ options.title }}</p>
-			{% if options.address %}
-				<p>{{ options.address }}</p>
-			{% endif %}
-			{% if options.contact_phone_numbers %}
-				<ul class="with__text-subtle">
-					{% for item in options.contact_phone_numbers %}
-						<li>
-							<a href="tel:{{ item.number }}">
-								<strong>{{ item.type }}</strong>:
-								{{ item.number|format_phone_number }}
-							</a>
-						</li>
-					{% endfor %}
-				</ul>
-			{% endif %}
-		</div>
-		<img class="footer__logo" src="/wp-content/uploads/FFLogoBlk.svg" alt="Future Foam Logo"/>
+		<div class="footer__main__logo">
+			<a href="/">
+				<img class="footer__logo" src="/wp-content/uploads/2023/03/streamlogo.svg" alt="Stream Logo"/>
 
-		<nav class="footer__nav" aria-label="footer navigation">
+			</a>
+		</div>
+		<div class="footer__main__details">
 			<ul>
-				{% for item in footer_nav_menu.get_items %}
-					<li>
-						<a class="action__link" href="{{ item.link }}">{{ item.title }}</a>
-					</li>
-				{% endfor %}
+				<li><a href="tel:+16125321997">Cell : (612)-532-1997</a></li>
+				<li><a href="mailto:gary@streamdigital.co">Email : gary@streamdigital.co</a></li>
+				<li><a href="">Address : 9610 Sandra Lane Minnetonka, MN 55305</a></li>
 			</ul>
-		</nav>
-	</div>
-	<div class="footer__copy with__text-subtle">
-		&copy;
-		{{ now|date('Y') }}
-		Future Foam
-		<nav class="footer__copy--nav" aria-label="footer sub-navigation">
-			<ul>
-				{% for item in copy_nav_menu.get_items %}
-					<li>
-						<a class="action__link" href="{{ item.link }}">{{ item.title }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		</nav>
+		</div>
+		<div class="copyright">© 2023 Stream Digital Advertising LLC.
+		</div>
 	</div>
 </footer>

@@ -10,7 +10,14 @@
 	--navPadding: #{$header-padding-small};
 	--logoHeight: #{$logo-height-small};
 }
-
+.header-slide {
+	background-color: $color-BGgreen;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	background-image: url($streams);
+	background-repeat: no-repeat;
+	background-color: $color-BGgreen;
+	background-size: cover;
+}
 .header {
 	@include gridInherit;
 	position: fixed;
@@ -47,12 +54,14 @@
 		ul {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-start;
+			gap: 35px;
 			height: var(--logoHeight);
 		}
 
 		li {
 			position: relative;
+			color: $color-white;
 
 			&:hover > ul {
 				display: block;
@@ -86,4 +95,56 @@
 			transform: translateY(0);
 		}
 	}
+}
+.nav-toggle {
+	justify-self: right;
+	align-self: center;
+	height: 30px;
+	width: 30px;
+	display: block;
+	border-radius: 25px;
+	background-color: $color-deep-blue;
+	color: $color-white;
+	transition: all 0.5s ease;
+	:hover {
+		cursor: pointer;
+	}
+	&.move {
+		transform: rotate(90deg);
+		background-color: $color-deep-blue;
+	}
+	@include query("large") {
+		display: none;
+	}
+}
+.mobile-nav {
+	display: none !important;
+	position: fixed;
+	top: calc(var(--navPadding) * 2 + var(--logoHeight));
+	width: 60vw;
+	height: 100%;
+	z-index: $index-popover;
+	background-image: url($streams);
+	background-repeat: no-repeat;
+	background-color: $color-BGgreen;
+	background-size: cover;
+	background-color: $color-medium-blue;
+	opacity: 0.95;
+	box-shadow: 1px 3px 4px $color-black-t10;
+	transition: 12.5s ease-in;
+	@include gridInherit();
+	ul {
+		grid-column: container;
+		padding-left: $spacer-lg;
+	}
+	li {
+		line-height: 5em;
+		color: $color-white;
+	}
+	.action__blue {
+		margin: $spacer-lg;
+	}
+}
+.toggled {
+	display: block !important;
 }

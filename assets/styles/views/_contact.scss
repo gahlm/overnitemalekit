@@ -1,0 +1,60 @@
+.contact {
+	@include gridInherit;
+	background-color: $color-white;
+	&__inner {
+		height: fit-content;
+		grid-column: container;
+		display: grid;
+		grid-template-columns: 1fr;
+		padding: $spacer-max 0 $spacer-max 0;
+		align-items: center;
+		justify-items: center;
+		.contact {
+			font-size: $font-size-heading-xl;
+			color: $color-deep-blue;
+		}
+		&__form {
+			order: 2;
+			padding-top: $spacer-xl;
+		}
+		&__bio {
+			order: 1;
+			display: grid;
+			justify-items: center;
+			.biopic {
+				width: 80%;
+				padding: 1em;
+			}
+			h2 {
+				color: $color-deep-blue;
+				font-size: $font-size-heading-xl;
+				text-align: left;
+			}
+			p {
+				margin: $spacer-xl $spacer-md $spacer-md $spacer-md;
+			}
+		}
+		@include query("medium") {
+			grid-template-columns: 10fr 14fr;
+			&__form {
+				order: 1;
+				grid-column: 1;
+
+				.nf-table-display {
+					width: 100%;
+				}
+			}
+			&__bio {
+				order: 2;
+				grid-column: 2;
+				.biopic {
+					width: 60%;
+					padding: 1em;
+				}
+				p {
+					margin: $spacer-md $spacer-max $spacer-md $spacer-max;
+				}
+			}
+		}
+	}
+}

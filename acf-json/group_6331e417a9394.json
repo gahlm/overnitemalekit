@@ -6,6 +6,7 @@
             "key": "field_6331e4175dfb7",
             "label": "Headline",
             "name": "headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_6331ee28a1bf2",
             "label": "Color Word",
             "name": "colorword",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -44,6 +46,7 @@
             "key": "field_6331ee3da1bf3",
             "label": "Subhead",
             "name": "subhead",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -63,6 +66,7 @@
             "key": "field_633203df63fd9",
             "label": "Capabilities",
             "name": "capabilities",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -84,6 +88,7 @@
                     "key": "field_633203f263fda",
                     "label": "Capability Title",
                     "name": "capability_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -104,6 +109,7 @@
                     "key": "field_6332040463fdb",
                     "label": "Capability Text",
                     "name": "capability_text",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -126,6 +132,7 @@
             "key": "field_63320bcfd5e6e",
             "label": "Work Headline",
             "name": "work_headline",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -145,6 +152,7 @@
             "key": "field_63320be4d5e6f",
             "label": "Work Content",
             "name": "work_content",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -164,6 +172,7 @@
             "key": "field_63320bf3d5e70",
             "label": "Work Image",
             "name": "work_image",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -185,6 +194,7 @@
                     "key": "field_63320c11d5e71",
                     "label": "Work Slide Image",
                     "name": "work_slide_img",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -210,6 +220,7 @@
                     "key": "field_63320c37d5e72",
                     "label": "Work Slide Title",
                     "name": "work_slide_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -225,6 +236,142 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_63320bf3d5e70"
+                }
+            ]
+        },
+        {
+            "key": "field_641de2cf0bfbb",
+            "label": "Testimonial Title",
+            "name": "testimonial_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_641de3090e489",
+            "label": "Client Logo",
+            "name": "client_logo",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_641de3230e48a",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_641de3090e489"
+                }
+            ]
+        },
+        {
+            "key": "field_641df30d5b7a9",
+            "label": "Client Testimonial",
+            "name": "client_testimonial",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_641df3285b7aa",
+                    "label": "Nice Thing",
+                    "name": "nice_thing",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_641df30d5b7a9"
+                },
+                {
+                    "key": "field_641df3355b7ab",
+                    "label": "Client",
+                    "name": "client",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_641df30d5b7a9"
                 }
             ]
         }
@@ -247,5 +394,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664224335
+    "modified": 1679684419
 }

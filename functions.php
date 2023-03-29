@@ -32,24 +32,10 @@ class ModularSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['header_nav_menu'] = new TimberMenu('header_nav');
-		$context['footer_nav_menu'] = new TimberMenu('footer_nav');
+		$context['header'] = new TimberMenu('header');
 		$context['site'] = $this;
 		$context['options'] = get_fields('options');
 
-
-
-
-		// $facilities = array(
-		// 	'post_type' => 'Facility',
-		// 	'posts_per_page' => -1,
-		// 	'meta_key' => 'facility_name',
-		// 	'orderby'	=> 'meta_value',
-		// 	'order' => 'ASC'
-		// );
-		// $context['facilities'] = Timber::get_posts( $facilities );
-
-		
 		return $context;
 	}
 

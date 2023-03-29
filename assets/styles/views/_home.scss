@@ -23,26 +23,43 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	grid-template-columns: 1fr min-content;
-	padding: $spacer-max 0 $spacer-max 0;
-	width: 60%;
-	@include query("medium") {
-		align-content: center;
-		gap: 25px;
-		margin: $spacer-lg 0 0 0;
+	padding: 15vh 0 $spacer-max 0;
+	width: 90%;
+	.hero__meta {
+		grid-column: container;
+		color: white;
+		font-size: $font-size-small;
+		padding: $spacer-md 0 $spacer-md 0;
+	}
+	.action {
+		padding: $spacer-xs $spacer-xs $spacer-xs $spacer-xs;
+		font-size: $font-size-small;
 	}
 	h1 {
 		color: $color-white;
+		font-size: $font-size-heading-sm;
 		span {
 			color: $color-light-blue;
 		}
 	}
+	@include query("medium") {
+		align-content: center;
+		gap: 25px;
+		margin: $spacer-lg 0 0 0;
+		width: 60%;
+		.hero__meta {
+			font-size: $font-size-body;
+		}
+		h1 {
+			font-size: $font-size-heading-hero;
+		}
+		.action {
+			padding: $spacer-sm;
+			font-size: $font-size-body;
+		}
+	}
 }
-.action {
-}
-.hero__meta {
-	grid-column: container;
-	color: white;
-}
+
 .flow {
 	@include gridInherit;
 	background-color: $color-light-tan;
@@ -53,6 +70,28 @@ main {
 	display: grid;
 	align-content: center;
 	grid-template-columns: auto 7fr;
+	@include query("medium") {
+		&__bar {
+			display: grid !important;
+		}
+		&__content {
+			article {
+				padding: $spacer-sm 0 0 $spacer-xxl;
+			}
+		}
+	}
+	@include query("small") {
+		h2 {
+			justify-self: center;
+			padding-top: $spacer-lg;
+		}
+		&__bar {
+			display: initial;
+		}
+		.action__blue {
+			margin: $spacer-xl 0 $spacer-xl 0;
+		}
+	}
 	h2 {
 		grid-column: 1 / span 2;
 		font-size: 2.5em;
@@ -65,8 +104,8 @@ main {
 	&__bar {
 		padding: $spacer-xxl 0 0 0;
 		grid-column: 1;
+		display: none;
 		grid-row: 2;
-		display: grid;
 		justify-content: center;
 		#dot1 {
 			background-color: $color-light-blue;
@@ -111,6 +150,7 @@ main {
 			border-radius: 50%;
 		}
 	}
+
 	&__content {
 		display: grid;
 		padding: $spacer-xxl 0 0 0;
@@ -136,7 +176,6 @@ main {
 			}
 		}
 		article {
-			padding: $spacer-sm 0 0 $spacer-xxl;
 			h3 {
 				font-size: 2em;
 			}
@@ -150,9 +189,11 @@ main {
 	background-color: $color-BGgreen;
 	background-size: cover;
 	min-height: 40vh;
+
 	&__inner {
 		grid-column: container;
 		padding: $spacer-max 0 $spacer-max 0;
+
 		h2 {
 			font-size: 2.5em;
 			color: $color-light-blue;
@@ -160,29 +201,193 @@ main {
 		p {
 			color: white;
 		}
-		&__slideshow {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			justify-items: center;
-			article {
-				background-color: $color-light-tan;
-				position: relative;
-				width: 300px;
-				height: 300px;
-				overflow: hidden;
 
-				img {
-					height: 100%;
-					width: 100%;
-					object-fit: cover;
+		&__slideshow {
+			height: 300px;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			margin: 0 auto;
+
+			.swiper-navBtn {
+				color: $color-white;
+				height: 40px;
+				width: 40px;
+				background: rgba($color: #000000, $alpha: 0.7);
+				border-radius: 50%;
+			}
+			.swiper-navBtn::before,
+			.swiper-navBtn::after {
+				font-size: 18px;
+			}
+			.swiper-pagination-bullet {
+				background-color: #000;
+			}
+
+			.carousel {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				width: 100%;
+				display: flex;
+				position: absolute;
+				left: 0;
+				transition: all 1s ease;
+				.card {
+					background: black;
+					min-width: 33%;
+					height: 300px;
+					margin-right: 1rem;
+					display: inline-block;
+					img {
+						height: 300px;
+						width: 100%;
+						object-fit: cover;
+					}
+					.slide-description {
+						background: rgba($color: #000000, $alpha: 0.7);
+						position: absolute;
+						bottom: 0;
+						height: 15%;
+						width: 100%;
+						h3 {
+							position: relative;
+							top: 25%;
+							text-align: center;
+							font-weight: 600;
+							color: $color-white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.testimonials {
+	@include gridInherit;
+	background-color: $color-tan;
+	min-height: 40vh;
+
+	&__inner {
+		grid-column: container;
+		padding: $spacer-max 0 $spacer-max 0;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		.subtitle {
+			color: $color-deep-blue;
+			font-size: $font-size-heading-xl;
+		}
+		.logos {
+			display: flex;
+			flex-direction: row;
+			width: 90%;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			img {
+				height: 100px;
+				width: 100px;
+				padding: 10px;
+				object-fit: contain;
+			}
+		}
+		&__slideshow {
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			margin: 0 auto;
+			display: none;
+
+			.swiper-navBtn {
+				color: $color-medium-blue;
+				height: 20px;
+				width: 20px;
+				border-radius: 50%;
+			}
+			.swiper-navBtn::before,
+			.swiper-navBtn::after {
+				font-size: 12px;
+			}
+			.swiper-pagination-bullet {
+				background-color: #000;
+			}
+			article {
+				display: grid;
+				grid-template-rows: 3fr 3fr;
+				width: 60%;
+				height: min-content;
+				justify-items: center;
+				padding: $spacer-xxl 0 $spacer-xxl 0;
+				p {
+					font-size: $font-size-small;
 				}
 				h3 {
-					position: absolute;
-					bottom: 5%;
-					margin: 0 25% 0 25%;
+					font-size: $font-bold;
+				}
+			}
+		}
+
+		@include query("medium") {
+			.logos {
+				img {
+					height: 225px;
+					width: 225px;
+					padding: 15px;
+					object-fit: contain;
+				}
+			}
+			&__slideshow {
+				.swiper-navBtn {
+					height: 40px;
+					width: 40px;
+				}
+				.swiper-navBtn::before,
+				.swiper-navBtn::after {
+					font-size: 40px;
+				}
+
+				article {
+					p {
+						font-size: $font-size-heading-sm;
+					}
+					h3 {
+						font-size: $font-size-heading-lg;
+					}
+				}
+			}
+		}
+
+		.testimonial-divider {
+			width: 100%;
+			overflow: hidden;
+			display: none;
+			&__inner {
+				h3 {
+					width: 100%;
 					text-align: center;
-					font-weight: 600;
-					color: $color-deep-blue;
+					font-size: $font-size-heading-md;
+					padding: $spacer-lg;
+				}
+
+				h3:before,
+				h3:after {
+					background-color: $color-medium-blue;
+					content: "";
+					display: inline-block;
+					height: 2px;
+					position: relative;
+					vertical-align: middle;
+					width: 50%;
+				}
+
+				h3:before {
+					right: 0.5em;
+					margin-left: -50%;
+				}
+
+				h3:after {
+					left: 0.5em;
+					margin-right: -50%;
 				}
 			}
 		}
